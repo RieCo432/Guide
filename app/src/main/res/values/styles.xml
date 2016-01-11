@@ -4,8 +4,12 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@android:color/black</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@drawable/ingress_gradient_background</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:windowBackground">@drawable/ingress_gradient_background</item>
+        <item name="android:textColorPrimaryInverse">@color/color_primary_text_invers</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

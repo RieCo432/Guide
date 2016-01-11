@@ -1,15 +1,9 @@
 package com.colinries.guide;
 
-
-/*import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.app.FragmentManager;*/
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -21,8 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, MainFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +23,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,15 +33,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Get and display main fragment
+        //TODO: fill fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        MainFragment mainfragment = new MainFragment();
-        fragmentTransaction.replace(R.id.fragment_container, mainfragment).commit();
+        fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
 
-        /*FragmentManager fm = getFragmentManager();
-        MainFragment mainFragment = new MainFragment();
-        mainFragment = MainFragment.newInstance("lol", "lol");
-        FragmentTransaction ft = fm.beginTransaction().replace(R.id.fragment_container, mainFragment);*/
 
     }
 
@@ -101,34 +82,36 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            MainFragment mainfragment = new MainFragment();
-            fragmentTransaction.replace(R.id.fragment_container, mainfragment).commit();
-        } else if (id == R.id.nav_gallery) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            SideFragment sidefragment = new SideFragment();
-            fragmentTransaction.replace(R.id.fragment_container, sidefragment).commit();
-        } else if (id == R.id.nav_slideshow) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_howto) {
+            fragmentTransaction.replace(R.id.fragment_container, new HowToFragment()).commit();
+            setTitle(getString(R.string.how_tos));
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_items) {
+            fragmentTransaction.replace(R.id.fragment_container, new ItemFragment()).commit();
+            setTitle(getString(R.string.items));
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_faq) {
+            fragmentTransaction.replace(R.id.fragment_container, new FAQFragment()).commit();
+            setTitle(getString(R.string.faq));
+
+        } else if (id == R.id.nav_about) {
+            fragmentTransaction.replace(R.id.fragment_container, new AboutFragment()).commit();
+            setTitle(getString(R.string.about));
+
+        } else if (id == R.id.nav_support) {
+
+        } else if (id == R.id.nav_feedback) {
+
+        } else if (id == R.id.nav_settings) {
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }
