@@ -16,4 +16,8 @@
     <string name="header">Header</string>
     <string name="ingress_guide">Ingress Guide</string>
     <string name="subheader">The best Ingress guide ever!</string>
+    <string name="sample_header">Header</string>
+    <string name="sample_subheader">Subheader</string>
+    <string name="sample_paragraphe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus nunc, rhoncus vel lorem sed, finibus lacinia felis. Ut augue ante, ultrices maximus semper at, elementum ac lectus. Pellentesque semper.</string>
+    <string name="badge">Badge</string>
 </resources>
