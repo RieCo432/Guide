@@ -5,7 +5,19 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings">Settings</string>
+    <string name="feedback">Feedback</string>
+    <string name="support">Support</string>
+    <string name="more">More</string>
+    <string name="about">About</string>
+    <string name="faq">FAQ</string>
+    <string name="items">Items</string>
+    <string name="how_tos">How-Tos</string>
+    <string name="header">Header</string>
+    <string name="ingress_guide">Ingress Guide</string>
+    <string name="subheader">The best Ingress guide ever!</string>
+    <string name="sample_header">Header</string>
+    <string name="sample_subheader">Subheader</string>
+    <string name="sample_paragraphe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus nunc, rhoncus vel lorem sed, finibus lacinia felis. Ut augue ante, ultrices maximus semper at, elementum ac lectus. Pellentesque semper.</string>
+    <string name="badge">Badge</string>
 </resources>
