@@ -1,10 +1,10 @@
 package com.colinries.guide;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
+        setTitle(getString(R.string.main));
 
 
     }
@@ -85,7 +90,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        if (id == R.id.nav_howto) {
+
+        if (id == R.id.nav_main) {
+            fragmentTransaction.replace(R.id.fragment_container, new HowToFragment()).commit();
+            setTitle(getString(R.string.how_tos));
+
+        } else if (id == R.id.nav_howto) {
             fragmentTransaction.replace(R.id.fragment_container, new HowToFragment()).commit();
             setTitle(getString(R.string.how_tos));
 

@@ -20,4 +20,28 @@
     <string name="sample_subheader">Subheader</string>
     <string name="sample_paragraphe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus nunc, rhoncus vel lorem sed, finibus lacinia felis. Ut augue ante, ultrices maximus semper at, elementum ac lectus. Pellentesque semper.</string>
     <string name="badge">Badge</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="resonators">Resonators</string>
+    <string name="xmps">XMPs</string>
+    <string name="ultrastrikes">Ultra Strikes</string>
+    <string name="adarefactor">ADA Refactor</string>
+    <string name="jarvisvirus">Jarvis Virus</string>
+    <string name="shields">Shields</string>
+    <string name="axashields">AXA Shields</string>
+    <string name="heatsinks">Heat Sinks</string>
+    <string name="multihacks">Multi Hacks</string>
+    <string name="forceamps">Force AMPs</string>
+    <string name="turrets">Turrets</string>
+    <string name="linkamps">Link AMPs</string>
+    <string name="softbankultralinkamps">Softbank Ultra Link AMPs</string>
+    <string name="powercubes">Power Cubes</string>
+    <string name="capsules">Capsules</string>
+    <string name="mufgcapsules">MUFG Capsules</string>
+    <string name="fracker">Fracker</string>
+    <string name="keylocker">Key Locker</string>
+    <string name="beacons">Beacons</string>
+    <string name="cmus">CMUs</string>
+    <string name="main">Main</string>
 </resources>
