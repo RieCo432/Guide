@@ -27,6 +27,10 @@
             android:icon="@mipmap/verified"
             android:title="@string/powercubes" />
         <item
+            android:id="@+id/nav_portalkey"
+            android:icon="@mipmap/verified"
+            android:title="@string/portalkey" />
+        <item
             android:id="@+id/nav_shields"
             android:icon="@mipmap/verified"
             android:title="@string/shields" />

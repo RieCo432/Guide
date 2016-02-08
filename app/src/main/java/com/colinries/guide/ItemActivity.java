@@ -25,15 +25,6 @@ public class ItemActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -86,80 +77,84 @@ public class ItemActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
         if (id == R.id.nav_resonators) {
-            fragmentTransaction.replace(R.id.fragment_container, new ResonatorFragment()).commit();
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.ResonatorFragment()).commit();
             setTitle(getString(R.string.resonators));
             // Handle the camera action
         } else if (id == R.id.nav_xmps) {
-            fragmentTransaction.replace(R.id.fragment_container, new XmpFragment()).commit();
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.XmpFragment()).commit();
             setTitle(getString(R.string.xmps));
             // Handle the camera action
         } else if (id == R.id.nav_ultrastrikes) {
-            fragmentTransaction.replace(R.id.fragment_container, new UltrastrikeFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.UltrastrikeFragment()).commit();
+            setTitle(getString(R.string.ultrastrikes));
             // Handle the camera action
         } else if (id == R.id.nav_adarefactor) {
-            fragmentTransaction.replace(R.id.fragment_container, new AdarefactorFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.AdarefactorFragment()).commit();
+            setTitle(getString(R.string.adarefactor));
             // Handle the camera action
         } else if (id == R.id.nav_jarvisvirus) {
-            fragmentTransaction.replace(R.id.fragment_container, new JarvisvirusFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.JarvisvirusFragment()).commit();
+            setTitle(getString(R.string.jarvisvirus));
             // Handle the camera action
         } else if (id == R.id.nav_powercubes) {
-            fragmentTransaction.replace(R.id.fragment_container, new PowercubeFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.PowercubeFragment()).commit();
+            setTitle(getString(R.string.powercubes));
+            // Handle the camera action
+        } else if (id == R.id.nav_portalkey) {
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.PortalkeyFragment()).commit();
+            setTitle(getString(R.string.portalkey));
             // Handle the camera action
         } else if (id == R.id.nav_shields) {
-            fragmentTransaction.replace(R.id.fragment_container, new ShieldFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.ShieldFragment()).commit();
+            setTitle(getString(R.string.shields));
             // Handle the camera action
         } else if (id == R.id.nav_axashields) {
-            fragmentTransaction.replace(R.id.fragment_container, new AxashieldFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.AxashieldFragment()).commit();
+            setTitle(getString(R.string.axashields));
             // Handle the camera action
         } else if (id == R.id.nav_heatsinks) {
-            fragmentTransaction.replace(R.id.fragment_container, new HeatsinkFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.HeatsinkFragment()).commit();
+            setTitle(getString(R.string.heatsinks));
             // Handle the camera action
         } else if (id == R.id.nav_multihacks) {
-            fragmentTransaction.replace(R.id.fragment_container, new MultihackFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.MultihackFragment()).commit();
+            setTitle(getString(R.string.multihacks));
             // Handle the camera action
         } else if (id == R.id.nav_forceamps) {
-            fragmentTransaction.replace(R.id.fragment_container, new ForceampFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.ForceampFragment()).commit();
+            setTitle(getString(R.string.forceamps));
             // Handle the camera action
         } else if (id == R.id.nav_turrets) {
-            fragmentTransaction.replace(R.id.fragment_container, new TurretFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.TurretFragment()).commit();
+            setTitle(getString(R.string.turrets));
             // Handle the camera action
         } else if (id == R.id.nav_linkamps) {
-            fragmentTransaction.replace(R.id.fragment_container, new LinkampFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.LinkampFragment()).commit();
+            setTitle(getString(R.string.linkamps));
             // Handle the camera action
         } else if (id == R.id.nav_softbankultralinkamps) {
-            fragmentTransaction.replace(R.id.fragment_container, new SoftbankultralinkampFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.SoftbankultralinkampFragment()).commit();
+            setTitle(getString(R.string.softbankultralinkamps));
             // Handle the camera action
         } else if (id == R.id.nav_capsules) {
-            fragmentTransaction.replace(R.id.fragment_container, new CapsuleFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.CapsuleFragment()).commit();
+            setTitle(getString(R.string.capsules));
             // Handle the camera action
         } else if (id == R.id.nav_mufgcapsules) {
-            fragmentTransaction.replace(R.id.fragment_container, new MufgcapsuleFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.MufgcapsuleFragment()).commit();
+            setTitle(getString(R.string.mufgcapsules));
             // Handle the camera action
         } else if (id == R.id.nav_fracker) {
-            fragmentTransaction.replace(R.id.fragment_container, new FrackerFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.FrackerFragment()).commit();
+            setTitle(getString(R.string.fracker));
             // Handle the camera action
         } else if (id == R.id.nav_keylocker) {
-            fragmentTransaction.replace(R.id.fragment_container, new KeylockerFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.KeylockerFragment()).commit();
+            setTitle(getString(R.string.keylocker));
             // Handle the camera action
         } else if (id == R.id.nav_beacons) {
-            fragmentTransaction.replace(R.id.fragment_container, new BeaconFragment()).commit();
-            setTitle(getString(R.string.xmps));
+            fragmentTransaction.replace(R.id.item_fragment_container, new ItemsFragment.BeaconFragment()).commit();
+            setTitle(getString(R.string.beacons));
             // Handle the camera action
         }
 

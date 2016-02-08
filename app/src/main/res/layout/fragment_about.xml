@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     tools:context="com.colinries.guide.AboutFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Add information about the app -->
 
 </RelativeLayout>

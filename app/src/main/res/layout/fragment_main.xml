@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Build nice welcome page -->
 
 </RelativeLayout>
