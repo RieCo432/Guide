@@ -27,6 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.colinries.guide.MainActivity" />
         </activity>
+        <activity
+            android:name=".BadgesActivity"
+            android:label="@string/title_activity_badges"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.colinries.guide.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

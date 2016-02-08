@@ -9,7 +9,7 @@
         <item name="android:colorBackground">@drawable/ingress_gradient_background</item>
         <item name="android:textColorPrimary">@color/colorTextPrimary</item>
         <item name="android:windowBackground">@drawable/ingress_gradient_background</item>
-        <item name="android:textColorPrimaryInverse">@color/color_primary_text_invers</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_default_material_dark</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

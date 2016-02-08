@@ -7,10 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
-public class SampleItemPage extends Fragment {
 
-    public SampleItemPage() {
+public class BadgesFragment extends Fragment {
+    public BadgesFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +24,9 @@ public class SampleItemPage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sample_item_page, container, false);
+        RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.fragment_badges, container, false);
+
+        return layout;
     }
 
     @Override
@@ -35,4 +38,6 @@ public class SampleItemPage extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
+    //TODO: Add all fragments for the badges
 }
