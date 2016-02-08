@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HowToFragment">
+    tools:context="com.colinries.guide.BadgesFragment">
 
-    <!-- TODO: Add how to content -->
+    <!-- TODO: Add introduction for badges-->
 
 </RelativeLayout>
