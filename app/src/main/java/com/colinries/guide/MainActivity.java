@@ -1,6 +1,7 @@
 package com.colinries.guide;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -100,8 +101,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             setTitle(getString(R.string.how_tos));
 
         } else if (id == R.id.nav_items) {
-            fragmentTransaction.replace(R.id.fragment_container, new ItemFragment()).commit();
-            setTitle(getString(R.string.items));
+            Intent intent = new Intent(this, ItemActivity.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.nav_faq) {
             fragmentTransaction.replace(R.id.fragment_container, new FAQFragment()).commit();
