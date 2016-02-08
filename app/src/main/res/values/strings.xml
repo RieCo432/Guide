@@ -15,7 +15,7 @@
     <string name="how_tos">How-Tos</string>
     <string name="header">Header</string>
     <string name="ingress_guide">Ingress Guide</string>
-    <string name="subheader">The best Ingress guide ever!</string>
+    <string name="subheader">v 1.0</string>
     <string name="sample_header">Header</string>
     <string name="sample_subheader">Subheader</string>
     <string name="sample_paragraphe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus nunc, rhoncus vel lorem sed, finibus lacinia felis. Ut augue ante, ultrices maximus semper at, elementum ac lectus. Pellentesque semper.</string>
@@ -44,4 +44,6 @@
     <string name="beacons">Beacons</string>
     <string name="cmus">CMUs</string>
     <string name="main">Main</string>
+    <string name="badges">Badges</string>
+    <string name="title_activity_item">ItemActivity</string>
 </resources>
