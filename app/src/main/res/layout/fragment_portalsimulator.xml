@@ -1,0 +1,235 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.colinries.guide.PortalsimulatorFragment">
+
+    <!-- TODO: Build Portal Simulator Interface -->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/select_resonators"
+        android:id="@+id/selectResonatorsPrompt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorPrimary"/>
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selectResonatorsPrompt"
+        android:id="@+id/resonatorSlots">
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot1"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot2"
+            android:layout_toEndOf="@+id/resonatorSlot1"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot3"
+            android:layout_toEndOf="@+id/resonatorSlot2"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot4"
+            android:layout_toEndOf="@+id/resonatorSlot3"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot5"
+            android:layout_toEndOf="@+id/resonatorSlot4"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot6"
+            android:layout_toEndOf="@+id/resonatorSlot5"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot7"
+            android:layout_toEndOf="@+id/resonatorSlot6"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/resonatorSlot8"
+            android:layout_toEndOf="@+id/resonatorSlot7"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/select_mods"
+        android:id="@+id/selectModsPrompt"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/resonatorSlots"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selectModsPrompt"
+        android:id="@+id/modSlots">
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/modSlot1"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/modSlot2"
+            android:backgroundTint="@color/itemSlotBackgroundColor"
+            android:layout_toEndOf="@+id/modSlot1"/>
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/modSlot3"
+            android:layout_toEndOf="@+id/modSlot2"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/modSlot4"
+            android:layout_toEndOf="@+id/modSlot3"
+            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/portalData"
+        android:layout_below="@id/modSlots"
+        android:layout_alignParentEnd="true">
+
+        <!--TODO: Add all portal properties-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/portalDataTitle"
+            android:text="@string/portalData"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/level"
+            android:id="@+id/portalLevelTitle"
+            android:layout_below="@+id/portalDataTitle"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="7"
+            android:id="@+id/portalLevelValue"
+            android:layout_below="@+id/portalDataTitle"
+            android:textColor="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/range"
+            android:id="@+id/portalRangeTitle"
+            android:layout_below="@+id/portalLevelTitle"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="655km"
+            android:id="@+id/portalRangeValue"
+            android:layout_below="@+id/portalLevelValue"
+            android:textColor="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/hackSpeed"
+            android:id="@+id/portalHackSpeedTitle"
+            android:layout_below="@+id/portalRangeTitle"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="58s"
+            android:id="@+id/portalHackSpeedValue"
+            android:layout_below="@+id/portalRangeValue"
+            android:textColor="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/portalBurnoutIsolation"
+            android:id="@+id/portalBurnoutIsolationTitle"
+            android:layout_below="@+id/portalHackSpeedTitle"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="+12"
+            android:id="@+id/portalBurnoutIsolationValue"
+            android:layout_below="@+id/portalHackSpeedValue"
+            android:textColor="@color/colorPrimary"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/portalMitigation"
+            android:id="@+id/portalMitigationTitle"
+            android:layout_below="@+id/portalBurnoutIsolationTitle"
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="95"
+            android:id="@+id/portalMitigationValue"
+            android:layout_below="@+id/portalBurnoutIsolationValue"
+            android:textColor="@color/colorPrimary"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
