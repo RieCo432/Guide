@@ -103,12 +103,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_items) {
             Intent intent = new Intent(this, ItemActivity.class);
             startActivity(intent);
-
-
         } else if (id == R.id.nav_badges) {
             Intent intent = new Intent(this, BadgesActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_faq) {
+        } else if (id == R.id.nav_portalsimulator) {
+            fragmentTransaction.replace(R.id.fragment_container, new PortalsimulatorFragment()).commit();
+            setTitle(getString(R.string.portalsimulator));
+        }else if (id == R.id.nav_faq) {
             fragmentTransaction.replace(R.id.fragment_container, new FAQFragment()).commit();
             setTitle(getString(R.string.faq));
         } else if (id == R.id.nav_about) {
