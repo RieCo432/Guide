@@ -81,4 +81,14 @@
     <string name="translator">Translator</string>
     <string name="trekker">Trekker</string>
     <string name="vanguard">Vanguard</string>
+    <string name="portalsimulator">Portal Simulator</string>
+    <string name="portalsim">Portal Sim</string>
+    <string name="select_resonators">Select Resonators</string>
+    <string name="select_mods">Select Mods</string>
+    <string name="portalData">Portal Data</string>
+    <string name="level">Level</string>
+    <string name="range">Range</string>
+    <string name="hackSpeed">Hack Speed</string>
+    <string name="portalBurnoutIsolation">Burnout Isolation</string>
+    <string name="portalMitigation">Mitigation</string>
 </resources>

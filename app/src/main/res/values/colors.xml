@@ -7,4 +7,5 @@
     <color name="colorAccent">#ffd752</color>
     <color name="colorTextPrimary">#008a7b</color>
     <color name="primary_text_default_material_dark">#ffffff</color>
+    <color name="itemSlotBackgroundColor">@color/colorPrimary</color>
 </resources>
