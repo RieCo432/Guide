@@ -89,6 +89,11 @@
     <string name="level">Level</string>
     <string name="range">Range</string>
     <string name="hackSpeed">Hack Speed</string>
-    <string name="portalBurnoutIsolation">Burnout Isolation</string>
+    <string name="portalBurnoutIsolation">Burnout Insulation</string>
     <string name="portalMitigation">Mitigation</string>
+    <string name="ada_description">ADA Refactor and Jarvis Virus are weapons used to instantly switch a Portal\'s alignment. All the mods and resonators stay the same after the use of a Jarvis or ADA, only the name changes.
+Important tips: You can only attack a specific Portal with an ADA /Jarvis once per hour. If you try to use one before the 1 hour cooldown, the Portal\'s alignment won\'t change and your ADA or Jarvis will be gone.</string>
+    <string name="axa_description"> AXA shields are the most powerful shields in Ingress.They have the highest mitigation and stickiness, which means that they provide the best defense and that they are the hardest to destroy.  </string>
+    <string name="beacon_description"></string>
+
 </resources>
