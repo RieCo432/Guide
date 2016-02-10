@@ -79,6 +79,15 @@
             android:backgroundTint="@color/itemSlotBackgroundColor"/>
     </RelativeLayout>
 
+    <!--<Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:id="@+id/selectResonatorLevelSpinner"
+        android:spinnerMode="dialog">
+
+    </Spinner>-->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -197,7 +206,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:text="@string/portalBurnoutIsolation"
+            android:text="@string/portalBurnoutInsulation"
             android:id="@+id/portalBurnoutIsolationTitle"
             android:layout_below="@+id/portalHackSpeedTitle"
             android:textColor="@color/colorPrimary"/>
