@@ -23,60 +23,76 @@
         android:layout_below="@+id/selectResonatorsPrompt"
         android:id="@+id/resonatorSlots">
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot1"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot2"
             android:layout_toEndOf="@+id/resonatorSlot1"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot3"
             android:layout_toEndOf="@+id/resonatorSlot2"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot4"
             android:layout_toEndOf="@+id/resonatorSlot3"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot5"
             android:layout_toEndOf="@+id/resonatorSlot4"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot6"
             android:layout_toEndOf="@+id/resonatorSlot5"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot7"
             android:layout_toEndOf="@+id/resonatorSlot6"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/resonatorSlot8"
             android:layout_toEndOf="@+id/resonatorSlot7"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
     </RelativeLayout>
 
     <!--<Spinner
@@ -104,140 +120,199 @@
         android:layout_below="@+id/selectModsPrompt"
         android:id="@+id/modSlots">
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/modSlot1"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/modSlot2"
-            android:backgroundTint="@color/itemSlotBackgroundColor"
-            android:layout_toEndOf="@+id/modSlot1"/>
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_toEndOf="@+id/modSlot1"
+            android:layout_margin="@dimen/item_slot_margin" />
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/modSlot3"
             android:layout_toEndOf="@+id/modSlot2"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin"/>
+        <ImageView
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
             android:id="@+id/modSlot4"
             android:layout_toEndOf="@+id/modSlot3"
-            android:backgroundTint="@color/itemSlotBackgroundColor"/>
+            android:background="@color/itemSlotBackgroundColor"
+            android:scaleType="fitCenter"
+            android:layout_margin="@dimen/item_slot_margin" />
 
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/portalData"
         android:layout_below="@id/modSlots"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/item_slot_width_height">-->
+
+    <TableLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/portalData"
+        android:layout_below="@id/modSlots"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/item_slot_width_height"
+        android:layout_marginRight="0dp">
 
         <!--TODO: Add all portal properties-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/portalDataTitle"
-            android:text="@string/portalData"
-            android:textColor="@color/colorPrimary"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:text="@string/level"
-            android:id="@+id/portalLevelTitle"
-            android:layout_below="@+id/portalDataTitle"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="1"
-            android:id="@+id/portalLevelValue"
-            android:layout_below="@+id/portalDataTitle"
-            android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/portalDataTitle"
+                android:text="@string/portalData"
+                android:textColor="@color/colorPrimary"/>
 
+        <TableRow>
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="@string/level"
+                android:id="@+id/portalLevelTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:id="@+id/portalLevelValue"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="end"/>
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:text="@string/range"
-            android:id="@+id/portalRangeTitle"
-            android:layout_below="@+id/portalLevelTitle"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="0km"
-            android:id="@+id/portalRangeValue"
-            android:layout_below="@+id/portalLevelValue"
-            android:textColor="@color/colorPrimary"/>
+        <TableRow>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/energy"
+                android:id="@+id/portalEnergyTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:id="@+id/portalEnergyValue"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="end"/>
+        </TableRow>
 
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/range"
+                android:id="@+id/portalRangeTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0km"
+                android:id="@+id/portalRangeValue"
+                android:textColor="@color/colorPrimary"
+                android:gravity="end"/>
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:text="@string/hackSpeed"
-            android:id="@+id/portalHackSpeedTitle"
-            android:layout_below="@+id/portalRangeTitle"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="300s"
-            android:id="@+id/portalHackSpeedValue"
-            android:layout_below="@+id/portalRangeValue"
-            android:textColor="@color/colorPrimary"/>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hackSpeed"
+                android:id="@+id/portalHackSpeedTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="300s"
+                android:id="@+id/portalHackSpeedValue"
+                android:textColor="@color/colorPrimary"
+                android:gravity="end"/>
+        </TableRow>
 
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/portalBurnoutInsulation"
+                android:id="@+id/portalBurnoutInsulationTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:id="@+id/portalBurnoutInsulationValue"
+                android:textColor="@color/colorPrimary"
+                android:gravity="end"/>
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:text="@string/portalBurnoutInsulation"
-            android:id="@+id/portalBurnoutIsolationTitle"
-            android:layout_below="@+id/portalHackSpeedTitle"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="4"
-            android:id="@+id/portalBurnoutIsolationValue"
-            android:layout_below="@+id/portalHackSpeedValue"
-            android:textColor="@color/colorPrimary"/>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/portalAttackFrequency"
+                android:id="@+id/portalAttackFrequencyTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0x"
+                android:id="@+id/portalAttackFrequencyValue"
+                android:textColor="@color/colorPrimary"
+                android:gravity="end"/>
+        </TableRow>
 
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/portalForce"
+                android:id="@+id/portalForceTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/portalForceValue"
+                android:textColor="@color/colorPrimary"
+                android:gravity="end"/>
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:text="@string/portalMitigation"
-            android:id="@+id/portalMitigationTitle"
-            android:layout_below="@+id/portalBurnoutIsolationTitle"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="0"
-            android:id="@+id/portalMitigationValue"
-            android:layout_below="@+id/portalBurnoutIsolationValue"
-            android:textColor="@color/colorPrimary"/>
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/portalOutgoingLinks"
+                android:id="@+id/portalOutgoingLinksTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/portalOutgoingLinksValue"
+                android:textColor="@color/colorPrimary"
+                android:gravity="end"/>
+        </TableRow>
+    </TableLayout>
 
-    </RelativeLayout>
+    <!--</RelativeLayout>-->
 
 
 
