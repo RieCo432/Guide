@@ -104,6 +104,7 @@
     <string name="jarvis_description"><u>Description&#58;</u> \n ADA Refactor and Jarvis Virus are weapons used to instantly switch a Portal\'s alignment.They are gained, just as any other weapons, by hacking a Portal \n All the mods and resonators stay the same after the use of a Jarvis or ADA, only the name changes.
                                       \n \n <u>Important tips:</u> \n You can only attack the same Portal with an ADA /Jarvis once per hour. If you try to use one before the 1 hour cooldown, the Portal\'s alignment won\'t change and your ADA or Jarvis will be gone.</string>
     <string name="keylocker_description">Keylockers are similar to capsules, but they can only store keys. \n In addition, the amount of keys you put in the keylocker will free up space of your inventory. \n\n You can get them in the Ingress store as well.</string>
-    <string name="linkamp_description"> Link amplifier (short Linkamps) are used to increase the link range of a portal. \n\n They only appear in a rare and a very rare form. However you can get the very rare link amp only with a passcode. \n \n Our Portal Sim also includes a link range calculator.</string>
-
+    <string name="linkamp_description">Link amplifier (short Linkamps) are used to increase the link range of a portal. \n\n They only appear in a rare and a very rare form. However you can get the very rare link amp only with a passcode. \n \n Our Portal Sim also includes a link range calculator.</string>
+    <string name="mufgcapsule_description">MUFG (aka MILF) capsules are awesome. It made getting very rare items much easier, due to the awesome fact that MUFG capsules double items after a certain time, when you put them inside. </string>
+    <string name="mufgcapsule_acquisition">As any other capsules, you get the MUFG capsules by hacking. Although they are very rare.</string>
 </resources>
