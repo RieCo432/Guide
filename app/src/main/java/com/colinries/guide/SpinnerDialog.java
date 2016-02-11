@@ -8,14 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
-
 public class SpinnerDialog extends Dialog {
     private String[] mList;
     private Context mContext;
     private Spinner mSpinner;
     private DialogListener mReadyListener;
-    private int[] images;
 
     public SpinnerDialog(Context context, String[] list, DialogListener readyListener) {
         super(context);
@@ -37,7 +34,7 @@ public class SpinnerDialog extends Dialog {
 
         setContentView(R.layout.spinner_dialog);
         mSpinner = (Spinner) findViewById (R.id.dialog_spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, R.layout.resonator_level_chooser, R.id.resonator_level, mList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, R.layout.simple_dropdown_item, R.id.text1, mList);
         mSpinner.setAdapter(adapter);
 
         Button buttonOK = (Button) findViewById(R.id.dialogOK);
