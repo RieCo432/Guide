@@ -96,25 +96,15 @@
 
 
     <!--TODO: review these strings-->
-    <string name="ada_description">ADA Refactor and Jarvis Virus are weapons used to instantly switch a Portal\'s alignment.They are gained, just as any other weapons, by hacking a Portal \n All the mods and resonators stay the same after the use of a Jarvis or ADA, only the name changes. You can only attack the same Portal with an ADA /Jarvis once per hour. If you try to use one before the 1 hour cooldown, the Portal\'s alignment won\'t change and your ADA or Jarvis will be gone.</string>
-    <string name="axa_description">AXA shields are the most powerful shields in Ingress. \n They have the highest mitigation and stickiness, which means that they provide the best defense and that they are the hardest to destroy.\n They are earned as any other shields by hacking, but they are considered as very rare. \n\n As you might guess, AXA shields were introduced with the Insurance Company AXA </string>
-    <string name="beacon_description">Beacons can be found in the Store in the Ingress App. There are currently 4 different beacons: ENL Beacon, RES Beacon, Target Beacon and Meetup Beacon. \n \n The functionality of those beacons is to put them onto a Portal and they will appear as a big mark on the scanner. \n For some it is a fun tool, for some it is useful, especially in anomalies.  </string>
-    <string name="capsule_description">Capsules are storaging items. You can store in whatever you want, to a maximum of 100 items per Capsule. They can be gained by hacking but are considered as rare. \n \n<u>Notice&#58;</u> \n Unfortunately, they cannot, as the MUFG capsules, free storage space of your inventory. </string>
-    <string name="forceamp_description">Forceamps are the nasty mods on an enemy portal which decide on how much damage you take from a portal\'s back-attack, after you\'ve attacked or hacked it. \n (Not every hack ends in an attack by the portal. See Turrets). </string>
-    <string name="fracker_description">Portalfracker can be found in the Store as well.  They are part of the "Powerups" and are pretty useful. \n\n What a portal fracker does is basically it doubles the hack output for 10 minutes OR 150 hacks. \n\n So if you\'re wanting to use one, be sure to spend them with other people, otherwise they are too expensive because as 1 person you won\'t get 150 hacks in 10 minutes. </string>
-    <string name="heatsink_description">First introduced in Ingress v1.28.1, the Heatsink is used to decrease the waiting/cooldown time between 2 hacks of the same portal. \n \n They come as many other mods in a common, rare and very rare edition. Since it is so hard to calculate the effects of the HS\'s, we\'ve build in a Portal Simulator.  </string>
-    <string name="jarvis_description">ADA Refactor and Jarvis Virus are weapons used to instantly switch a Portal\'s alignment.They are gained, just as any other weapons, by hacking a Portal \n All the mods and resonators stay the same after the use of a Jarvis or ADA, only the name changes. You can only attack the same Portal with an ADA /Jarvis once per hour. If you try to use one before the 1 hour cooldown, the Portal\'s alignment won\'t change and your ADA or Jarvis will be gone.</string>
-    <string name="keylocker_description">Keylockers are similar to capsules, but they can only store keys. \n In addition, the amount of keys you put in the keylocker will free up space of your inventory. \n\n You can get them in the Ingress store as well.</string>
-    <string name="linkamp_description"> Link amplifier (short Linkamps) are used to increase the link range of a portal. \n\n They only appear in a rare and a very rare form. However you can get the very rare link amp only with a passcode. \n \n Our Portal Sim also includes a link range calculator.</string>
+
     <string name="item_intro">Items are a big part of the game.</string>
-    <string name="ada_notes">Don\'t waste</string>
-    <string name="resonator">Resonator</string>
-    <string name="resonator_description">Resonators are deployed on a portal in order to capture it or upgrade existing resonators.</string>
-    <string name="resonator_notes">There\'s a limit of resonators of one level a player can deploy on one portal:\n1x L8\n1x L7\n2x L6\n2x L5\n4x L4\n4x L3\n4x L2\n8x L1.</string>
+
     <string name="item_variations_level">Levels 1 - 8</string>
-    <string name="item_variation_rarity_all">-Common\n-Rare\n-Very Rare</string>
-    <string name="item_variation_rarity_rare_veryrare">-Rare\n-Very Rare</string>
+    <string name="item_variations_rarity_common">Common</string>
+    <string name="item_variations_rarity_rare">Rare</string>
     <string name="item_variations_rarity_veryrare">-Very Rare</string>
+    <string name="item_variations_rarity_rare_veryrare">-Rare\n-Very Rare</string>
+    <string name="item_variations_rarity_all">-Common\n-Rare\n-Very Rare</string>
     <string name="item_versions">Versions</string>
     <string name="xmp">Exotic Matter Pulse Burster</string>
     <string name="item_notes">Notes:</string>
@@ -123,10 +113,52 @@
     <string name="item_acquisition">Acquisition:</string>
     <string name="item_intro_header">About Items in Ingress</string>
     <string name="item_acquisition_full">-via hacking\n-via passcodes</string>
-    <string name="item_acquisition_passcodes_only">-via passcodes</string>
+    <string name="item_acquisition_hacking_only">-via Hacking</string>
+    <string name="item_acquisition_passcodes_only">-via Passcodes</string>
+    <string name="item_acquisition_store_only">-via the Ingress Store</string>
     <string name="item_image">Image:</string>
     <string name="portalAttackFrequency">Attack Frequency</string>
     <string name="portalOutgoingLinks">Outgoing Links</string>
     <string name="portalForce">Force</string>
     <string name="energy">Energy</string>
+
+
+    <string name="resonator_description">Resonators are deployed on a portal in order to capture it or upgrade existing resonators.</string>
+    <string name="resonator_notes">There\'s a limit of resonators of one level a player can deploy on one portal:\n1x L8\n1x L7\n2x L6\n2x L5\n4x L4\n4x L3\n4x L2\n8x L1.</string>
+    <string name="powercubes_description">Power Cubes are used to refill your XM bar.</string>
+    <string name="powercubes_notes">XM gain is calculted by mutliplying the level by 1000.</string>
+    <string name="portalkey_description">Portalkeys are the most important gain of a Hack. With portal keys you are able to link portal A to portal B if you\'re in the range of portal A and if you have a key of portal B. Also are keys useful to recharge portals when not in their range.</string>
+    <string name="portalkey_notes">Once you\'ve hacked a key out of a portal, you won\'t be able to hack another one unless you drop the key or store it in a capsule.</string>
+    <string name="shields_description">Shields are a portal\'s bodyguard. They decrease an XMP\'s attack damage. 2 attributes define a shield\'s behavior: Mitigation and Stickiness. Mitigation is the shield\'s protecting abilty. The stickiness effect describes the shield\'s lasting ability, whether it lasts long or not long to XMP attacks.</string>
+    <string name="shield_notes">no notes for disss</string>
+    <string name="axashield_notes">There are currently rumours out there which are saying that the hack output is slightly increased when hacking a portal of an AXA Building. It\'s in the internet, it must be true..</string>
+    <string name="heatsink_notes">no notes for dissss</string>
+    <string name="multihack_description">A multihack is used to increase the max. amount of hacks that can be done in 4  hours (after the first hack). A standard portal can be hacked up to 4 times. Take a look at our simulator to experiment with multihack-effects.</string>
+    <string name="multihack_notes">Portal burned out but you don\'t want to wait 4 hours to hack again? See if there is an empty mod slot and put in a multihack to get rid of the cooldown.</string>
+    <string name="forceamp_notes">lorem ipsum an den leschten mecht d dier zou</string>
+    <string name="turret_description">Turrets are mods and are used to increase the frequency of a portal\'s attack. F.e. a portal does not always shoot back when you hack or attack it, but with the turrets, you can change this probability.</string>
+    <string name="turret_notes">no such notes 00null00</string>
+    <string name="linkamps_notes">Very rare link amps can only be received by redeeming a password. They are mostly distributed after having participated at an anomaly.</string>
+    <string name="softbankultralinkamp_description">Softbank Ultra Link Amps have many features. They can increase the link range of a portal, they can act as a shield and they can also max the limit of 8 outbound links to 16 (per SBULA).</string>
+    <string name="softbankultralinkamp_notes">no such notes</string>
+    <string name="capsule_notes">no such notes</string>
+    <string name="mufgcapsules_description">MUFG capsules are awesome. They have made getting very rare items much easier, due to the awesome fact that they duplicate items after a certain time that you\'ve them in. Also, every item you put in a MUFG, will no longer take away space of your inventory limit of 2000 items.</string>
+    <string name="mufgcapsule_notes">none</string>
+    <string name="fracker_notes">To be used on a fast pace hacking portal or in a group of few people.</string>
+    <string name="keylocker_notes">no special notes</string>
+    <string name="beacon_notes">nothing special</string>
+    <string name="xmp_description">XMP\'s are weapons used to attack enemy portals. XMP\'s from different levels have different ranges of attack (see Ingress App).</string>
+    <string name="xmp_notes">They are easy to hack but easy to waste.</string>
+    <string name="ultrastrike_description">Different to XMPs do Ultra Strikes more damage but in a much tinier area. That\'s why they are used to destroy shields (by staying the nearest to the middle of a portal) or to destroy single resonators by staying on them as well.</string>
+    <string name="ultrastrike_notes">Don\'t waste them, they are not that common in hacks.</string>
+    <string name="ada_description">Ada Refactor and Jarvis Virus are weapons used to instantly change a portal\'s alignment. Once applied on a portal, mods and resonators stay the same, but the name and the faction of the portal changes and links are being destroyed.</string>
+    <string name="ada_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using an ADA or Jarvis.</string>
+    <string name="axashield_description">AXA shields are the best shields in Ingress. They have the highest shielding and stickiness effect. As you might guess, they have been introduced in cooperation with AXA (assurance company).</string>
+    <string name="heatsink_description">Heatsinks are mods to decrease the waiting time between 2 hacks on the same portal. The standard amount of waiting time is 5 minutes but with heat sinks you can decrease this time to even lower than 1 minute! (See our Portal Simulator)</string>
+    <string name="forceamp_description">Forceamps are mods to give a portal the power to answer with more damage by attacking a player. (See Portal Sim.)</string>
+    <string name="linkamp_description">Linkamps are mods to increase the maximum link range of a portal.</string>
+    <string name="capsule_description">You can store any item in capsules (except capsules..) but they wont free you space in your inventory.</string>
+    <string name="fracker_description">Fracker are Powerups which can be bought in the Store in Ingress. When used on a Portal, they double the hack output for 10 minutes or for 150 hacks, whatever comes first.</string>
+    <string name="keylocker_description">Keylocker are good alternatives to MUFG capsules. Keylocker can only store keys but they do free space in your inventory. They can be bought in the Ingress Store as well.</string>
+    <string name="beacon_description">Beacons are simple marks on the scanner over a portal. For some they are more a fun item than a utility item. They can be found in the store as well, under 4 different variations.</string>
 </resources>
