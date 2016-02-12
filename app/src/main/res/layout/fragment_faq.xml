@@ -31,7 +31,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/verified"
+        android:src="@mipmap/badge_verified"
         android:id="@+id/badgeImage"
         android:layout_marginLeft="76dp"
         android:layout_alignParentTop="true"

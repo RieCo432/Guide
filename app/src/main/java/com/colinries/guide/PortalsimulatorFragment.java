@@ -11,19 +11,23 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 
 public class PortalsimulatorFragment extends Fragment {
 
     public static int[] ResonatorLevels = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     public static String[] ModsAndRarity = new String[5];
-    public static int[] PortalProperties = new int[9]; //level, energy, mitigation, range, outbound links, hack speed, burnout limit, force, attack freq
+    //public static int[] PortalProperties = new int[9]; //level, energy, mitigation, range, outbound links, hack speed, burnout limit, force, attack freq
     public static int resonatorSlotId;
     public static ImageView[] modSlot;
     public static SpinnerDialog selectResonatorLevelSpinner;
     public static SpinnerDialog selectModSpinner;
     public static ImageView[] resonatorSlot;
     public static int[] resonatorImages;
+    public static int[] modImages;
     public static int modSlotId;
+    public static String[] mods = new String[16];
 
     public static TextView portal_level;
     public static TextView portal_energy;
@@ -33,6 +37,11 @@ public class PortalsimulatorFragment extends Fragment {
     public static TextView portal_outgoinglinks;
     public static TextView portal_attackfreq;
     public static TextView portal_force;
+    public static TextView portal_mitigation;
+
+    public static float[] decreasefactor1488 = {0f, 1f, 4f, 8f, 8f};
+    public static float[] Decreasefactor1222 = {0f, 1f, 2f, 2f, 2f};
+    public static int[] resonatorEnergyLevel = {0,1000,1500,2000,2500,3000,4000,5000,6000};
 
 
 
@@ -70,14 +79,33 @@ public class PortalsimulatorFragment extends Fragment {
                 (ImageView) layout.findViewById(R.id.modSlot3),
                 (ImageView) layout.findViewById(R.id.modSlot4)};
 
-        resonatorImages = new int[]{0, R.mipmap.item_resonator8,
-                R.mipmap.item_resonator8,
-                R.mipmap.item_resonator8,
-                R.mipmap.item_resonator8,
-                R.mipmap.item_resonator8,
-                R.mipmap.item_resonator8,
-                R.mipmap.item_resonator8,
+        resonatorImages = new int[]{0,
+                R.mipmap.item_resonator1,
+                R.mipmap.item_resonator2,
+                R.mipmap.item_resonator3,
+                R.mipmap.item_resonator4,
+                R.mipmap.item_resonator5,
+                R.mipmap.item_resonator6,
+                R.mipmap.item_resonator7,
                 R.mipmap.item_resonator8};
+
+        modImages = new int[] {0,
+                R.mipmap.item_shieldc,
+                R.mipmap.item_shieldr,
+                R.mipmap.item_shieldvr,
+                R.mipmap.item_shieldaxa,
+                R.mipmap.item_softbankultralinkvr,
+                R.mipmap.item_softbankultralinkvr,
+                R.mipmap.item_softbankultralinkvr,
+                R.mipmap.item_heatsinkc,
+                R.mipmap.item_heatsinkr,
+                R.mipmap.item_heatsinkvr,
+                R.mipmap.item_multihackc,
+                R.mipmap.item_multihackr,
+                R.mipmap.item_multihackvr,
+                R.mipmap.item_forceampr,
+                R.mipmap.item_turretr
+        };
 
         portal_level = (TextView) layout.findViewById(R.id.portalLevelValue);
         portal_energy = (TextView) layout.findViewById(R.id.portalEnergyValue);
@@ -87,6 +115,7 @@ public class PortalsimulatorFragment extends Fragment {
         portal_outgoinglinks = (TextView) layout.findViewById(R.id.portalOutgoingLinksValue);
         portal_attackfreq = (TextView) layout.findViewById(R.id.portalAttackFrequencyValue);
         portal_force = (TextView) layout.findViewById(R.id.portalForceValue);
+        portal_mitigation = (TextView) layout.findViewById(R.id.portalMitigationValue);
 
         //TODO: Add all onClickListeners and item select handlers
         View.OnClickListener ResonatorSelectorListener = new View.OnClickListener() {
@@ -167,11 +196,11 @@ public class PortalsimulatorFragment extends Fragment {
                         "Turret"
                 };
 
-                final String[] mods = {null,
-                        "cs",
-                        "rs",
-                        "vrs",
-                        "axas",
+                mods = new String[]{null,
+                        "csh",
+                        "rsh",
+                        "vrsh",
+                        "axash",
                         "rla",
                         "vrla",
                         "sbula",
@@ -240,6 +269,14 @@ public class PortalsimulatorFragment extends Fragment {
                 resonatorSlot[i].setImageDrawable(null);
             }
         }
+
+        for (int i=1; i<=4; i++) {
+            if (ModsAndRarity[i] != null) {
+                modSlot[i].setImageResource(modImages[getIndex(mods, ModsAndRarity[i])]);
+            } else {
+                modSlot[i].setImageDrawable(null);
+            }
+        }
     }
 
     public void updateProperties() {
@@ -261,5 +298,113 @@ public class PortalsimulatorFragment extends Fragment {
             unit = "km";
         }
         portal_range.setText(Float.toString(range) + unit);
+
+        //Mitigation
+
+        int portal_mitigation_value = 0;
+
+        for (int i=1;i<=4;i++) {
+            if (ModsAndRarity[i] != null) {
+                if (ModsAndRarity[i].endsWith("sh")) {
+                    if (ModsAndRarity[i].startsWith("c"))
+                        portal_mitigation_value = portal_mitigation_value + 30;
+                    else if (ModsAndRarity[i].startsWith("r"))
+                        portal_mitigation_value = portal_mitigation_value + 40;
+                    else if (ModsAndRarity[i].startsWith("vr"))
+                        portal_mitigation_value = portal_mitigation_value + 60;
+                    else if (ModsAndRarity[i].startsWith("axa"))
+                        portal_mitigation_value = portal_mitigation_value + 70;
+                }
+            }
+        }
+
+        portal_mitigation.setText(Integer.toString(portal_mitigation_value));
+
+        //Outbound Links
+
+        int portal_outgoinglinks_value = 8;
+
+        for (int i=1;i<=4;i++) {
+            if (ModsAndRarity[i] != null) {
+                if (ModsAndRarity[i].equals("sbula")) portal_outgoinglinks_value = portal_outgoinglinks_value + 8;
+            }
+        }
+
+        portal_outgoinglinks.setText(Integer.toString(portal_outgoinglinks_value));
+
+        //Energy
+
+        int portal_energy_value = 0;
+
+        for (int i=1;i<=8;i++) {
+            if (ResonatorLevels[i] != 0) {
+                portal_energy_value = portal_energy_value + resonatorEnergyLevel[ResonatorLevels[i]];
+            }
+        }
+
+        portal_energy.setText(Integer.toString(portal_energy_value));
+
+        //Force
+
+        boolean[] forceamps = {false, false, false, false, false};
+        int forceampsindex = 1;
+        float portal_force_value = 1;
+
+        for (int i=1;i<=4;i++) {
+            if (ModsAndRarity[i] != null) {
+                if (ModsAndRarity[i].endsWith("fa")) {
+                    forceamps[forceampsindex] = true;
+                    forceampsindex++;
+                    portal_force_value = 0f;
+                }
+            }
+        }
+
+        for (int i=1; i<=4;i++) {
+            if (forceamps[i]) {
+                portal_force_value = portal_force_value + (2f/decreasefactor1488[i]);
+            }
+        }
+
+        portal_force.setText(Float.toString(portal_force_value) + "x");
+
+
+        //AttackFreq
+
+        boolean[] turrets = {false, false, false, false, false};
+        int turretsindex = 1;
+        float portal_attackfreq_value = 1f;
+
+        for (int i=1;i<=4;i++) {
+            if (ModsAndRarity[i] != null) {
+                if (ModsAndRarity[i].endsWith("t")) {
+                    turrets[turretsindex] = true;
+                    turretsindex++;
+                    portal_attackfreq_value = 0f;
+                }
+            }
+        }
+
+        for (int i=1; i<=4;i++) {
+            if (turrets[i]) {
+                portal_attackfreq_value = portal_attackfreq_value + (2f/decreasefactor1488[i]);
+            }
+        }
+
+        portal_attackfreq.setText(Float.toString(portal_attackfreq_value) + "x");
+
+
+
+    }
+
+    public int getIndex(String[] array, String value) {
+        if (value != null) {
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] != null) {
+                    if (array[i].equals(value)) return i;
+                }
+            }
+        }
+        return 0;
     }
 }

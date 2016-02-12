@@ -4,87 +4,87 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_item_intro"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/item_intro"/>
         <item
             android:id="@+id/nav_resonators"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/resonators" />
         <item
             android:id="@+id/nav_xmps"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/xmps" />
         <item
             android:id="@+id/nav_ultrastrikes"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/ultrastrikes" />
         <item
             android:id="@+id/nav_adarefactor"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/adarefactor" />
         <item
             android:id="@+id/nav_jarvisvirus"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/jarvisvirus" />
         <item
             android:id="@+id/nav_powercubes"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/powercubes" />
         <item
             android:id="@+id/nav_portalkey"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/portalkey" />
         <item
             android:id="@+id/nav_shields"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/shields" />
         <item
             android:id="@+id/nav_axashields"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/axashields" />
         <item
             android:id="@+id/nav_heatsinks"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/heatsinks" />
         <item
             android:id="@+id/nav_multihacks"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/multihacks" />
         <item
             android:id="@+id/nav_forceamps"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/forceamps" />
         <item
             android:id="@+id/nav_turrets"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/turrets" />
         <item
             android:id="@+id/nav_linkamps"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/linkamps" />
         <item
             android:id="@+id/nav_softbankultralinkamps"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/softbankultralinkamps" />
         <item
             android:id="@+id/nav_capsules"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/capsules" />
         <item
             android:id="@+id/nav_mufgcapsules"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/mufgcapsules" />
         <item
             android:id="@+id/nav_fracker"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/fracker" />
         <item
             android:id="@+id/nav_keylocker"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/keylocker" />
         <item
             android:id="@+id/nav_beacons"
-            android:icon="@mipmap/verified"
+            android:icon="@mipmap/item_resonator1"
             android:title="@string/beacons" />
     </group>
 
