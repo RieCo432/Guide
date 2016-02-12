@@ -114,6 +114,17 @@
         android:textColor="@color/test"
         android:layout_below="@+id/resonatorSlots"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/selectLinksPrompt"
+        android:layout_toEndOf="@+id/modSlots"
+        android:layout_below="@+id/resonatorSlots"
+        android:text="@string/select_links"
+        android:textColor="@color/test"
+        android:layout_marginLeft="@dimen/item_slot_width_height"/>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -154,6 +165,20 @@
 
 
     </RelativeLayout>
+
+        <EditText
+            android:layout_width="@dimen/item_slot_width_height"
+            android:layout_height="@dimen/item_slot_width_height"
+            android:id="@+id/linkAmmountInput"
+            android:layout_toEndOf="@+id/modSlots"
+            android:layout_below="@+id/selectLinksPrompt"
+            android:background="@color/itemSlotBackgroundColor"
+            android:layout_marginLeft="@dimen/item_slot_width_height"
+            android:layout_marginTop="@dimen/item_slot_margin"
+            android:inputType="number"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAlignment="center"/>
 
     <!--<RelativeLayout
         android:layout_width="200dp"

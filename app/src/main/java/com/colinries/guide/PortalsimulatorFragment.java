@@ -3,10 +3,13 @@ package com.colinries.guide;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -38,10 +41,14 @@ public class PortalsimulatorFragment extends Fragment {
     public static TextView portal_attackfreq;
     public static TextView portal_force;
     public static TextView portal_mitigation;
+    public static EditText linkAmountInput;
 
     public static float[] decreasefactor1488 = {0f, 1f, 4f, 8f, 8f};
-    public static float[] Decreasefactor1222 = {0f, 1f, 2f, 2f, 2f};
+    public static float[] decreasefactor1222 = {0f, 1f, 2f, 2f, 2f};
     public static int[] resonatorEnergyLevel = {0,1000,1500,2000,2500,3000,4000,5000,6000};
+    public static float[] linkAmpFactor = {0f, 7f, 5f, 2f};
+    public static float[] heatSinkFactor = {0f, 0.7f, 0.5f, 0.2f};
+    public static int[] multiHackInsulation = {0, 12, 8, 4};
 
 
 
@@ -116,6 +123,23 @@ public class PortalsimulatorFragment extends Fragment {
         portal_attackfreq = (TextView) layout.findViewById(R.id.portalAttackFrequencyValue);
         portal_force = (TextView) layout.findViewById(R.id.portalForceValue);
         portal_mitigation = (TextView) layout.findViewById(R.id.portalMitigationValue);
+
+        linkAmountInput = (EditText) layout.findViewById(R.id.linkAmmountInput);
+        linkAmountInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateProperties();
+            }
+        });
 
         //TODO: Add all onClickListeners and item select handlers
         View.OnClickListener ResonatorSelectorListener = new View.OnClickListener() {
@@ -285,19 +309,60 @@ public class PortalsimulatorFragment extends Fragment {
         for (int i = 1; i <=8; i++) {
             sum = sum + ResonatorLevels[i];
         }
-        float fLevel = sum/8;
+        float fLevel = ((float)sum)/8f;
         int level = (int) fLevel;
         if (level==0) level = 1;
         portal_level.setText(Integer.toString(level));
 
         //link range
-        float range = fLevel*fLevel*fLevel*fLevel*160;
+        float portal_range_value = fLevel*fLevel*fLevel*fLevel*160f;
         String unit = "m";
-        if (range >= 1000f) {
-            range = range/1000f;
+        if (portal_range_value >= 1000f) {
+            portal_range_value = portal_range_value/1000f;
             unit = "km";
         }
-        portal_range.setText(Float.toString(range) + unit);
+
+
+        float[] rangeFactorValues = {0f, 0f, 0f, 0f, 0f};
+        int rangeFactorValuesIndex = 1;
+        float rangeMultiplyFactor = 1;
+
+        for (int i=1;i<=4;i++) {
+            if (ModsAndRarity[i] != null) {
+                if (ModsAndRarity[i].endsWith("la")) {
+                    if (ModsAndRarity[i].startsWith("r")) {
+                        rangeFactorValues[rangeFactorValuesIndex] = linkAmpFactor[3];
+                        rangeFactorValuesIndex++;
+                    } else if (ModsAndRarity[i].startsWith("vr")) {
+                        rangeFactorValues[rangeFactorValuesIndex] = linkAmpFactor[1];
+                        rangeFactorValuesIndex++;
+                        rangeMultiplyFactor = 0f;
+                    }
+                }
+                if (ModsAndRarity[i].equals("sbula")) {
+                    rangeFactorValues[rangeFactorValuesIndex] = linkAmpFactor[2];
+                    rangeFactorValuesIndex++;
+                    rangeMultiplyFactor = 0f;
+                }
+            }
+        }
+
+        Arrays.sort(rangeFactorValues);
+        int decreasefactorIndex = 1;
+
+
+        for (int i=4;i>=1;i--) {
+            rangeMultiplyFactor = rangeMultiplyFactor + (rangeFactorValues[i]/decreasefactor1488[decreasefactorIndex]);
+            decreasefactorIndex++;
+        }
+
+        portal_range_value = portal_range_value * rangeMultiplyFactor;
+
+        Log.i("GUIDE", "Factor: " + Float.toString(rangeMultiplyFactor));
+
+
+
+        PortalsimulatorFragment.portal_range.setText(Float.toString(portal_range_value) + unit);
 
         //Mitigation
 
@@ -318,8 +383,6 @@ public class PortalsimulatorFragment extends Fragment {
             }
         }
 
-        portal_mitigation.setText(Integer.toString(portal_mitigation_value));
-
         //Outbound Links
 
         int portal_outgoinglinks_value = 8;
@@ -329,6 +392,19 @@ public class PortalsimulatorFragment extends Fragment {
                 if (ModsAndRarity[i].equals("sbula")) portal_outgoinglinks_value = portal_outgoinglinks_value + 8;
             }
         }
+
+        if (!linkAmountInput.getText().toString().equals("")) {
+            float links = Float.valueOf(linkAmountInput.getText().toString());
+
+            if (portal_outgoinglinks_value > 8) {
+                portal_mitigation_value = portal_mitigation_value + (int) (Math.round(400f / 9f * Math.atan(links / Math.E)) * 1.5f);
+            } else {
+                portal_mitigation_value = portal_mitigation_value + (int) (Math.round(400f / 9f * Math.atan(links / Math.E)));
+            }
+        }
+
+
+        portal_mitigation.setText(Integer.toString(portal_mitigation_value));
 
         portal_outgoinglinks.setText(Integer.toString(portal_outgoinglinks_value));
 
@@ -393,9 +469,79 @@ public class PortalsimulatorFragment extends Fragment {
 
         portal_attackfreq.setText(Float.toString(portal_attackfreq_value) + "x");
 
+        //Hack Speed
 
+        float[] hackSpeedFactors = {0f, 0f, 0f, 0f, 0f};
+        int hackSpeedFactorIndex = 1;
+
+        for (int i=1;i<=4;i++) {
+            if (ModsAndRarity[i] != null) {
+                if (ModsAndRarity[i].endsWith("hs")) {
+                    if (ModsAndRarity[i].startsWith("c")) {
+                        hackSpeedFactors[hackSpeedFactorIndex] = heatSinkFactor[3];
+                        hackSpeedFactorIndex++;
+                    } else if (ModsAndRarity[i].startsWith("r")) {
+                        hackSpeedFactors[hackSpeedFactorIndex] = heatSinkFactor[2];
+                        hackSpeedFactorIndex++;
+                    } else if (ModsAndRarity[i].startsWith("vr")) {
+                        hackSpeedFactors[hackSpeedFactorIndex] = heatSinkFactor[1];
+                        hackSpeedFactorIndex++;
+                    }
+                }
+            }
+        }
+
+        Arrays.sort(hackSpeedFactors);
+        decreasefactorIndex = 1;
+        float portal_hackspeed_value = 300f;
+
+        for (int i=4;i>=1;i--) {
+            if (hackSpeedFactors[i] != 0f) {
+                portal_hackspeed_value = portal_hackspeed_value *(1f-((hackSpeedFactors[i] )/ decreasefactor1222[decreasefactorIndex]));
+                decreasefactorIndex++;
+            }
+        }
+
+        portal_hackspeed.setText(Integer.toString(Math.round(portal_hackspeed_value)) + "s");
+
+        //Burnout insulation
+
+        float[] burnoutInsulationValue = {0f, 0f, 0f, 0f, 0f};
+        int burnoutInsulationValueIndex = 1;
+
+        for (int i=1;i<=4;i++) {
+            if (ModsAndRarity[i] != null) {
+                if (ModsAndRarity[i].endsWith("mh")) {
+                    if (ModsAndRarity[i].startsWith("c")) {
+                        burnoutInsulationValue[burnoutInsulationValueIndex] = multiHackInsulation[3];
+                        burnoutInsulationValueIndex++;
+                    } else if (ModsAndRarity[i].startsWith("r")) {
+                        burnoutInsulationValue[burnoutInsulationValueIndex] = multiHackInsulation[2];
+                        burnoutInsulationValueIndex++;
+                    } else if (ModsAndRarity[i].startsWith("vr")) {
+                        burnoutInsulationValue[burnoutInsulationValueIndex] = multiHackInsulation[1];
+                        burnoutInsulationValueIndex++;
+                    }
+                }
+            }
+        }
+
+        Arrays.sort(burnoutInsulationValue);
+        decreasefactorIndex = 1;
+        int portal_burnoutinsulation_value = 4;
+
+        for (int i=4;i>=1;i--) {
+            portal_burnoutinsulation_value =  portal_burnoutinsulation_value + (int) ((burnoutInsulationValue[i] )/ decreasefactor1222[decreasefactorIndex]);
+            decreasefactorIndex++;
+        }
+
+        portal_burnoutinsulation.setText(Integer.toString(portal_burnoutinsulation_value));
 
     }
+
+
+
+
 
     public int getIndex(String[] array, String value) {
         if (value != null) {

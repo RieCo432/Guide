@@ -161,4 +161,5 @@
     <string name="fracker_description">Fracker are Powerups which can be bought in the Store in Ingress. When used on a Portal, they double the hack output for 10 minutes or for 150 hacks, whatever comes first.</string>
     <string name="keylocker_description">Keylocker are good alternatives to MUFG capsules. Keylocker can only store keys but they do free space in your inventory. They can be bought in the Ingress Store as well.</string>
     <string name="beacon_description">Beacons are simple marks on the scanner over a portal. For some they are more a fun item than a utility item. They can be found in the store as well, under 4 different variations.</string>
+    <string name="select_links">Links</string>
 </resources>
