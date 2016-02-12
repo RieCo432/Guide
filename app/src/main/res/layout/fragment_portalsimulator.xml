@@ -209,8 +209,24 @@
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="1"
+                android:text="0"
                 android:id="@+id/portalEnergyValue"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="end"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/portalMitigation"
+                android:id="@+id/portalMitigationTitle"
+                android:textColor="@color/colorPrimary"/>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/portalMitigationValue"
                 android:textColor="@color/colorPrimary"
                 android:layout_gravity="end"/>
         </TableRow>
@@ -273,7 +289,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0x"
+                android:text="1.0x"
                 android:id="@+id/portalAttackFrequencyValue"
                 android:textColor="@color/colorPrimary"
                 android:gravity="end"/>
@@ -289,7 +305,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="1.0x"
                 android:id="@+id/portalForceValue"
                 android:textColor="@color/colorPrimary"
                 android:gravity="end"/>
@@ -305,7 +321,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="8"
                 android:id="@+id/portalOutgoingLinksValue"
                 android:textColor="@color/colorPrimary"
                 android:gravity="end"/>
