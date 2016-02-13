@@ -138,7 +138,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_adarefactor) {
 
             item_name.setText(getString(R.string.adarefactor));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_adarefactor);
             item_description.setText(getString(R.string.ada_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
@@ -150,11 +150,11 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_jarvisvirus) {
 
             item_name.setText(getString(R.string.jarvisvirus));
-            item_image.setImageResource(R.mipmap.item_resonator8);
-            item_description.setText(getString(R.string.ada_description));
+            item_image.setImageResource(R.mipmap.item_jarvisvirus);
+            item_description.setText(getString(R.string.jarvis_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
-            item_notes.setText(getString(R.string.ada_notes));
+            item_notes.setText(getString(R.string.jarvis_notes));
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
@@ -162,7 +162,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_powercubes) {
 
             item_name.setText(getString(R.string.powercubes));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_powercube8);
             item_description.setText(getString(R.string.powercubes_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_level));
@@ -174,7 +174,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_portalkey) {
 
             item_name.setText(getString(R.string.portalkey));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_portalkey);
             item_description.setText(getString(R.string.portalkey_description));
             item_acquisition.setText(getString(R.string.item_acquisition_hacking_only));
             item_variations.setText(getString(R.string.item_variations_rarity_common));
@@ -186,7 +186,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_shields) {
 
             item_name.setText(getString(R.string.shields));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_shieldvr);
             item_description.setText(getString(R.string.shields_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_all));
@@ -197,7 +197,7 @@ public class ItemActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_axashields) {
             item_name.setText(getString(R.string.axashields));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_shieldaxa);
             item_description.setText(getString(R.string.axashield_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
@@ -209,7 +209,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_heatsinks) {
 
             item_name.setText(getString(R.string.heatsinks));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_heatsinkvr);
             item_description.setText(getString(R.string.heatsink_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_all));
@@ -221,7 +221,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_multihacks) {
 
             item_name.setText(getString(R.string.multihacks));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_multihackvr);
             item_description.setText(getString(R.string.multihack_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_all));
@@ -233,7 +233,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_forceamps) {
 
             item_name.setText(getString(R.string.forceamps));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_forceampr);
             item_description.setText(getString(R.string.forceamp_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_rare));
@@ -245,7 +245,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_turrets) {
 
             item_name.setText(getString(R.string.turrets));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_turretr);
             item_description.setText(getString(R.string.turret_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_rare));
@@ -257,9 +257,9 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_linkamps) {
 
             item_name.setText(getString(R.string.linkamps));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_softbankultralinkvr);
             item_description.setText(getString(R.string.linkamp_description));
-            item_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            item_acquisition.setText(getString(R.string.item_acquisition_full) + "(Rare)\n"+ getString(R.string.item_acquisition_passcodes_only) + "(Very Rare)");
             item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
             item_notes.setText(getString(R.string.linkamps_notes));
 
@@ -269,10 +269,10 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_softbankultralinkamps) {
 
             item_name.setText(getString(R.string.softbankultralinkamps));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_softbankultralinkvr);
             item_description.setText(getString(R.string.softbankultralinkamp_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
-            item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
+            item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
             item_notes.setText(getString(R.string.softbankultralinkamp_notes));
 
             item_intro_block.setVisibility(View.GONE);
@@ -281,7 +281,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_capsules) {
 
             item_name.setText(getString(R.string.capsules));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_capsuler);
             item_description.setText(getString(R.string.capsule_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_rare));
@@ -293,10 +293,10 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_mufgcapsules) {
 
             item_name.setText(getString(R.string.mufgcapsules));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_mufgcapsulevr);
             item_description.setText(getString(R.string.mufgcapsules_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
-            item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
+            item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
             item_notes.setText(getString(R.string.mufgcapsule_notes));
 
             item_intro_block.setVisibility(View.GONE);
@@ -305,10 +305,10 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_fracker) {
 
             item_name.setText(getString(R.string.fracker));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_fracker);
             item_description.setText(getString(R.string.fracker_description));
             item_acquisition.setText(getString(R.string.item_acquisition_store_only));
-            item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
+            item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
             item_notes.setText(getString(R.string.fracker_notes));
 
             item_intro_block.setVisibility(View.GONE);
@@ -317,10 +317,10 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_keylocker) {
 
             item_name.setText(getString(R.string.keylocker));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_capsuler);
             item_description.setText(getString(R.string.keylocker_description));
             item_acquisition.setText(getString(R.string.item_acquisition_store_only));
-            item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
+            item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
             item_notes.setText(getString(R.string.keylocker_notes));
 
             item_intro_block.setVisibility(View.GONE);
@@ -332,7 +332,7 @@ public class ItemActivity extends AppCompatActivity
             item_image.setImageResource(R.mipmap.item_resonator8);
             item_description.setText(getString(R.string.beacon_description));
             item_acquisition.setText(getString(R.string.item_acquisition_store_only));
-            item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
+            item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
             item_notes.setText(getString(R.string.beacon_notes));
 
             item_intro_block.setVisibility(View.GONE);
