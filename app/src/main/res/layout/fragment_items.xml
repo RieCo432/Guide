@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.colinries.guide.ItemActivity">
+    tools:context="com.colinries.guide.ItemActivity"
+    android:orientation="horizontal">
 
     <!-- TODO: Add introduction for items -->
 
@@ -86,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_variations_header"
-                android:text="@string/item_versions"
+                android:text="@string/item_variations"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="28dp" />
             <TextView
