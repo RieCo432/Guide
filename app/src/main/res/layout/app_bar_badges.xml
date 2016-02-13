@@ -21,11 +21,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <FrameLayout
+    <include
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/badge_fragment_container"
+        android:id="@+id/badges_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="56dp"/>
+        android:layout_marginTop="56dp"
+        layout="@layout/fragment_badges"/>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,6 +1,7 @@
 package com.colinries.guide;
 
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -141,7 +142,6 @@ public class PortalsimulatorFragment extends Fragment {
             }
         });
 
-        //TODO: Add all onClickListeners and item select handlers
         View.OnClickListener ResonatorSelectorListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -278,10 +278,6 @@ public class PortalsimulatorFragment extends Fragment {
             modSlot[i].setOnClickListener(ModSelectorListener);
         }
 
-        //TODO: Add Formulas
-
-        //TODO: Put results into TextViews
-
         return layout;
     }
 
@@ -303,6 +299,7 @@ public class PortalsimulatorFragment extends Fragment {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void updateProperties() {
         //Portal level
         int sum = 0;
@@ -358,10 +355,6 @@ public class PortalsimulatorFragment extends Fragment {
 
         portal_range_value = portal_range_value * rangeMultiplyFactor;
 
-        Log.i("GUIDE", "Factor: " + Float.toString(rangeMultiplyFactor));
-
-
-
         PortalsimulatorFragment.portal_range.setText(Float.toString(portal_range_value) + unit);
 
         //Mitigation
@@ -397,9 +390,9 @@ public class PortalsimulatorFragment extends Fragment {
             float links = Float.valueOf(linkAmountInput.getText().toString());
 
             if (portal_outgoinglinks_value > 8) {
-                portal_mitigation_value = portal_mitigation_value + (int) (Math.round(400f / 9f * Math.atan(links / Math.E)) * 1.5f);
+                portal_mitigation_value = portal_mitigation_value + (int) (Math.floor(400f / 9f * Math.atan(links / Math.E)) * 1.5f);
             } else {
-                portal_mitigation_value = portal_mitigation_value + (int) (Math.round(400f / 9f * Math.atan(links / Math.E)));
+                portal_mitigation_value = portal_mitigation_value + (int) (Math.floor(400f / 9f * Math.atan(links / Math.E)));
             }
         }
 
@@ -538,10 +531,6 @@ public class PortalsimulatorFragment extends Fragment {
         portal_burnoutinsulation.setText(Integer.toString(portal_burnoutinsulation_value));
 
     }
-
-
-
-
 
     public int getIndex(String[] array, String value) {
         if (value != null) {
