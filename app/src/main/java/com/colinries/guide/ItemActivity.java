@@ -257,7 +257,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_linkamps) {
 
             item_name.setText(getString(R.string.linkamps));
-            item_image.setImageResource(R.mipmap.item_softbankultralinkvr);
+            item_image.setImageResource(R.mipmap.item_linkampvr);
             item_description.setText(getString(R.string.linkamp_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full) + "(Rare)\n"+ getString(R.string.item_acquisition_passcodes_only) + "(Very Rare)");
             item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
@@ -317,7 +317,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_keylocker) {
 
             item_name.setText(getString(R.string.keylocker));
-            item_image.setImageResource(R.mipmap.item_capsuler);
+            item_image.setImageResource(R.mipmap.item_keylockervr);
             item_description.setText(getString(R.string.keylocker_description));
             item_acquisition.setText(getString(R.string.item_acquisition_store_only));
             item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
@@ -329,7 +329,7 @@ public class ItemActivity extends AppCompatActivity
         } else if (id == R.id.nav_beacons) {
 
             item_name.setText(getString(R.string.beacons));
-            item_image.setImageResource(R.mipmap.item_resonator8);
+            item_image.setImageResource(R.mipmap.item_beaconres);
             item_description.setText(getString(R.string.beacon_description));
             item_acquisition.setText(getString(R.string.item_acquisition_store_only));
             item_variations.setText(getString(R.string.item_variations_rarity_veryrare));

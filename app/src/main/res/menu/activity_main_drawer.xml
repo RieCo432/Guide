@@ -13,7 +13,7 @@
         <item
             android:title="@string/items"
             android:id="@+id/nav_items"
-            android:icon="@drawable/ic_item"/>
+            android:icon="@drawable/ic_resonator"/>
         <item
             android:title="@string/badges"
             android:id="@+id/nav_badges"
