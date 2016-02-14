@@ -45,9 +45,9 @@
     <string name="cmus">CMUs</string>
     <string name="main">Main</string>
     <string name="badges">Badges</string>
-    <string name="title_activity_item">ItemActivity</string>
+    <string name="title_activity_item">Items IQ</string>
     <string name="portalkey">Portal Key</string>
-    <string name="title_activity_badges">BadgesActivity</string>
+    <string name="title_activity_badges">Badges IQ</string>
     <string name="verified">Verified</string>
     <string name="abaddon">Abaddon</string>
     <string name="ada">ADA</string>
