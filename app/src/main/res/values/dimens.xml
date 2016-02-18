@@ -8,4 +8,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="item_slot_width_height">45dp</dimen>
     <dimen name="item_slot_margin">3dp</dimen>
+    <dimen name="item_text_block_margin_bottom">10dp</dimen>
 </resources>

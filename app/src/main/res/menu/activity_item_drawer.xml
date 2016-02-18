@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_item_intro"
+            android:id="@+id/nav_intro"
             android:icon="@mipmap/item_resonator1"
-            android:title="@string/item_intro"/>
+            android:title="@string/nav_intro"/>
         <item
             android:id="@+id/nav_resonators"
             android:icon="@mipmap/item_resonator8"
