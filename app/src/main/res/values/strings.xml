@@ -4,6 +4,15 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="version">Version</string>
+    <string name="build">Build</string>
+    <string name="builddate">Build Date</string>
+    <string name="developers">Developers</string>
+    <string name="developers_names"><![CDATA[Colin Ries & Emmanuel Braz]]></string>
+    <string name="copyright">Copyright</string>
+    <string name="copyright_label">© Colin Ries, Emmanuel Braz 2016</string>
+    <string name="nav_intro">Intro</string>
+
     <string name="action_settings">Settings</string>
     <string name="settings">Settings</string>
     <string name="feedback">Feedback</string>
@@ -15,14 +24,11 @@
     <string name="how_tos">How-Tos</string>
     <string name="header">Header</string>
     <string name="ingress_guide">Ingress Guide</string>
-    <string name="subheader">v 1.0</string>
+    <string name="subheader">by @RieCo432 and @Twiistex</string>
     <string name="sample_header">Header</string>
     <string name="sample_subheader">Subheader</string>
     <string name="sample_paragraphe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacus nunc, rhoncus vel lorem sed, finibus lacinia felis. Ut augue ante, ultrices maximus semper at, elementum ac lectus. Pellentesque semper.</string>
     <string name="badge">Badge</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="resonators">Resonators</string>
     <string name="xmps">XMPs</string>
     <string name="ultrastrikes">Ultra Strikes</string>
@@ -85,6 +91,7 @@
     <string name="portalsim">Portal Sim</string>
     <string name="select_resonators">Select Resonators</string>
     <string name="select_mods">Select Mods</string>
+    <string name="select_links">Links</string>
     <string name="portalData">Portal Data</string>
     <string name="level">Level</string>
     <string name="range">Range</string>
@@ -93,19 +100,13 @@
     <string name="portalMitigation">Mitigation</string>
     <string name="deploy">Deploy</string>
     <string name="cancel">Cancel</string>
-
-
-    <!--TODO: review these strings-->
-
-    <string name="item_intro">Items are a big part of the game.</string>
-
     <string name="item_variations_level">Levels 1 – 8</string>
     <string name="item_variations_rarity_common">-Common</string>
     <string name="item_variations_rarity_rare">-Rare</string>
     <string name="item_variations_rarity_veryrare">-Very Rare</string>
     <string name="item_variations_rarity_rare_veryrare">-Rare\n-Very Rare</string>
     <string name="item_variations_rarity_all">-Common\n-Rare\n-Very Rare</string>
-    <string name="item_variations">Variations</string>
+    <string name="item_variations">Variations:</string>
     <string name="xmp">Exotic Matter Pulse Burster</string>
     <string name="item_notes">Notes:</string>
     <string name="item_full_name">Full Name:</string>
@@ -121,10 +122,16 @@
     <string name="portalOutgoingLinks">Outgoing Links</string>
     <string name="portalForce">Force</string>
     <string name="energy">Energy</string>
-
-
     <string name="resonator_description">Resonators are deployed on a portal in order to capture it or upgrade existing resonators.</string>
     <string name="resonator_notes">There\'s a limit of resonators of one level a player can deploy on one portal:\n1x L8\n1x L7\n2x L6\n2x L5\n4x L4\n4x L3\n4x L2\n8x L1</string>
+    <string name="xmp_description">XMPs are weapons used to attack enemy portals. XMP\'s from different levels have different ranges of attack and higher potential damage.</string>
+    <string name="xmp_notes">They are easy to hack but easy to waste. If you want to lower the number of XMPs you need to take down a portal, make sure you are as close as possible to the portal and long press the Fire button to get up to 20% attack bonus.</string>
+    <string name="ultrastrike_description">Contrary to XMPs, Ultra Strikes do more damage but in a much tinier range. That\'s why they are used to destroy shields (by staying the nearest to the middle of a portal) or to destroy single resonators by staying on them as well.</string>
+    <string name="ultrastrike_notes">Don\'t waste them, they are not that common in hacks. In order to get more out of an ultra strike, long press the fire button to get up to 20% attack bonus.</string>
+    <string name="ada_description">An ADA Refactor is a weapon used to instantly switch the colour of a green portal to blue. Once applied on a portal, mods and resonators stay the same, but the name and the faction of the portal changes and links are being destroyed.</string>
+    <string name="ada_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using an ADA. Be aware that you can only use an ADA on a portal that\'s maximal one level above your own level.</string>
+    <string name="jarvis_description">A Jarvis Virus is a weapon used to instantly switch the colour of a blue portal to green. Once applied on a portal, mods and resonators stay the same, but the name and the faction of the portal changes and links are being destroyed.</string>
+    <string name="jarvis_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using a Jarvis virus. Be aware that you can only use a Jarvis on a portal that\'s maximal one level above your own level.</string>
     <string name="powercubes_description">Power Cubes are used to refill your XM bar, so you can continue playing without having to pick up XM from the ground.</string>
     <string name="powercubes_notes">XM gain is calculated by multiplying the level of the power cube by 1000.</string>
     <string name="portalkey_description">Portal keys are the most important gain of a hack. With portal keys, you are able to link a portal to another portal if you\'re in the range of the start portal and if you have a key of the target portal. In addition, portal keys can be used to recharge portals when they\'re not in your range.</string>
@@ -132,36 +139,30 @@
     <string name="shields_description">Shields are a portal\'s bodyguards. They decrease the damage an XMP or Ultra Strike can do on your portal. Two attributes define a shield\'s behavior: Mitigation and Stickiness. Mitigation is the shield\'s protecting ability. The stickiness describes the shield\'s lasting ability, so to say whether it lasts long or not long when under XMP attacks.</string>
     <string name="shield_notes">Not only shields add mitigation to a portal, but links do as well. Check out our Portal Simulator for further information.</string>
     <string name="axashield_notes">The drop rate of AXA shields is slightly higher on AXA portals, which are present at all AXA agencies in some countries.</string>
+    <string name="axashield_description">AXA shields are the best shields in Ingress. They have the highest mitigation and stickiness. As you might guess, they have been introduced in cooperation with the AXA assurance company.</string>
+    <string name="heatsink_description">Heatsinks are mods used to decrease the waiting time between 2 hacks on the same portal. The standard amount of waiting time is 5 minutes but with heat sinks you can decrease this time to even lower than 30 seconds! See our Portal Simulator for further information.</string>
     <string name="heatsink_notes">The effect a heat sink has on portal cooldown decreases with each additional heat sink. See our Portal Simulator for quick and precise calculation of the cooldown period.</string>
     <string name="multihack_description">A multihack is used to increase the maximum amount of hacks that can be done in 4 hours (after the first hack). A standard portal can be hacked up to 4 times. Take a look at our Portal Simulator to experiment with multihack-effects.</string>
     <string name="multihack_notes">Portal burned out but you don\'t want to wait 4 hours to hack again? See if there is an empty mod slot and put in a multihack to reset the 4 hour period.</string>
+    <string name="forceamp_description">Force AMPs are mods used to give a portal the power to answer with more damage by attacking an enemy player when he hacks or attacks a portal. See our Portal Simulator to find out more.</string>
     <string name="forceamp_notes">The effect of Force AMPs decreases the more you deploy, take a look at our Portal Simulator.</string>
     <string name="turret_description">Turrets are used to increase the frequency of a portal\'s attacks against enemy players, for both, XMP attacks or just hacks. For example a portal does not always shoot back when you hack or attack it, but with the turrets, you can change this probability.</string>
     <string name="turret_notes">The effect a turret has on the attack frequency decreases the more you deploy, use our Portal Simulator to calculate the attack frequency.</string>
+    <string name="linkamp_description">Link AMPs are mods used to increase the maximum link range of a portal.</string>
     <string name="linkamps_notes">Very rare link amps can only be received by redeeming a passcode. They are mostly distributed on anomalies or to players who have a big and completely planned operation, when they ask Niantic.</string>
     <string name="softbankultralinkamp_description">Softbank Ultra Link Amps have many features. They increase the link range of a portal, the limit of 8 outbound link by 8 per Softbank Ultra Link and they the mitigation from links by 50%.</string>
     <string name="softbankultralinkamp_notes">Just as normal link amps, their effect decreases the more you deploy, use our Portal Simulator to calculate their effect on the portal.</string>
+    <string name="capsule_description">You can store any item in capsules (except capsules…) but they won\'t free up space in your inventory.</string>
     <string name="capsule_notes">Items in a capsule still count towards the 2000 item limit of your inventory. Be aware that keys stored in a capsule cannot be used to link or recharge portals.</string>
     <string name="mufgcapsules_description">MUFG capsules are awesome, period. They have made getting very rare items much easier, due to the fact that they duplicate items after a certain time that you\'ve them in.</string>
     <string name="mufgcapsule_notes">Items in a MUFG capsule still count towards inventory item limit. In order to make items duplicate, the capsule must have some free slots and your inventory must as well have a few free slots.</string>
-    <string name="fracker_notes">Best way to use them is when there are several rare or very rare heatsinks on the portal and when more than 1 or 2 players take advantage of it. Just like any other buyable item, they cannot be dropped or recycled.</string>
-    <string name="keylocker_notes">Just like any other buyable item, they cannot be dropped or recycled.</string>
-    <string name="beacon_notes">Just like any other buyable item, they cannot be dropped or recycled.</string>
-    <string name="xmp_description">XMPs are weapons used to attack enemy portals. XMP\'s from different levels have different ranges of attack and higher potential damage.</string>
-    <string name="xmp_notes">They are easy to hack but easy to waste. If you want to lower the number of XMPs you need to take down a portal, make sure you are as close as possible to the portal and long press the Fire button to get up to 20% attack bonus.</string>
-    <string name="ultrastrike_description">Contrary to XMPs, Ultra Strikes do more damage but in a much tinier range. That\'s why they are used to destroy shields (by staying the nearest to the middle of a portal) or to destroy single resonators by staying on them as well.</string>
-    <string name="ultrastrike_notes">Don\'t waste them, they are not that common in hacks. In order to get more out of an ultra strike, long press the fire button to get up to 20% attack bonus.</string>
-    <string name="ada_description">An ADA Refactor is a weapon used to instantly switch the colour of a green portal to blue. Once applied on a portal, mods and resonators stay the same, but the name and the faction of the portal changes and links are being destroyed.</string>
-    <string name="ada_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using an ADA. Be aware that you can only use an ADA on a portal that\'s maximal one level above your own level.</string>
-    <string name="axashield_description">AXA shields are the best shields in Ingress. They have the highest mitigation and stickiness. As you might guess, they have been introduced in cooperation with the AXA assurance company.</string>
-    <string name="heatsink_description">Heatsinks are mods used to decrease the waiting time between 2 hacks on the same portal. The standard amount of waiting time is 5 minutes but with heat sinks you can decrease this time to even lower than 30 seconds! See our Portal Simulator for further information.</string>
-    <string name="forceamp_description">Force AMPs are mods used to give a portal the power to answer with more damage by attacking an enemy player when he hacks or attacks a portal. See our Portal Simulator to find out more.</string>
-    <string name="linkamp_description">Link AMPs are mods used to increase the maximum link range of a portal.</string>
-    <string name="capsule_description">You can store any item in capsules (except capsules…) but they won\'t free up space in your inventory.</string>
     <string name="fracker_description">Frackers are powerups which can be bought in the Store in Ingress. When used on a Portal, they double the hack output for 10 minutes or for 150 hacks, whatever comes first.</string>
+    <string name="fracker_notes">Best way to use them is when there are several rare or very rare heatsinks on the portal and when more than 1 or 2 players take advantage of it. Just like any other buyable item, they cannot be dropped or recycled.</string>
     <string name="keylocker_description">Keylockers are similar to capsules. However, Keylockers can only store keys but they don\'t count towards the inventory item limit. They can be bought in the Ingress Store.</string>
+    <string name="keylocker_notes">Just like any other buyable item, they cannot be dropped or recycled.</string>
     <string name="beacon_description">Beacons are simple markers on the scanner that hover over a portal. For some they are more a fun item than a utility item. They can be found in the store, under 4 different variations.</string>
-    <string name="select_links">Links</string>
+    <string name="beacon_notes">Just like any other buyable item, they cannot be dropped or recycled.</string>
+
     <string name="badges_intro_header">About Badges in Ingress</string>
     <string name="badges_intro">Badges aren\'t important as long as you plan to stay at level 8 or below. But once you want to reach levels above level 8, you will need a certain amount of badges to be able to reach those levels. Other than that, badges don\'t have any function other than bragging rights.</string>
     <string name="badge_full_name">Badge name:</string>
@@ -170,6 +171,7 @@
     <string name="badge_acquisition">How to get it</string>
     <string name="badge_versions">Stages/Levels</string>
     <string name="badge_notes">Notes</string>
+
     <string name="abaddon_description">The Abaddon Anomaly Badge was awarded only to people who made a contribution to the Abaddon Anomly series, either as field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
     <string name="badge_variations_bronze">-bronze</string>
     <string name="abaddon_notes">You were able to get this badge when contributing to one of the following events:
@@ -202,6 +204,12 @@
         \nPorto, Portual (S)
         \nSofia, Bulgaria (S)
     </string>
-    <string name="jarvis_description">A Jarvis Virus is a weapon used to instantly switch the colour of a blue portal to green. Once applied on a portal, mods and resonators stay the same, but the name and the faction of the portal changes and links are being destroyed.</string>
-    <string name="jarvis_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using a Jarvis virus. Be aware that you can only use a Jarvis on a portal that\'s maximal one level above your own level.</string>
+
+
+    <!--TODO: review these strings-->
+
+    <string name="item_intro">Items are a big part of the game.</string>
+    <string name="connection_error">Connection error!</string>
+    <string name="xml_error">XML Error!</string>
+
 </resources>

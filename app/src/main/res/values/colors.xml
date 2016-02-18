@@ -9,4 +9,5 @@
     <color name="primary_text_default_material_dark">#ffffff</color>
     <color name="itemSlotBackgroundColor">@color/colorPrimary</color>
     <color name="gieltIngress">#eef180</color>
+    <color name="colorTextMain">@color/colorPrimary</color>
 </resources>
