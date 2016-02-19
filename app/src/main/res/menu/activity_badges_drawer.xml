@@ -4,131 +4,131 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_abaddon"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_abaddon"
             android:title="@string/abaddon" />
         <item
             android:id="@+id/nav_ada"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_ada"
             android:title="@string/ada" />
         <item
             android:id="@+id/nav_builder"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_builder"
             android:title="@string/builder" />
         <item
             android:id="@+id/nav_connector"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_connector"
             android:title="@string/connector" />
         <item
             android:id="@+id/nav_darsana"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_darsana"
             android:title="@string/darsana" />
         <item
             android:id="@+id/nav_engineer"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_engineer"
             android:title="@string/engineer" />
         <item
             android:id="@+id/nav_eve"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_eve"
             android:title="@string/eve" />
         <item
             android:id="@+id/nav_explorer"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_explorer"
             android:title="@string/explorer" />
         <item
             android:id="@+id/nav_founder"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_founder"
             android:title="@string/founder" />
         <item
             android:id="@+id/nav_hacker"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_hacker"
             android:title="@string/hacker" />
         <item
             android:id="@+id/nav_hankjohnson"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_hankjohnson"
             android:title="@string/hankjohnson" />
         <item
             android:id="@+id/nav_helios"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_helios"
             android:title="@string/helios" />
         <item
             android:id="@+id/nav_illuminator"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_illuminator"
             android:title="@string/illuminator" />
         <item
             android:id="@+id/nav_initio"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_initio"
             android:title="@string/initio" />
         <item
             android:id="@+id/nav_innovator"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_innovator"
             android:title="@string/innovator" />
         <item
             android:id="@+id/nav_interitus"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_interitus"
             android:title="@string/interitus" />
         <item
             android:id="@+id/nav_liberator"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_liberator"
             android:title="@string/liberator" />
         <item
             android:id="@+id/nav_mindcontroller"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_mindcontroller"
             android:title="@string/mindcontroller" />
         <item
             android:id="@+id/nav_missionday"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_missionday"
             android:title="@string/missionday" />
         <item
             android:id="@+id/nav_nl1331"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_nl1331"
             android:title="@string/nl1331" />
         <item
             android:id="@+id/nav_persepolis"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_persepolis"
             android:title="@string/persepolis" />
         <item
             android:id="@+id/nav_purifier"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_purifier"
             android:title="@string/purifier" />
         <item
             android:id="@+id/nav_recharger"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_recharger"
             android:title="@string/recharger" />
         <item
             android:id="@+id/nav_recursion"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_recursion"
             android:title="@string/recursion" />
         <item
             android:id="@+id/nav_shonin"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_shonin"
             android:title="@string/shonin" />
         <item
             android:id="@+id/nav_sojourner"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_sojourner"
             android:title="@string/sojourner" />
         <item
             android:id="@+id/nav_specops"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_specops"
             android:title="@string/specops" />
         <item
             android:id="@+id/nav_stellavyctory"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_stellavyctory"
             android:title="@string/stellavyctory" />
         <item
             android:id="@+id/nav_susannamoyer"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_susannamoyer"
             android:title="@string/susannamoyer" />
         <item
             android:id="@+id/nav_translator"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_translator"
             android:title="@string/translator" />
         <item
             android:id="@+id/nav_trekker"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_trekker"
             android:title="@string/trekker" />
         <item
             android:id="@+id/nav_vanguard"
-            android:icon="@mipmap/badge_verified"
+            android:icon="@mipmap/badge_vanguard"
             android:title="@string/vanguard" />
         <item
             android:id="@+id/nav_verified"

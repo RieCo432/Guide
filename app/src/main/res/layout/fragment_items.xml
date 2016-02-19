@@ -11,102 +11,118 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/item_intro_block"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:padding="15dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/item_intro_header"
-            android:textColor="@android:color/white"
-            android:text="@string/item_intro_header"/>
+            android:textColor="@color/colorTextMain"
+            android:text="@string/item_intro_header"
+            android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_intro"
             android:id="@+id/item_intro"
-            android:textColor="@android:color/white"/>
+            android:textColor="@color/colorTextMain"
+            android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/item_iq_block">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/item_iq_block"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:padding="15dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_name_header"
                 android:text="@string/item_full_name"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/colorTextMain"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_name"
-                android:textColor="@android:color/white"/>
+                android:textColor="@color/colorTextMain"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_image_header"
                 android:text="@string/item_image"
-                android:textColor="@android:color/white"/>
+                android:textColor="@color/colorTextMain"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <ImageView
                 android:layout_width="216dp"
                 android:layout_height="216dp"
                 android:id="@+id/item_image"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_description_header"
                 android:text="@string/item_description"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="28dp" />
+                android:textColor="@color/colorTextMain"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_description"
-                android:textColor="@android:color/white"/>
+                android:textColor="@color/colorTextMain"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_acquisition_header"
                 android:text="@string/item_acquisition"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="28dp" />
+                android:textColor="@color/colorTextMain"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_acquisition"
-                android:textColor="@android:color/white"/>
+                android:textColor="@color/colorTextMain"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_variations_header"
                 android:text="@string/item_variations"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="28dp" />
+                android:textColor="@color/colorTextMain"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_variations"
-                android:textColor="@android:color/white"/>
+                android:textColor="@color/colorTextMain"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_notes_header"
                 android:text="@string/item_notes"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="28dp" />
+                android:textColor="@color/colorTextMain"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_notes"
-                android:textColor="@android:color/white"/>
+                android:textColor="@color/colorTextMain"
+                android:layout_marginBottom="@dimen/item_text_block_margin_bottom"/>
         </LinearLayout>
     </ScrollView>
 

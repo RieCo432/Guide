@@ -1,15 +1,21 @@
 package com.colinries.guide;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 public class FAQFragment extends Fragment {
+
+    private static final String URL = "http://colinries.com/guide/faq.xml";
+    public static RelativeLayout layout;
+    public static ListView faqList;
+    public static Context context;
+
 
     public FAQFragment() {
         // Required empty public constructor
@@ -25,7 +31,14 @@ public class FAQFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.fragment_faq, container, false);
+        layout = (RelativeLayout) inflater.inflate(R.layout.fragment_faq, container, false);
+
+        context = getActivity();
+        new DownloadXmlTask().execute(URL);
+
+        faqList = (ListView) layout.findViewById(R.id.faqList);
+
+
 
         return layout;
     }
@@ -37,6 +50,5 @@ public class FAQFragment extends Fragment {
 
     @Override
     public void onDetach() {
-        super.onDetach();
-    }
+        super.onDetach();}
 }
