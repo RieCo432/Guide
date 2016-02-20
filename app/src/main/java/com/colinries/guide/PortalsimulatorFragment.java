@@ -22,7 +22,6 @@ public class PortalsimulatorFragment extends Fragment {
 
     public static int[] ResonatorLevels = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     public static String[] ModsAndRarity = new String[5];
-    //public static int[] PortalProperties = new int[9]; //level, energy, mitigation, range, outbound links, hack speed, burnout limit, force, attack freq
     public static int resonatorSlotId;
     public static ImageView[] modSlot;
     public static SpinnerDialog selectResonatorLevelSpinner;

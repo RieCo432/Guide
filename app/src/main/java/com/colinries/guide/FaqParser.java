@@ -1,10 +1,10 @@
 package com.colinries.guide;
 
-import android.util.Log;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -12,12 +12,10 @@ import java.util.List;
 
 
 public class FaqParser {
-    //TODO: remove all log.i calls and other debugging stuff
 
     private static final String ns = null;
 
     public List<Entry> parse(InputStream in) throws XmlPullParserException, IOException {
-        Log.i("FAQP", "parse() called");
         try {
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
@@ -30,7 +28,6 @@ public class FaqParser {
     }
 
     private List<Entry> readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
-        Log.i("FAQP", "readFeed() called");
         List<Entry> entries = new ArrayList<>();
 
         parser.require(XmlPullParser.START_TAG, ns, "feed");
@@ -40,7 +37,6 @@ public class FaqParser {
             }
 
             String name = parser.getName();
-            Log.i("FAQP", parser.getName());
             if(name.equals("entry")) {
                 entries.add(readEntry(parser));
             } else {
@@ -62,7 +58,6 @@ public class FaqParser {
     }
 
     private Entry readEntry(XmlPullParser parser) throws XmlPullParserException, IOException {
-        Log.i("FAQP", "readEntry() called");
         parser.require(XmlPullParser.START_TAG, ns, "entry");
         String question = null;
         String answer = null;
@@ -72,7 +67,6 @@ public class FaqParser {
             }
 
             String name = parser.getName();
-            Log.i("FAQP", "switch q/a" + parser.getName());
             switch (name) {
                 case "question":
                     question = readQuestion(parser);
@@ -81,7 +75,6 @@ public class FaqParser {
                     answer = readAnswer(parser);
                     break;
                 default:
-                    Log.i("FAQP", "default: skip() called");
                     skip(parser);
                     break;
             }
@@ -90,7 +83,6 @@ public class FaqParser {
     }
 
     private String readQuestion(XmlPullParser parser) throws IOException, XmlPullParserException {
-        Log.i("FAQP", "readQuestion() called");
         parser.require(XmlPullParser.START_TAG, ns, "question");
         String question = readText(parser);
         parser.require(XmlPullParser.END_TAG, ns, "question");
@@ -98,7 +90,6 @@ public class FaqParser {
     }
 
     private String readAnswer(XmlPullParser parser) throws IOException, XmlPullParserException {
-        Log.i("FAQP", "readAnswer() called");
         parser.require(XmlPullParser.START_TAG, ns, "answer");
         String answer = readText(parser);
         parser.require(XmlPullParser.END_TAG, ns, "answer");
@@ -106,7 +97,6 @@ public class FaqParser {
     }
 
     private String readText(XmlPullParser parser) throws IOException, XmlPullParserException {
-        Log.i("FAQP", "readText() called");
         String result = "";
         if (parser.next() ==XmlPullParser.TEXT) {
             result = parser.getText();
@@ -115,13 +105,10 @@ public class FaqParser {
             result = "N/A";
         }
 
-        Log.i("FAQP", result);
-        //Toast.makeText(new FAQFragment().getActivity(), result, Toast.LENGTH_SHORT).show();
         return result;
     }
 
     private void skip(XmlPullParser parser) throws XmlPullParserException, IOException {
-        Log.i("FAQP", "skip() called");
         if (parser.getEventType() != XmlPullParser.START_TAG) {
             throw new IllegalStateException();
         }

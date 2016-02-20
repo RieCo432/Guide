@@ -19,20 +19,16 @@ import java.util.List;
 
 public class DownloadXmlTask extends AsyncTask<String, Void, String[]> {
 
-    //TODO: remove all log.i calls and other debugging stuff
     @Override
     protected String[] doInBackground(String... urls) {
         try {
-            Log.i("DXT", "function called on " + urls[0]);
             return loadXmlFromNetwork(urls[0]);
         } catch (IOException e) {
             e.printStackTrace();
-            //Toast.makeText(new FAQFragment().getActivity(), new FAQFragment().getString(R.string.connection_error), Toast.LENGTH_SHORT).show();
-            return null;
+            return new String[]{"An error occured!", "Network Error!"};
         } catch (XmlPullParserException e) {
             e.printStackTrace();
-            //Toast.makeText(new FAQFragment().getActivity(), new FAQFragment().getString(R.string.xml_error), Toast.LENGTH_SHORT).show();
-            return new String[]{"Q1", "A1", "Q2", "A2"};
+            return new String[]{"An error occured!", "XML Error!"};
         }
     }
 
@@ -63,9 +59,9 @@ public class DownloadXmlTask extends AsyncTask<String, Void, String[]> {
 
         new FAQFragment();
         ListAdapter myListAdapter = new SimpleAdapter(FAQFragment.context, list,
-                android.R.layout.simple_list_item_2,
+                R.layout.two_line_list_item,
                 new String[] { "line1","line2" },
-                new int[] {android.R.id.text1, android.R.id.text2});
+                new int[] {R.id.text1, R.id.text2});
         faqList.setAdapter(myListAdapter);
     }
 
@@ -90,12 +86,9 @@ public class DownloadXmlTask extends AsyncTask<String, Void, String[]> {
         int i = 0;
 
         for (FaqParser.Entry entry: entries) {
-            Log.i("DXT", "result setter called");
             result[i] = entry.question;
-            //Log.i("DXT", entry.question);
             i++;
             result[i] = entry.answer;
-            //Log.i("DXT", entry.answer);
             i++;
 
         }
