@@ -1,6 +1,8 @@
 package com.colinries.guide;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -69,7 +71,7 @@ public class ItemActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.item, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -81,7 +83,12 @@ public class ItemActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_submit_faq) {
+            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", getString(R.string.question_submission_email), null));
+            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.submit_a_question));
+            Intent.createChooser(intent, getString(R.string.choose_email_app));
+            startActivity(intent);
             return true;
         }
 

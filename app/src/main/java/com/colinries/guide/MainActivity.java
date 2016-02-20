@@ -1,6 +1,7 @@
 package com.colinries.guide;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -66,7 +67,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_submit_faq) {
+            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", getString(R.string.question_submission_email), null));
+            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.submit_a_question));
+            Intent.createChooser(intent, getString(R.string.choose_email_app));
+            startActivity(intent);
             return true;
         }
 
@@ -107,9 +113,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.replace(R.id.fragment_container, new AboutFragment()).commit();
             setTitle(getString(R.string.about));
         } else if (id == R.id.nav_support) {
-
+            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", getString(R.string.support_email), null));
+            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.guide_support));
+            Intent.createChooser(intent, getString(R.string.choose_email_app));
+            startActivity(intent);
         } else if (id == R.id.nav_feedback) {
-
+            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", getString(R.string.feedback_email), null));
+            intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.guide_feedback));
+            Intent.createChooser(intent, getString(R.string.choose_email_app));
+            startActivity(intent);
         } else if (id == R.id.nav_settings) {
 
         }
