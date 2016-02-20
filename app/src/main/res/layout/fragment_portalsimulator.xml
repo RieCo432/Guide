@@ -4,9 +4,6 @@
     android:layout_height="match_parent"
     tools:context="com.colinries.guide.PortalsimulatorFragment">
 
-    <!-- TODO: Build Portal Simulator Interface -->
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,15 +91,6 @@
             android:scaleType="fitCenter"
             android:layout_margin="@dimen/item_slot_margin"/>
     </RelativeLayout>
-
-    <!--<Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:id="@+id/selectResonatorLevelSpinner"
-        android:spinnerMode="dialog">
-
-    </Spinner>-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -196,8 +184,6 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/item_slot_width_height"
         android:layout_marginRight="0dp">
-
-        <!--TODO: Add all portal properties-->
 
 
             <TextView
