@@ -1,15 +1,19 @@
 package com.colinries.guide;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,11 +62,17 @@ public class AboutFragment extends Fragment {
         }
 
         ListAdapter myListAdapter = new SimpleAdapter(getActivity(), list,
-                android.R.layout.simple_list_item_2,
+                R.layout.two_line_list_item,
                 new String[] {"line1", "line2"},
-                new int[] {android.R.id.text1, android.R.id.text2});
+                new int[] {R.id.text1, R.id.text2});
 
         aboutView.setAdapter(myListAdapter);
+
+        /*TextView line1 = (TextView) aboutView.findViewById(android.R.id.text1);
+        TextView line2 = (TextView) aboutView.findViewById(android.R.id.text2);
+
+        line1.setTextColor(getResources().getColor(R.color.colorPrimary));
+        line2.setTextColor(getResources().getColor(R.color.colorPrimary));*/
 
         return layout;
     }
