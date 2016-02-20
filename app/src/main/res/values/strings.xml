@@ -55,18 +55,16 @@
     <string name="portalkey">Portal Key</string>
     <string name="title_activity_badges">Badges IQ</string>
     <string name="verified">Verified</string>
-    <string name="abaddon">Abaddon</string>
+
     <string name="ada">ADA</string>
     <string name="builder">Builder</string>
     <string name="connector">Connector</string>
-    <string name="darsana">Darsana</string>
     <string name="engineer">Engineer</string>
     <string name="eve">Eve</string>
     <string name="explorer">Explorer</string>
     <string name="founder">Founder</string>
     <string name="hacker">Hacker</string>
     <string name="hankjohnson">Hank Johnson</string>
-    <string name="helios">Helios</string>
     <string name="illuminator">Illuminator</string>
     <string name="initio">Initio</string>
     <string name="innovator">Innovator</string>
@@ -172,44 +170,168 @@
     <string name="badge_versions">Stages/Levels</string>
     <string name="badge_notes">Notes</string>
 
-    <string name="abaddon_description">The Abaddon Anomaly Badge was awarded only to people who made a contribution to the Abaddon Anomly series, either as field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
-    <string name="badge_variations_bronze">-bronze</string>
-    <string name="abaddon_notes">You were able to get this badge when contributing to one of the following events:
-        \n14th November 2015:
-        \n
-        \nHamburg, Germany (P)
-        \nEdinburgh, UK (S)
-        \nSeville, Spain (S)
-        \nZagreb, Croatia (S)
-        \n\nNew Orleans, USA (P)
-        \nCharlotte, USA (S)
-        \nGuatemala City, Guatemala (S)
-        \nPittsburgh, USA (S)
-        \n\nNew Taipei City (P)
-        \nBankok, Thailand (S)
-        \nManila, Philippines (S)
-        \nSydney, Australia (S)
-        \n\n12th December 2015:
-        \n34
-        \nOakland, USA (P)
-        \nFort Worth, USA (S)
-        \nLima, Peru (S)
-        \nPhoenix, USA (S)
-        \n\nOkinawa, Japan (P)
-        \nSeoul, South Korea (S)
-        \nSingapore, Singapore (S)
-        \nWellington, New Zealand (S)
-        \n\nMilan, Italy (P)
-        \nGdansk, Poland (S)
-        \nPorto, Portual (S)
-        \nSofia, Bulgaria (S)
-    </string>
 
 
     <!--TODO: review these strings-->
 
-    <string name="item_intro">Items are a big part of the game.</string>
+    <string name="item_intro">Items are a big pfart of the game.</string>
     <string name="connection_error">Connection error!</string>
     <string name="xml_error">XML Error!</string>
+    <string name="badge_variations_bronze">-bronze</string>
+    <string name="badge_variations_full">-bronze\n-silver\n-gold\n-platinum\n-onyx</string>
+    <string name="item_acquisition_playing">-via playing</string>
+
+    <string name="abaddon">Abaddon</string>
+    <string name="abaddon_description">The Abaddon Anomaly Badge was awarded only to people who made a contribution on the Abaddon Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="abaddon_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n14th November 2015:
+    \nHamburg, Germany (P)
+    \nEdinburgh, UK (S)
+    \nSeville, Spain (S)
+    \nZagreb, Croatia (S)
+    \n\nNew Orleans, USA (P)
+    \nCharlotte, USA (S)
+    \nGuatemala City, Guatemala (S)
+    \nPittsburgh, USA (S)
+    \n\nNew Taipei City (P)
+    \nBankok, Thailand (S)
+    \nManila, Philippines (S)
+    \nSydney, Australia (S)
+    \n\n12th December 2015:
+    \nOakland, USA (P)
+    \nFort Worth, USA
+    \nLima, Peru (S)
+    \nPhoenix, USA (S)
+    \n\nOkinawa, Japan (P)
+    \nSeoul, South Korea (S)
+    \nSingapore, Singapore (S)
+    \nWellington, New Zealand (S)
+    \n\nMilan, Italy (P)
+    \nGdansk, Poland (S)
+    \nPorto, Portugal (S)
+    \nSofia, Bulgaria (S) </string>
+
+    <string name="darsana">Darsana</string>
+    <string name="darsana_description">The Darsana Anomaly Badge was awarded only to people who made a contribution on the Darsana Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="darsana_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n28th October 2014:
+    \nBrussels, Belgium (P)
+    \nAarhus, Denmark (S)
+    \nBerne, Switzerland (S)
+    \nVilnius, Lithuania (S)
+    \nPune, India (S)
+    \n\nSalt Lake City, Utah, USA (P)
+    \nAnchorage, Alaska, USA (S)
+    \nHonolulu, Hawaii, USA (S)
+    \n\n15th November 2014:
+    \nNew Orleans, Louisiana, USA (P)
+    \nOklahoma City, Oklahoma, USA (S)
+    \nSanto Domingo, Dominican Republic (S)
+    \nVirginia Beach, Virginia, USA (S)
+    \n\n13th December 2014:
+    \nTokyo, Japan(P)
+    \nAuckland, New Zealand (S)
+    \nManila, Philippines(S)
+    \nSeoul, Korea (S)
+    \n\nBarcelona, Spain (P)
+    \nPretoria, South Africa (S)
+    \nStuttgart, Germany (S)
+    \nToulouse, France (S)
+    \n\nCharleston, South Carolina, USA (P)
+    \nHartford, Connecticut, USA (S)
+    \nRio de Janeiro, Brazil (S)
+    \nSanta Cruz, California, USA (S) </string>
+
+    <string name="helios">Helios</string>
+    <string name="helios_description">The Helios Anomaly Badge was awarded only to people who made a contribution on the Helios Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="helios_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n12th July 2014:
+    \nMontreal, Quebec, Canada (P)
+    \nChattanooga, Tennesse, USA (S)
+    \nToronto, Ontario, Canada (S)
+    \n\n26th July 2014:
+    \nSan Diego, California, USA (P)
+    \nPhiladelphia, Pennsylvania, USA (S)
+    \nBoston, Massachusetts, USA (S)
+    \n\nDublin, Ireland (P)
+    \nTallin, Estonia (S)
+    \nPalermo, Italy (S)
+    \n\n9th August 2014:
+    \nChicago, Illinois, USA (P)
+    \nRichmond, Virginia, USA (S)
+    \nGalveston, Texas, USA (S)
+    \n\nTaipei (P)
+    \nHong Kong, China (S)
+    \nKuala Lumpur, Malaysia (S)
+    \n\n23rd August 2014:
+    \nDetroit, Michigan, USA (P)
+    \nBaltimore, Maryland, USA (S)
+    \nIndianapolis, Indiana, USA (S)
+    \n\nPrague, Czech Republic (P)
+    \nManchester, United Kingdom (S)
+    \nRotterdam, The Netherlands (S)
+    \n\n6th September 2014:
+    \nMinneapolis, Minnesota, USA (P)
+    \nTulsa, Oklahoma, USA (S)
+    \nMonterrey, Mexico (S)
+    \n\nBogota, Colombia (P)
+    \nAsuncion, Paraguay (S)
+    \nBuenos Aires, Argentina (S)
+    \n\n24th September 2014:
+    \nLondon, United Kingdom (Special Edition)
+    \n\n27th September 2014:
+    \nTacoma, Washington, USA (P)
+    \nSacramento, California, USA (S)
+    \nVancouver, British Columbia, Canada (S)
+    \n\nMunich, Germany (P)
+    \nGothenburg, Sweden (S)
+    \nRiga, Latvia (S) </string>
+
+    <string name="builder_description">To get the Builder medal, you need to deploy or upgrade resonators</string>
+    <string name="builder_notes">The different stages of the Builder medal:\nBronze: 2.000\nSilver: 10.000\nGold: 30.000\nPlatinum: 100.000\nOnyx: 200.000</string>
+
+    <string name="connector_description">To get the Connector medal, you need to establish portal links.</string>
+    <string name="connector_notes">The different stages of the Connector medal:\nBronze: 50\nSilver: 1.000\nGold: 5.000\nPlatinum: 25.000\nOnyx: 100.000</string>
+
+    <string name="engineer_description">To get the Engineer medal, you need to deploy mods.</string>
+    <string name="engineer_notes">The different stages of the Engineer medal:\nBronze: 150\nSilver: 1.500\nGold: 5.000\nPlatinum: 20.000\nOnyx: 50.000</string>
+
+    <string name="explorer_description">To get the Explorer medal, you need to visit portals. By "visiting" is meant upgrading, either by deploying mods and resonators or by hacking (easiest method), but also by linking. Basically every action on a portal counts as a visit.</string>
+    <string name="explorer_notes">The different stages of the Engineer medal:\nBronze: 100\nSilver: 1.000\nGold: 2.000\nPlatinum: 10.000\nOnyx: 30.000</string>
+
+    <string name="hacker_description">To get the Hacker medal, you need to hack portals.</string>
+    <string name="hacker_notes">The different stages of the Hacker medal:\nBronze: 2.000\nSilver 10.000\nGold: 30.0000\nPlatinum: 100.000\nOnyx: 200.000</string>
+
+    <string name="illuminator_description">To get the Illuminator medal, you need to capture MU by creating control fields. </string>
+    <string name="illuminator_notes">The different stages of the Builder medal:\nBronze: 5.000\nSilver: 50.000\nGold: 250.000\nPlatinum: 1.000.000\nOnyx: 4.000.000</string>
+
+    <string name="liberator_description">To get the Liberator medal, you need to simply capture portals.</string>
+    <string name="liberator_notes">The different stages of the Liberator medal:\nBronze: 100\nSilver: 1.000\nGold: 5.000\nPlatinum: 15.000\nOnyx: 40.000</string>
+
+    <string name="mindcontroller_description">To get the Mind Controller medal, you need make fields.</string>
+    <string name="mindcontroller_notes">The different stages of the Mind Controller medal:\nBronze: 100\nSilver: 500\nGold: 2.000\nPlatinum: 10.000\nOnyx: 40.000</string>
+
+    <string name="purifier_description">To get the Purifier medal, you need to destroy resonators with XMPs.</string>
+    <string name="purifier_notes">The different stages of the Purifier medal:\nBronze: 2.000\nSilver: 10.000\nGold: 30.000\nPlatinum: 100.000\nOnyx: 300.000</string>
+
+    <string name="recharger_description">To get the Recharger medal, you need to recharge portals. This can be done by going into your inventory, selecting "Portal keys" and recharging any portal that isn't fully charged yet.</string>
+    <string name="recharger_notes">The different stages of the Recharger medal:\nBronze: 100.000\nSilver: 1.000.000\nGold: 300.000\nPlatinum: 10.000.000\nOnyx: 25.000.000</string>
+
+    <string name="sojourner_description">To get the Sojourner medal, you need to hack any portal in a period of 24 hours, for a given time.</string>
+    <string name="sojourner_notes">The different stages of the Sojourner medal:\nBronze: 15\nSilver: 30\nGold: 60\nPlatinum: 180\nOnyx: 360</string>
+
+    <string name="specops_description">To get the Specops medal, you need to complete missions. Missions can be found in the "Missions"-tab in Ingress (pretty obvious) and are sorted by rating and distance of the mission-beginning portal to you.</string>
+    <string name="specops_notes">The different stages of the Specops medal:\nBronze: 5\nSilver: 25\nGold: 100\nPlatinum: 200\nOnyx: 500</string>
+
+    <string name="translator_description">To get the Translator medal, you need to perform glyph hacks instead of normal hacks. Glyphs can done by pressing and holding the "Hack Portal" Button when in range of a portal. The game of glyphing is the following: You will be shown 1 to 5 patterns (depending on the portals level) which you have to remind. After the patterns being shown, you have to redo them. You can get up to 15 glyph points when succeeding in a level 8 portal glyph hack.</string>
+    <string name="translator_notes">The different stages of the Trannslator medal:\nBronze: 200\nSilver: 2.000\nGold: 6.000\nPlatinum: 20.000\nOnyx: 50.000</string>
+
+    <string name="trekker_description">To get the Trekker medal, you need to move around. Alot.</string>
+    <string name="trekker_notes">The different stages of the Trekker medal:\nBronze: 10\nSilver: 100\nGold: 300\nPlatinum: 10.000\nOnyx: 2.500</string>
+
+    <string name="aided_ada">Aided Ada</string>
+    <string name="aided_ada_description">Ada is the name of a character in the storyline. You were able to get this badge at an event where Ada was present.</string>
+    <string name="aided_ada_notes">You are not able to receive this badge anymore, unless you have a valid passcode.</string>
+
 
 </resources>
