@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">Guide</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -333,5 +333,13 @@
     <string name="aided_ada_description">Ada is the name of a character in the storyline. You were able to get this badge at an event where Ada was present.</string>
     <string name="aided_ada_notes">You are not able to receive this badge anymore, unless you have a valid passcode.</string>
 
+    <string name="action_submit_faq">Submit Question</string>
+    <string name="submit_a_question">Question Submission</string>
+    <string name="choose_email_app">Choose email client</string>
+    <string name="question_submission_email">faq.guide@colinries.com</string>
+    <string name="support_email">support@colinries.com</string>
+    <string name="guide_support">Support (Guide)</string>
+    <string name="feedback_email">feedback@colinries.com</string>
+    <string name="guide_feedback">Feedback (Guide)</string>
 
 </resources>
