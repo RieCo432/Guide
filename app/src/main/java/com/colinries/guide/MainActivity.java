@@ -1,8 +1,10 @@
 package com.colinries.guide;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,10 +13,47 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.colinries.guide.util.IabHelper;
+import com.colinries.guide.util.IabResult;
+import com.colinries.guide.util.Inventory;
+import com.colinries.guide.util.Purchase;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final String TAG = "guide.inappbilling";
+    IabHelper mHelper;
+    static String ITEM_SKU;
+    public static SharedPreferences sharedPreferences;
+
+    public String mIdToken;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/Z+0f1U2B2Jvk1vsEoa+rwZuVZBisvb1Tt0bqELhClou97rnWtobvkf13Cjbnr7qGKfENcuQAikRcZbY6FkLyWEceC5iScew4OK7FFllpbLlZ32dOIXyzgaKZI8zGEIWNbNrRMnGRyTABml63+PAZLW09vPAxJTFO991lhvjnMcWFEq32dtgoHGkzNUrgWJeRV8jiPSakcAqvcStWreZ1uvIJwQLhf4BZdyQ4c8sBEx5QPG/S5sNt1nfF9gZl2ShLEResiugXDJWYgOcmDdUw0BBNvu/411IKOujxR/XXIRHHEAkZA6D6qiJHAPLYbG/6V7GA1Nu8lrrRIbiJqnswIDAQAB";
+
+        mHelper = new IabHelper(this, base64EncodedPublicKey);
+        mHelper.enableDebugLogging(true, TAG);
+
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+            @Override
+            public void onIabSetupFinished(IabResult result) {
+                if (!result.isSuccess()) {
+                    Log.i(TAG, "In-app billing setup failed: " + result);
+                } else {
+                    Log.i(TAG, "In-app billing is set up OK");
+                }
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -37,7 +77,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
         setTitle(getString(R.string.main));
 
+        /*Intent serviceIntent = new Intent("com.android.vending.billing.InAppBillingService.BIND");
+        serviceIntent.setPackage("com.android.vending");
+        bindService(serviceIntent, mServiceConn, Context.BIND_AUTO_CREATE);*/
 
+        if (!sharedPreferences.getString("APP_ID_TOKEN", "NULL").equals("NULL")) {
+            mIdToken = sharedPreferences.getString("APP_ID_TOKEN", "NULL");
+        } else {
+            mIdToken = UUID.randomUUID().toString();
+            sharedPreferences.edit().putString("APP_ID_TOKEN", mIdToken).apply();
+        }
     }
 
 
@@ -74,6 +123,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent.createChooser(intent, getString(R.string.choose_email_app));
             startActivity(intent);
             return true;
+        } else if (id == R.id.action_donateS) {
+            ITEM_SKU = "donates";
+            mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
+        } else if (id == R.id.action_donateM) {
+            ITEM_SKU = "donatem";
+            mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
+        } else if (id == R.id.action_donateL) {
+            ITEM_SKU = "donatel";
+            mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
+        } else if (id == R.id.action_unlockPortalSim) {
+            ITEM_SKU = "portalsimunlock";
+            mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
         }
 
         return super.onOptionsItemSelected(item);
@@ -132,5 +193,61 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
+        @Override
+        public void onIabPurchaseFinished(IabResult result, Purchase info) {
+            if (result.isFailure()) {
+                //TODO: Add error handler
+            } else if (info.getSku().equals(ITEM_SKU) && !(info.getSku().equals("portalsimunlock"))) {
+                consumeItem();
+                //TODO: Add appropriate message
+                Toast.makeText(MainActivity.this, "sänk you", Toast.LENGTH_SHORT).show();
+            } else if (info.getSku().equals(("portalsumunlock"))) {
+                //TODO: Add appropriate message
+                Toast.makeText(MainActivity.this, "portal sim unlocked", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
+
+    public void consumeItem() {
+        mHelper.queryInventoryAsync(mReceivedInventoryListener);
+    }
+
+    IabHelper.QueryInventoryFinishedListener mReceivedInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+        @Override
+        public void onQueryInventoryFinished(IabResult result, Inventory inv) {
+            if (result.isFailure()) {
+                //TODO: Handle error
+            } else {
+                mHelper.consumeAsync(inv.getPurchase(ITEM_SKU), mConsumeFinishedListener);
+            }
+        }
+    };
+
+    IabHelper.OnConsumeFinishedListener mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
+        @Override
+        public void onConsumeFinished(Purchase purchase, IabResult result) {
+            if (result.isSuccess()) {
+                Toast.makeText(MainActivity.this, "Donation consumed", Toast.LENGTH_SHORT).show();
+            } else {
+                //TODO: Handle error
+            }
+        }
+    };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mHelper != null) mHelper.dispose();
+        mHelper = null;
     }
 }
