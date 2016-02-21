@@ -5,8 +5,6 @@
     tools:context="com.colinries.guide.ItemActivity"
     android:orientation="horizontal">
 
-    <!-- TODO: Add introduction for items -->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

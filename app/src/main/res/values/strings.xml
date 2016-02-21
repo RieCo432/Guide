@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">Guide</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -314,7 +314,7 @@
     <string name="purifier_description">To get the Purifier medal, you need to destroy resonators with XMPs.</string>
     <string name="purifier_notes">The different stages of the Purifier medal:\nBronze: 2.000\nSilver: 10.000\nGold: 30.000\nPlatinum: 100.000\nOnyx: 300.000</string>
 
-    <string name="recharger_description">To get the Recharger medal, you need to recharge portals. This can be done by going into your inventory, selecting "Portal keys" and recharging any portal that isn't fully charged yet.</string>
+    <string name="recharger_description">To get the Recharger medal, you need to recharge portals. This can be done by going into your inventory, selecting \"Portal keys\" and recharging any portal that isn\'t fully charged yet.</string>
     <string name="recharger_notes">The different stages of the Recharger medal:\nBronze: 100.000\nSilver: 1.000.000\nGold: 300.000\nPlatinum: 10.000.000\nOnyx: 25.000.000</string>
 
     <string name="sojourner_description">To get the Sojourner medal, you need to hack any portal in a period of 24 hours, for a given time.</string>
@@ -333,5 +333,17 @@
     <string name="aided_ada_description">Ada is the name of a character in the storyline. You were able to get this badge at an event where Ada was present.</string>
     <string name="aided_ada_notes">You are not able to receive this badge anymore, unless you have a valid passcode.</string>
 
+    <string name="action_submit_faq">Submit Question</string>
+    <string name="submit_a_question">Question Submission</string>
+    <string name="choose_email_app">Choose email client</string>
+    <string name="question_submission_email">faq.guide@colinries.com</string>
+    <string name="support_email">support@colinries.com</string>
+    <string name="guide_support">Support (Guide)</string>
+    <string name="feedback_email">feedback@colinries.com</string>
+    <string name="guide_feedback">Feedback (Guide)</string>
+    <string name="unlockPortalSim">Unlock Portal Sim</string>
+    <string name="donateS">Donate S</string>
+    <string name="donateM">Donate M</string>
+    <string name="donateL">Donate L</string>
 
 </resources>
