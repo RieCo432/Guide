@@ -6,4 +6,25 @@
         android:orderInCategory="100"
         android:title="@string/action_submit_faq"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_unlockPortalSim"
+        android:orderInCategory="50"
+        android:title="@string/unlockPortalSim"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_donateS"
+        android:orderInCategory="200"
+        android:title="@string/donateS"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_donateM"
+        android:orderInCategory="200"
+        android:title="@string/donateM"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_donateL"
+        android:orderInCategory="200"
+        android:title="@string/donateL"
+        app:showAsAction="never"/>
+
 </menu>

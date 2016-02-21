@@ -1,8 +1,19 @@
 package com.colinries.guide;
 
+import android.app.Instrumentation;
+import android.app.Instrumentation.ActivityResult;
+import android.app.PendingIntent;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
+import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,8 +24,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.android.vending.billing.IInAppBillingService;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static String mPortalSimUnlockPrice;
+    public static String mDonateSPrice;
+    public static String mDonateMPrice;
+    public static String mDonateLPrice;
+
+    public final String mPortalSimUnlockId = "portalsimunlock";
+    public String mIdToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -37,6 +66,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
         setTitle(getString(R.string.main));
 
+        Intent serviceIntent = new Intent("com.android.vending.billing.InAppBillingService.BIND");
+        serviceIntent.setPackage("com.android.vending");
+        bindService(serviceIntent, mServiceConn, Context.BIND_AUTO_CREATE);
+
+        if (!sharedPreferences.getString("APP_ID_TOKEN", "NULL").equals("NULL")) {
+            mIdToken = sharedPreferences.getString("APP_ID_TOKEN", "NULL");
+        } else {
+            mIdToken = UUID.randomUUID().toString();
+            sharedPreferences.edit().putString("APP_ID_TOKEN", mIdToken).apply();
+        }
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ArrayList<String> skuList = new ArrayList<>();
+                skuList.add(mPortalSimUnlockId);
+                skuList.add("donateS");
+                skuList.add("donateM");
+                skuList.add("donateL");
+                Bundle querySkus = new Bundle();
+                querySkus.putStringArrayList("ITEM_ID_LIST", skuList);
+
+                try {
+                    Bundle skuDetails = mService.getSkuDetails(3, getPackageName(), "inapp", querySkus);
+
+                    int response = skuDetails.getInt("RESPONSE_CODE");
+                    if (response == 0) {
+                        ArrayList<String> responseList = skuDetails.getStringArrayList("DETAILS_LIST");
+
+                        assert responseList != null;
+                        for (String thisResponse : responseList) {
+                            JSONObject object = new JSONObject(thisResponse);
+                            String sku = object.getString("productId");
+                            String price = object.getString("price");
+                            switch (sku) {
+                                case mPortalSimUnlockId:
+                                    mPortalSimUnlockPrice = price;
+                                    break;
+                                case "donateS":
+                                    mDonateSPrice = price;
+                                    break;
+                                case "donateM":
+                                    mDonateMPrice = price;
+                                    break;
+                                case "donateL":
+                                    mDonateLPrice = price;
+                                    break;
+                            }
+
+                        }
+                    }
+
+                } catch (RemoteException | JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
 
     }
 
@@ -74,6 +162,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent.createChooser(intent, getString(R.string.choose_email_app));
             startActivity(intent);
             return true;
+        } else if (id == R.id.action_unlockPortalSim) {
+            try {
+                Bundle buyIntentBundle = mService.getBuyIntent(3, getPackageName(), mPortalSimUnlockId, "inapp", mIdToken);
+                PendingIntent pendingIntent = buyIntentBundle.getParcelable("BUY_INTENT");
+                assert pendingIntent != null;
+                startIntentSenderForResult(pendingIntent.getIntentSender(), 1001, new Intent(), Integer.valueOf("0"), Integer.valueOf("0"), Integer.valueOf("0"));
+                Toast.makeText(this, "worked", Toast.LENGTH_LONG).show();
+            } catch (RemoteException | IntentSender.SendIntentException e) {
+                e.printStackTrace();
+            }
         }
 
         return super.onOptionsItemSelected(item);
@@ -133,4 +231,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    IInAppBillingService mService;
+
+    ServiceConnection mServiceConn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            mService = IInAppBillingService.Stub.asInterface(service);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mService = null;
+        }
+    };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mService != null) {
+            unbindService(mServiceConn);
+        }
+    }
+
 }
