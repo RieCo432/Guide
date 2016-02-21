@@ -228,9 +228,29 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_initio) {
 
+            badge_name.setText(getString(R.string.initio));
+            badge_image.setImageResource(R.mipmap.badge_initio);
+            badge_description.setText(getString(R.string.initio_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.initio_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_innovator) {
 
         } else if (id == R.id.nav_interitus) {
+
+            badge_name.setText(getString(R.string.interitus));
+            badge_image.setImageResource(R.mipmap.badge_interitus);
+            badge_description.setText(getString(R.string.interitus_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.interitus_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_liberator) {
 
