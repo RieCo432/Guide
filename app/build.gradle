@@ -23,6 +23,7 @@ android {
             buildConfigField "String", "versionDate", getDate()
         }
     }
+    sourceSets { main { java.srcDirs = ['src/main/java', 'src/main/java/util'] } }
 }
 
 def getDate() {
