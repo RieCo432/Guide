@@ -68,14 +68,10 @@
     <string name="purifier">Purifier</string>
     <string name="recharger">Recharger</string>
     <string name="recursion">Recursion</string>
-    <string name="shonin">Shōnin</string>
     <string name="sojourner">Sojourner</string>
     <string name="specops">SpecOps</string>
-    <string name="stellavyctory">Stella Vyctory</string>
-    <string name="susannamoyer">Susanna Moyer</string>
     <string name="translator">Translator</string>
     <string name="trekker">Trekker</string>
-    <string name="vanguard">Vanguard</string>
 
     <string name="portalsimulator">Portal Simulator</string>
     <string name="portalsim">Portal Sim</string>
@@ -348,6 +344,32 @@
     \nNashville, Tennessee, USA (S)
     \nFt Collins, Colorado, USA (S) </string>
 
+    <string name="shonin">Shōnin</string>
+    <string name="shonin_description">The Shōnin Anomaly Badge was awarded only to people who made a contribution on the Shōnin Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="shonin_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n21st February 2015:
+    \nAustin, Texas, USA (P)
+    \nLas Vegas, Nevada, USA (S)
+    \nAtlanta, Georgia, USA (S)
+    \nMedellin, Colombia (S)
+    \n\nFlorence, Italy (P)
+    \nBrno, Czech Republic (S)
+    \nAlexandria, Egypt (S)
+    \nBilbao, Spain (S)
+    \n\n28th March 2015:
+    \nPasadena, California, USA (P)
+    \nLima, Peru (S)
+    \nDenver, Colorado, USA (S)
+    \nOrlando, Florida, USA (S)
+    \n\nHanover, Germany (P)
+    \nCardiff, United Kingdom (S)
+    \nReykjavik, Iceland (S)
+    \nYekaterinburg, Russia (S)
+    \n\nKyoto, Japan (P)
+    \nAdelaide, Australia (S)
+    \nChristchurch, New Zealand (S)
+    \nGuangzhou, China (S) </string>
+
 
     <string name="builder_description">To get the Builder medal, you need to deploy or upgrade resonators</string>
     <string name="builder_notes">The different stages of the Builder medal:\nBronze: 2.000\nSilver: 10.000\nGold: 30.000\nPlatinum: 100.000\nOnyx: 200.000</string>
@@ -402,7 +424,7 @@
 
     <string name="founder">Founder</string>
     <string name="founder_description">The Founder badge is one of the oldest, non-tiered badges. Players received this badge in recognition of their contribution during the early days of Ingress. To get this badge, agents had to be Level 5 or more at December 14th 2013.</string>
-    <string name="founder_notes">You can not get this badge anymore. That's why the players who own it are very proud of it.</string>
+    <string name="founder_notes">You can not get this badge anymore. That's why the players who own it since the beginning of Ingress are very proud of it.</string>
 
     <string name="hankjohnson">Hank Johnson</string>
     <string name="hankjohnson_description">For this badge you had to meet Hank Johnson, although this fact is unconfirmed. You were able to meet him at the Shōnin anomaly in Hannover, Germany in March 28th 2015.</string>
@@ -414,7 +436,8 @@
 
     <string name="innovator">Innovator</string>
     <string name="innovator_description">The Innovator badge is the second Founder. It has been released on November 15th 2014, to every player with at least level 3. It rewards the players which have made a contribution during the first 2 years with a good looking medal.</string>
-    <string name="innovator_notes"> </string>
+    <string name="innovator_notes">The different stages of the Innovator medal are:
+    \n\nBronze: Level 3\nSilver: Level 9\nGold: Level 11\nPlatinum: Level 13\nOnyx (Black): Level 15</string>
 
     <string name="missionday">Mission Day</string>
     <string name="missionday_description">The Mission Day badge is earned by contributing to a bunch of missions after the official day of an anomaly. These missions are mostly done in a group of people. The Mission Day medal can be gained after every anomaly in will stay the same.</string>
@@ -425,6 +448,22 @@
     <string name="nl1331_notes">Unfortunately we have no idea if this badge is still available. Sure that on ebay or other online markets you may buy them, but there is no information of another visit of the NIA van.</string>
     <!--Add image NIA van-->
 
+    <string name="stellavyctory">Stella Vyctory</string>
+    <string name="stellavyctory_description">Stella Vyctory is a character in Ingress like Hank Johnson. This badge bas distributed at the Hanover anomaly (Shonin) to people who chose a line. </string>
+    <string name="stellavyctory_notes">As many other badges, you can not get this badge anymore unless you find a valid passcode.</string>
+
+    <string name="susannamoyer">Susanna Moyer</string>
+    <string name="susannamoyer_description">Susanna Moyer is the main investigative journalist. She appears in almost every Media reports and emails from Ingress. Since there isso much about her, see this link for more, detailed information: https://niantic.schlarp.com/investigation:characters:susanna_moyer</string>
+    <string name="susannamoyer_notes">As many other badges, you can not get this badge anymore unless you find a valid passcode.</string>
+
+    <string name="vanguard">Vanguard</string>
+    <string name="vanguard_description">The Vanguard badge was awarded only to people who reached at least level 3 at the 1st December 2015. It is to reward people for playing Ingress in year 3. </string>
+    <string name="vanguard_notes">The different stages of the Innovator medal are:
+    \n\nBronze: Level 3\nSilver: Level 9\nGold: Level 13\nPlatinum: Level 15\nOnyx (Black): Level 16\n\n As you may have recognised, this medal has higher ranks than its previous one, the Innovator.</string>
+
+    <string name="verified">Verified</string>
+    <string name="verified_description">When you reach level 2 you'll be asked to enter a verification code that will be sent to you via SMS to verify that you are, in fact, you. Once that's done you'll automatically get the 'Verified' badge and your inventory space will be expanded from 200 to 2000 items.</string>
+    <string name="verified_notes"> </string>
 
     <string name="action_submit_faq">Submit Question</string>
     <string name="submit_a_question">Question Submission</string>
