@@ -60,31 +60,19 @@
     <string name="builder">Builder</string>
     <string name="connector">Connector</string>
     <string name="engineer">Engineer</string>
-    <string name="eve">Eve</string>
     <string name="explorer">Explorer</string>
-    <string name="founder">Founder</string>
     <string name="hacker">Hacker</string>
-    <string name="hankjohnson">Hank Johnson</string>
     <string name="illuminator">Illuminator</string>
-    <string name="initio">Initio</string>
-    <string name="innovator">Innovator</string>
-    <string name="interitus">Interitus</string>
     <string name="liberator">Liberator</string>
     <string name="mindcontroller">Mind Controller</string>
-    <string name="missionday">Mission Day</string>
-    <string name="nl1331">NL-1331</string>
-    <string name="persepolis">Persepolis</string>
     <string name="purifier">Purifier</string>
     <string name="recharger">Recharger</string>
     <string name="recursion">Recursion</string>
-    <string name="shonin">Shōnin</string>
     <string name="sojourner">Sojourner</string>
     <string name="specops">SpecOps</string>
-    <string name="stellavyctory">Stella Vyctory</string>
-    <string name="susannamoyer">Susanna Moyer</string>
     <string name="translator">Translator</string>
     <string name="trekker">Trekker</string>
-    <string name="vanguard">Vanguard</string>
+
     <string name="portalsimulator">Portal Simulator</string>
     <string name="portalsim">Portal Sim</string>
     <string name="select_resonators">Select Resonators</string>
@@ -120,6 +108,7 @@
     <string name="portalOutgoingLinks">Outgoing Links</string>
     <string name="portalForce">Force</string>
     <string name="energy">Energy</string>
+
     <string name="resonator_description">Resonators are deployed on a portal in order to capture it or upgrade existing resonators.</string>
     <string name="resonator_notes">There\'s a limit of resonators of one level a player can deploy on one portal:\n1x L8\n1x L7\n2x L6\n2x L5\n4x L4\n4x L3\n4x L2\n8x L1</string>
     <string name="xmp_description">XMPs are weapons used to attack enemy portals. XMP\'s from different levels have different ranges of attack and higher potential damage.</string>
@@ -287,6 +276,101 @@
     \nGothenburg, Sweden (S)
     \nRiga, Latvia (S) </string>
 
+    <string name="interitus">Helios</string>
+    <string name="interitus_description">The Interitus Anomaly Badge was awarded only to people who made a contribution on the Interitus Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="interitus_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n12th April 2014:
+    \nAmsterdam, The Netherlands (P)
+    \nGlasgow, United Kingdom (S)
+    \nMalaga, Spain (S)
+    \n\n26th April 2014
+    \nLondon, United Kingdom (P)
+    \nFlagstaff, Arizona, USA (P)
+    \nFrankfurt, Germany (S)
+    \nStockholm, Sweden (S)
+    \nColorado Springs, Colorado, USA (S)
+    \nSalt Lake City, Utah, USA (S)
+    \n\n10th May 2014
+    \nIshinomaki, Japan (P)
+    \nSanta Fe, New Mexico (P)
+    \nBeijing, China (S)
+    \nSeoul, South Korea (S)
+    \nHelena, Montana (S)
+    \nMadison, Alabama (S)
+    \n\n17th May 2014
+    \nMelbourne, Australia (P)
+    \nKansas City, Missouri (P)
+    \nAuckland, New Zealand (S)
+    \nBrisbane, Australia (S)
+    \nCheyenne, Wyoming, USA (S)
+    \nSioux Falls, South Dakota (S)
+    \n\n7th June 2014
+    \nSantiago, Chile (P)
+    \nCincinnati, Ohio (P)
+    \nSan Jose, California, USA (S)
+    \nSan Juan, Puerto Rico (S)
+    \nAsheville, North Carolina (S)
+    \nBirmingham, England (S)
+    \n\n21st June 2014:
+    \nKrakow, Poland (P)
+    \nGettysburg, Pennsylvania (P)
+    \nBergen, Norway (S)
+    \nSt Petersburg, Russia(S)
+    \nHoboken, New Jersey (S)
+    \nJacksonville, Florida, USA (S)</string>
+
+    <string name="persepolis">Persepolis</string>
+    <string name="persepolis_description">The Persepolis Anomaly Badge was awarded only to people who made a contribution on the Persepolis Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="persepolis_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n30th May 2015:
+    \nBratislava, Slovakia (P)
+    \nCovilhã, Portugal (S)
+    \nThessaloniki, Greece (S)
+    \nBari, Italy (S)
+    \n\nWashington, District of Columbia, USA (P)
+    \nPhoenix, Arizona, USA (S)
+    \nToronto, Canada (S)
+    \nBuenos Aires, Argentina (S)
+    \n\n20th June 2015:
+    \nUtrecht, The Netherlands (P)
+    \nLiverpool, United Kingdom (S)
+    \nPoznan, Poland (S)
+    \nHelsinki, Finland (S)
+    \n\nTohoku, Japan (P)
+    \nJakarta, Indonesia (S)
+    \nPerth, Australia (S)
+    \n\nPortland, Oregon, USA (P)
+    \nMilwaukee, Wisconsin, USA (S)
+    \nNashville, Tennessee, USA (S)
+    \nFt Collins, Colorado, USA (S) </string>
+
+    <string name="shonin">Shōnin</string>
+    <string name="shonin_description">The Shōnin Anomaly Badge was awarded only to people who made a contribution on the Shōnin Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="shonin_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n21st February 2015:
+    \nAustin, Texas, USA (P)
+    \nLas Vegas, Nevada, USA (S)
+    \nAtlanta, Georgia, USA (S)
+    \nMedellin, Colombia (S)
+    \n\nFlorence, Italy (P)
+    \nBrno, Czech Republic (S)
+    \nAlexandria, Egypt (S)
+    \nBilbao, Spain (S)
+    \n\n28th March 2015:
+    \nPasadena, California, USA (P)
+    \nLima, Peru (S)
+    \nDenver, Colorado, USA (S)
+    \nOrlando, Florida, USA (S)
+    \n\nHanover, Germany (P)
+    \nCardiff, United Kingdom (S)
+    \nReykjavik, Iceland (S)
+    \nYekaterinburg, Russia (S)
+    \n\nKyoto, Japan (P)
+    \nAdelaide, Australia (S)
+    \nChristchurch, New Zealand (S)
+    \nGuangzhou, China (S) </string>
+
+
     <string name="builder_description">To get the Builder medal, you need to deploy or upgrade resonators</string>
     <string name="builder_notes">The different stages of the Builder medal:\nBronze: 2.000\nSilver: 10.000\nGold: 30.000\nPlatinum: 100.000\nOnyx: 200.000</string>
 
@@ -329,9 +413,57 @@
     <string name="trekker_description">To get the Trekker medal, you need to move around. Alot.</string>
     <string name="trekker_notes">The different stages of the Trekker medal:\nBronze: 10\nSilver: 100\nGold: 300\nPlatinum: 10.000\nOnyx: 2.500</string>
 
+
     <string name="aided_ada">Aided Ada</string>
     <string name="aided_ada_description">Ada is the name of a character in the storyline. You were able to get this badge at an event where Ada was present.</string>
     <string name="aided_ada_notes">You are not able to receive this badge anymore, unless you have a valid passcode.</string>
+
+    <string name="eve">Eve</string>
+    <string name="eve_description">The EVE Medal is similar to the Recruiter medal. It was introduced in July 2014 and to get it, agents had to recruit at least 3 more agents in a timespan of 20 days. Another difference to the Recruiter badge: You've only received the EVE badge when recruitng iPhone agents.</string>
+    <string name="eve_notes">As mentioned previously, you are not able to get this badge anymore.</string>
+
+    <string name="founder">Founder</string>
+    <string name="founder_description">The Founder badge is one of the oldest, non-tiered badges. Players received this badge in recognition of their contribution during the early days of Ingress. To get this badge, agents had to be Level 5 or more at December 14th 2013.</string>
+    <string name="founder_notes">You can not get this badge anymore. That's why the players who own it since the beginning of Ingress are very proud of it.</string>
+
+    <string name="hankjohnson">Hank Johnson</string>
+    <string name="hankjohnson_description">For this badge you had to meet Hank Johnson, although this fact is unconfirmed. You were able to meet him at the Shōnin anomaly in Hannover, Germany in March 28th 2015.</string>
+    <string name="hankjohnson_notes"> </string>
+
+    <string name="initio">Initio</string>
+    <string name="initio_description">The Initio Badge was awarded only to people who bought a t-shirt during the Interitus Anomaly series. </string>
+    <string name="initio_notes">You are not able to get this badge, unless you have a valid passcode.</string>
+
+    <string name="innovator">Innovator</string>
+    <string name="innovator_description">The Innovator badge is the second Founder. It has been released on November 15th 2014, to every player with at least level 3. It rewards the players which have made a contribution during the first 2 years with a good looking medal.</string>
+    <string name="innovator_notes">The different stages of the Innovator medal are:
+    \n\nBronze: Level 3\nSilver: Level 9\nGold: Level 11\nPlatinum: Level 13\nOnyx (Black): Level 15</string>
+
+    <string name="missionday">Mission Day</string>
+    <string name="missionday_description">The Mission Day badge is earned by contributing to a bunch of missions after the official day of an anomaly. These missions are mostly done in a group of people. The Mission Day medal can be gained after every anomaly in will stay the same.</string>
+    <string name="missionday_notes"> </string>
+
+    <string name="nl1331">NL-1331</string>
+    <string name="nl1331_description">What is it all about those NL-1331 badges? Where do people get them from?\n This badge can only be acquired when being at the right time at the right spot. A special van of the NIA group may come to your town and hand them out.</string>
+    <string name="nl1331_notes">Unfortunately we have no idea if this badge is still available. Sure that on ebay or other online markets you may buy them, but there is no information of another visit of the NIA van.</string>
+    <!--Add image NIA van-->
+
+    <string name="stellavyctory">Stella Vyctory</string>
+    <string name="stellavyctory_description">Stella Vyctory is a character in Ingress like Hank Johnson. This badge bas distributed at the Hanover anomaly (Shonin) to people who chose a line. </string>
+    <string name="stellavyctory_notes">As many other badges, you can not get this badge anymore unless you find a valid passcode.</string>
+
+    <string name="susannamoyer">Susanna Moyer</string>
+    <string name="susannamoyer_description">Susanna Moyer is the main investigative journalist. She appears in almost every Media reports and emails from Ingress. Since there isso much about her, see this link for more, detailed information: https://niantic.schlarp.com/investigation:characters:susanna_moyer</string>
+    <string name="susannamoyer_notes">As many other badges, you can not get this badge anymore unless you find a valid passcode.</string>
+
+    <string name="vanguard">Vanguard</string>
+    <string name="vanguard_description">The Vanguard badge was awarded only to people who reached at least level 3 at the 1st December 2015. It is to reward people for playing Ingress in year 3. </string>
+    <string name="vanguard_notes">The different stages of the Innovator medal are:
+    \n\nBronze: Level 3\nSilver: Level 9\nGold: Level 13\nPlatinum: Level 15\nOnyx (Black): Level 16\n\n As you may have recognised, this medal has higher ranks than its previous one, the Innovator.</string>
+
+    <string name="verified">Verified</string>
+    <string name="verified_description">When you reach level 2 you'll be asked to enter a verification code that will be sent to you via SMS to verify that you are, in fact, you. Once that's done you'll automatically get the 'Verified' badge and your inventory space will be expanded from 200 to 2000 items.</string>
+    <string name="verified_notes"> </string>
 
     <string name="action_submit_faq">Submit Question</string>
     <string name="submit_a_question">Question Submission</string>

@@ -174,6 +174,16 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_eve) {
 
+            badge_name.setText(getString(R.string.eve));
+            badge_image.setImageResource(R.mipmap.badge_eve);
+            badge_description.setText(getString(R.string.eve_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_playing));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.eve_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_explorer) {
 
             badge_name.setText(getString(R.string.explorer));
@@ -188,6 +198,16 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_founder) {
 
+            badge_name.setText(getString(R.string.founder));
+            badge_image.setImageResource(R.mipmap.badge_founder);
+            badge_description.setText(getString(R.string.founder_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_playing));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.founder_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_hacker) {
 
             badge_name.setText(getString(R.string.hacker));
@@ -201,6 +221,16 @@ public class BadgesActivity extends AppCompatActivity
             badge_iq_block.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_hankjohnson) {
+
+            badge_name.setText(getString(R.string.hankjohnson));
+            badge_image.setImageResource(R.mipmap.badge_hankjohnson);
+            badge_description.setText(getString(R.string.hankjohnson_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_playing));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.hankjohnson_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_helios) {
 
@@ -228,9 +258,39 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_initio) {
 
+            badge_name.setText(getString(R.string.initio));
+            badge_image.setImageResource(R.mipmap.badge_initio);
+            badge_description.setText(getString(R.string.initio_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.initio_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_innovator) {
 
+            badge_name.setText(getString(R.string.innovator));
+            badge_image.setImageResource(R.mipmap.badge_innovator);
+            badge_description.setText(getString(R.string.innovator_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_playing));
+            badge_variations.setText(getString(R.string.badge_variations_full));
+            badge_notes.setText(getString(R.string.innovator_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_interitus) {
+
+            badge_name.setText(getString(R.string.interitus));
+            badge_image.setImageResource(R.mipmap.badge_interitus);
+            badge_description.setText(getString(R.string.interitus_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.interitus_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_liberator) {
 
@@ -258,9 +318,39 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_missionday) {
 
+            badge_name.setText(getString(R.string.missionday));
+            badge_image.setImageResource(R.mipmap.badge_missionday);
+            badge_description.setText(getString(R.string.missionday_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.missionday_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_nl1331) {
 
+            badge_name.setText(getString(R.string.nl1331));
+            badge_image.setImageResource(R.mipmap.badge_nl1331);
+            badge_description.setText(getString(R.string.nl1331_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.nl1331_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_persepolis) {
+
+            badge_name.setText(getString(R.string.persepolis));
+            badge_image.setImageResource(R.mipmap.badge_persepolis);
+            badge_description.setText(getString(R.string.persepolis_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.persepolis_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_purifier) {
 
@@ -288,7 +378,27 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_recursion) {
 
+            badge_name.setText(getString(R.string.purifier));
+            badge_image.setImageResource(R.mipmap.badge_purifier);
+            badge_description.setText(getString(R.string.purifier_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_playing));
+            badge_variations.setText(getString(R.string.badge_variations_full));
+            badge_notes.setText(getString(R.string.purifier_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_shonin) {
+
+            badge_name.setText(getString(R.string.shonin));
+            badge_image.setImageResource(R.mipmap.badge_shonin);
+            badge_description.setText(getString(R.string.shonin_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.shonin_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_sojourner) {
 
@@ -316,7 +426,27 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_stellavyctory) {
 
+            badge_name.setText(getString(R.string.stellavyctory));
+            badge_image.setImageResource(R.mipmap.badge_stellavyctory);
+            badge_description.setText(getString(R.string.stellavyctory_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.stellavyctory_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_susannamoyer) {
+
+            badge_name.setText(getString(R.string.susannamoyer));
+            badge_image.setImageResource(R.mipmap.badge_susannamoyer);
+            badge_description.setText(getString(R.string.susannamoyer_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.susannamoyer_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
 
         } else if (id == R.id.nav_translator) {
 
@@ -344,7 +474,27 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_vanguard) {
 
+            badge_name.setText(getString(R.string.vanguard));
+            badge_image.setImageResource(R.mipmap.badge_vanguard);
+            badge_description.setText(getString(R.string.vanguard_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_playing));
+            badge_variations.setText(getString(R.string.badge_variations_full));
+            badge_notes.setText(getString(R.string.vanguard_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
         } else if (id == R.id.nav_verified) {
+
+            badge_name.setText(getString(R.string.verified));
+            badge_image.setImageResource(R.mipmap.badge_verified);
+            badge_description.setText(getString(R.string.verified_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_playing));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.verified_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
 
         }
 
