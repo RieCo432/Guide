@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 public class FAQFragment extends Fragment {
 
     private static final String URL = "http://colinries.com/guide/faq.xml";
@@ -51,4 +54,26 @@ public class FAQFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();}
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final Tracker tracker = ((Guide) getActivity().getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        final Tracker tracker = ((Guide) getActivity().getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
+    }
 }

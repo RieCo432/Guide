@@ -1,19 +1,18 @@
 package com.colinries.guide;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +43,7 @@ public class AboutFragment extends Fragment {
                 {getString(R.string.app_name), getString(R.string.subheader)},
                 {getString(R.string.version), versionName},
                 {getString(R.string.build), versionCode},
-                {getString(R.string.builddate), versionDate},
+                {getString(R.string.build_date), versionDate},
                 {getString(R.string.developers), getString(R.string.developers_names)},
                 {getString(R.string.copyright), getString(R.string.copyright_label)}
         };
@@ -85,5 +84,27 @@ public class AboutFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final Tracker tracker = ((Guide) getActivity().getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        final Tracker tracker = ((Guide) getActivity().getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
     }
 }

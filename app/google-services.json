@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_id": "guide-1235",
+    "project_number": "127522202003",
+    "name": "Guide"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127522202003:android:2cb702c4706a7295",
+        "client_id": "android:com.colinries.guide",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.colinries.guide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-47100626-7"
+          }
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
