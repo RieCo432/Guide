@@ -9,12 +9,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 public class BadgesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -98,7 +102,10 @@ public class BadgesActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        //TODO: Add all navigation entries and their respective fragments
+        Tracker t = ((Guide) getApplication()).getTracker(
+                Guide.TrackerName.APP_TRACKER);
+
+        //TODO: Verify all enzries
 
         if (id == R.id.nav_abaddon) {
 
@@ -112,6 +119,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_ada) {
 
             badge_name.setText(getString(R.string.aided_ada));
@@ -123,6 +135,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_builder) {
 
@@ -136,6 +153,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_connector) {
 
             badge_name.setText(getString(R.string.connector));
@@ -147,6 +169,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_darsana) {
 
@@ -160,6 +187,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_engineer) {
 
             badge_name.setText(getString(R.string.engineer));
@@ -171,6 +203,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_eve) {
 
@@ -184,6 +221,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_explorer) {
 
             badge_name.setText(getString(R.string.explorer));
@@ -195,6 +237,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_founder) {
 
@@ -208,6 +255,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_hacker) {
 
             badge_name.setText(getString(R.string.hacker));
@@ -219,6 +271,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_hankjohnson) {
 
@@ -232,6 +289,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_helios) {
 
             badge_name.setText(getString(R.string.helios));
@@ -243,6 +305,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_illuminator) {
 
@@ -256,6 +323,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_initio) {
 
             badge_name.setText(getString(R.string.initio));
@@ -267,6 +339,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_innovator) {
 
@@ -280,6 +357,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_interitus) {
 
             badge_name.setText(getString(R.string.interitus));
@@ -291,6 +373,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_liberator) {
 
@@ -304,6 +391,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_mindcontroller) {
 
             badge_name.setText(getString(R.string.mindcontroller));
@@ -315,6 +407,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_missionday) {
 
@@ -328,6 +425,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_nl1331) {
 
             badge_name.setText(getString(R.string.nl1331));
@@ -339,6 +441,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_persepolis) {
 
@@ -352,6 +459,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_purifier) {
 
             badge_name.setText(getString(R.string.purifier));
@@ -363,6 +475,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_recharger) {
 
@@ -376,6 +493,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_recursion) {
 
             badge_name.setText(getString(R.string.purifier));
@@ -387,6 +509,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_shonin) {
 
@@ -400,6 +527,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_sojourner) {
 
             badge_name.setText(getString(R.string.sojourner));
@@ -411,6 +543,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_specops) {
 
@@ -424,6 +561,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_stellavyctory) {
 
             badge_name.setText(getString(R.string.stellavyctory));
@@ -435,6 +577,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_susannamoyer) {
 
@@ -448,6 +595,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_translator) {
 
             badge_name.setText(getString(R.string.translator));
@@ -459,6 +611,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_trekker) {
 
@@ -472,6 +629,11 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_vanguard) {
 
             badge_name.setText(getString(R.string.vanguard));
@@ -483,6 +645,11 @@ public class BadgesActivity extends AppCompatActivity
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_verified) {
 
@@ -496,10 +663,39 @@ public class BadgesActivity extends AppCompatActivity
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
+            Log.i("BadgeIQ", getResources().getResourceName(id));
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final Tracker tracker = ((Guide) getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        final Tracker tracker = ((Guide) getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
     }
 }

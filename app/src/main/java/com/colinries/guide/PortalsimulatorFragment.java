@@ -15,6 +15,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import java.util.Arrays;
 
 
@@ -155,6 +158,14 @@ public class PortalsimulatorFragment extends Fragment {
                     }
                     public void ready(int position) {
 
+                        Tracker t = ((Guide) getActivity().getApplication()).getTracker(
+                                Guide.TrackerName.APP_TRACKER);
+
+                        t.send(new HitBuilders.EventBuilder()
+                                .setCategory("PortalSim")
+                                .setAction("R"+Integer.toString(position))
+                                .build());
+
                         switch (resonatorSlotId) {
                             case R.id.resonatorSlot1:
                                 ResonatorLevels[1] = position;
@@ -244,6 +255,13 @@ public class PortalsimulatorFragment extends Fragment {
 
 
                     public void ready(int n) {
+                        Tracker t = ((Guide) getActivity().getApplication()).getTracker(
+                                Guide.TrackerName.APP_TRACKER);
+
+                        t.send(new HitBuilders.EventBuilder()
+                                .setCategory("PortalSim")
+                                .setAction(mods[n])
+                                .build());
                         switch (modSlotId) {
                             case R.id.modSlot1:
                                 ModsAndRarity[1]=mods[n];
@@ -540,5 +558,27 @@ public class PortalsimulatorFragment extends Fragment {
             }
         }
         return 0;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final Tracker tracker = ((Guide) getActivity().getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        final Tracker tracker = ((Guide) getActivity().getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
     }
 }

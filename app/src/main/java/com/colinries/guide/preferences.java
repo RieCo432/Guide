@@ -5,4 +5,5 @@ package com.colinries.guide;
  */
 public class preferences {
     public static final String APP_ID_TOKEN = "Token to confirm ID for IAPs";
+    public static final String PREMIUM_UNLOCKED = "If premium has been unlocked";
 }

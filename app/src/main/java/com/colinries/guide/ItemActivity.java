@@ -18,6 +18,9 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 public class ItemActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -29,6 +32,8 @@ public class ItemActivity extends AppCompatActivity
     public static TextView item_notes;
     public static LinearLayout item_intro_block;
     public static ScrollView item_iq_block;
+
+    public static Tracker t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,10 +107,18 @@ public class ItemActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Tracker t = ((Guide) this.getApplication()).getTracker(
+                Guide.TrackerName.APP_TRACKER);
+
         if (id == R.id.nav_intro) {
 
             item_iq_block.setVisibility(View.GONE);
             item_intro_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_resonators) {
 
@@ -119,6 +132,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_xmps) {
 
             item_name.setText(getString(R.string.xmp));
@@ -130,6 +148,11 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_ultrastrikes) {
 
@@ -144,6 +167,10 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_adarefactor) {
 
@@ -157,6 +184,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_jarvisvirus) {
 
             item_name.setText(getString(R.string.jarvisvirus));
@@ -168,6 +200,11 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_powercubes) {
 
@@ -181,6 +218,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_portalkey) {
 
             item_name.setText(getString(R.string.portalkey));
@@ -192,6 +234,11 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_shields) {
 
@@ -205,6 +252,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_axashields) {
             item_name.setText(getString(R.string.axashields));
             item_image.setImageResource(R.mipmap.item_shieldaxa);
@@ -215,6 +267,11 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_heatsinks) {
 
@@ -228,6 +285,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_multihacks) {
 
             item_name.setText(getString(R.string.multihacks));
@@ -239,6 +301,11 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_forceamps) {
 
@@ -252,6 +319,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_turrets) {
 
             item_name.setText(getString(R.string.turrets));
@@ -264,6 +336,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_linkamps) {
 
             item_name.setText(getString(R.string.linkamps));
@@ -271,10 +348,15 @@ public class ItemActivity extends AppCompatActivity
             item_description.setText(getString(R.string.linkamp_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full) + "(Rare)\n"+ getString(R.string.item_acquisition_passcodes_only) + "(Very Rare)");
             item_variations.setText(getString(R.string.item_variations_rarity_rare_veryrare));
-            item_notes.setText(getString(R.string.linkamps_notes));
+            item_notes.setText(getString(R.string.linkamp_notes));
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_softbankultralinkamps) {
 
@@ -288,6 +370,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_capsules) {
 
             item_name.setText(getString(R.string.capsules));
@@ -299,6 +386,11 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_mufgcapsules) {
 
@@ -312,6 +404,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_fracker) {
 
             item_name.setText(getString(R.string.fracker));
@@ -323,6 +420,11 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
 
         } else if (id == R.id.nav_keylocker) {
 
@@ -336,6 +438,11 @@ public class ItemActivity extends AppCompatActivity
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
 
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_beacons) {
 
             item_name.setText(getString(R.string.beacons));
@@ -347,10 +454,37 @@ public class ItemActivity extends AppCompatActivity
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
         }
 
     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        final Tracker tracker = ((Guide) getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        final Tracker tracker = ((Guide) getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
+        if (tracker != null) {
+            tracker.setScreenName(getClass().getSimpleName());
+            tracker.send(new HitBuilders.ScreenViewBuilder().build());
+        }
     }
 }

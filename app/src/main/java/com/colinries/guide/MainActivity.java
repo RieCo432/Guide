@@ -1,5 +1,6 @@
 package com.colinries.guide;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -11,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -22,6 +24,8 @@ import com.colinries.guide.util.IabHelper;
 import com.colinries.guide.util.IabResult;
 import com.colinries.guide.util.Inventory;
 import com.colinries.guide.util.Purchase;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.UUID;
 
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/Z+0f1U2B2Jvk1vsEoa+rwZuVZBisvb1Tt0bqELhClou97rnWtobvkf13Cjbnr7qGKfENcuQAikRcZbY6FkLyWEceC5iScew4OK7FFllpbLlZ32dOIXyzgaKZI8zGEIWNbNrRMnGRyTABml63+PAZLW09vPAxJTFO991lhvjnMcWFEq32dtgoHGkzNUrgWJeRV8jiPSakcAqvcStWreZ1uvIJwQLhf4BZdyQ4c8sBEx5QPG/S5sNt1nfF9gZl2ShLEResiugXDJWYgOcmDdUw0BBNvu/411IKOujxR/XXIRHHEAkZA6D6qiJHAPLYbG/6V7GA1Nu8lrrRIbiJqnswIDAQAB";
 
         mHelper = new IabHelper(this, base64EncodedPublicKey);
-        mHelper.enableDebugLogging(true, TAG);
+        mHelper.enableDebugLogging(false, TAG);
 
         mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             @Override
@@ -133,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ITEM_SKU = "donatel";
             mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
         } else if (id == R.id.action_unlockPortalSim) {
-            ITEM_SKU = "portalsimunlock";
+            ITEM_SKU = "premiumunlock";
             mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
         }
 
@@ -147,12 +151,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 
         if (id == R.id.nav_main) {
-            fragmentTransaction.replace(R.id.fragment_container, new HowToFragment()).commit();
-            setTitle(getString(R.string.how_tos));
+            fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
+            setTitle(getString(R.string.main));
 
         } else if (id == R.id.nav_howto) {
             fragmentTransaction.replace(R.id.fragment_container, new HowToFragment()).commit();
@@ -165,8 +169,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, BadgesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_portalsimulator) {
-            fragmentTransaction.replace(R.id.fragment_container, new PortalsimulatorFragment()).commit();
-            setTitle(getString(R.string.portalsimulator));
+            if(sharedPreferences.getBoolean("PREMIUM_UNLOCKED", false)) {
+                fragmentTransaction.replace(R.id.fragment_container, new PortalsimulatorFragment()).commit();
+                setTitle(getString(R.string.portalsimulator));
+            } else {
+                final Tracker t = ((Guide) this.getApplication()).getTracker(
+                        Guide.TrackerName.APP_TRACKER);
+                new AlertDialog.Builder(this)
+                        .setTitle(getString(R.string.premiumunlockneeded))
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setPositiveButton(getString(R.string.buy), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ITEM_SKU = "premiumunlock";
+                                mHelper.launchPurchaseFlow(MainActivity.this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
+                                t.send(new HitBuilders.EventBuilder()
+                                        .setCategory("Premium Unlock")
+                                        .setAction("Accepted")
+                                        .build());
+                            }
+                        })
+                        .setMessage(R.string.dialogpremiuminfo)
+                        .setCancelable(false)
+                        .setNegativeButton(getString(R.string.nothanks), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
+                                setTitle(getString(R.string.main));
+                                t.send(new HitBuilders.EventBuilder()
+                                        .setCategory("Premium Unlock")
+                                        .setAction("Declined")
+                                        .build());
+                            }
+                        }).show();
+            }
         }else if (id == R.id.nav_faq) {
             fragmentTransaction.replace(R.id.fragment_container, new FAQFragment()).commit();
             setTitle(getString(R.string.faq));
@@ -205,15 +241,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
         @Override
         public void onIabPurchaseFinished(IabResult result, Purchase info) {
+            Tracker t = ((Guide) getApplication()).getTracker(
+                    Guide.TrackerName.APP_TRACKER);
             if (result.isFailure()) {
-                //TODO: Add error handler
-            } else if (info.getSku().equals(ITEM_SKU) && !(info.getSku().equals("portalsimunlock"))) {
+                Toast.makeText(MainActivity.this, getString(R.string.purchasefailed), Toast.LENGTH_SHORT).show();
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("Purchase")
+                        .setAction("Failed " + ITEM_SKU)
+                        .build());
+            } else if (info.getSku().equals(ITEM_SKU) && !(info.getSku().equals("premiumunlock"))) {
                 consumeItem();
-                //TODO: Add appropriate message
-                Toast.makeText(MainActivity.this, "sänk you", Toast.LENGTH_SHORT).show();
-            } else if (info.getSku().equals(("portalsumunlock"))) {
-                //TODO: Add appropriate message
-                Toast.makeText(MainActivity.this, "portal sim unlocked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.thankyou), Toast.LENGTH_SHORT).show();
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("Purchase")
+                        .setAction("Successful " + info.getSku())
+                        .build());
+            } else if (info.getSku().equals(("premiumunlock"))) {
+                Toast.makeText(MainActivity.this, getString(R.string.premiumunlocked), Toast.LENGTH_SHORT).show();
+                sharedPreferences.edit().putBoolean("PREMIUM_UNLOCKED", true).apply();
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("Purchase")
+                        .setAction("Successful " + info.getSku())
+                        .build());
             }
         }
     };
@@ -226,7 +275,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         public void onQueryInventoryFinished(IabResult result, Inventory inv) {
             if (result.isFailure()) {
-                //TODO: Handle error
+                Toast.makeText(MainActivity.this, getString(R.string.error), Toast.LENGTH_SHORT).show();
             } else {
                 mHelper.consumeAsync(inv.getPurchase(ITEM_SKU), mConsumeFinishedListener);
             }
@@ -239,7 +288,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if (result.isSuccess()) {
                 Toast.makeText(MainActivity.this, "Donation consumed", Toast.LENGTH_SHORT).show();
             } else {
-                //TODO: Handle error
+                Toast.makeText(MainActivity.this, getString(R.string.errorconsumingitem), Toast.LENGTH_SHORT).show();
             }
         }
     };
