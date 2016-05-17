@@ -9,4 +9,10 @@
     <dimen name="item_slot_width_height">45dp</dimen>
     <dimen name="item_slot_margin">3dp</dimen>
     <dimen name="item_text_block_margin_bottom">10dp</dimen>
+    <dimen name="portalSimDefaultMargin">10dp</dimen>
+    <dimen name="topBottomResonatorSlotSpacing">55dp</dimen>
+    <dimen name="middleResonatorSlotSpacing">120dp</dimen>
+    <dimen name="IQtextPadding">15dp</dimen>
+    <dimen name="badgeShowcase">216dp</dimen>
+    <dimen name="IQparagrapheTopMargin">28dp</dimen>
 </resources>

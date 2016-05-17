@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
         setTitle(getString(R.string.main));
+        drawer.openDrawer(GravityCompat.START);
 
         /*Intent serviceIntent = new Intent("com.android.vending.billing.InAppBillingService.BIND");
         serviceIntent.setPackage("com.android.vending");
@@ -158,11 +159,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.replace(R.id.fragment_container, new MainFragment()).commit();
             setTitle(getString(R.string.main));
 
-        } else if (id == R.id.nav_howto) {
+        } /*else if (id == R.id.nav_howto) {
             fragmentTransaction.replace(R.id.fragment_container, new HowToFragment()).commit();
             setTitle(getString(R.string.how_tos));
 
-        } else if (id == R.id.nav_items) {
+        }*/ else if (id == R.id.nav_items) {
             Intent intent = new Intent(this, ItemActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_badges) {
