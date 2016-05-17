@@ -64,7 +64,6 @@
     <string name="mindcontroller">Mind Controller</string>
     <string name="purifier">Purifier</string>
     <string name="recharger">Recharger</string>
-    <string name="recursion">Recursion</string>
     <string name="sojourner">Sojourner</string>
     <string name="specops">SpecOps</string>
     <string name="translator">Translator</string>
@@ -314,7 +313,7 @@
     <string name="persepolis">Persepolis</string>
     <string name="persepolis_description">The Persepolis Anomaly Badge was awarded only to people who made a contribution on the Persepolis Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
     <string name="persepolis_notes">You were able to get this badge when contributing to one of the following events:
-    \n\n30th May 2015:
+    \n\n30th May, 2015:
     \nBratislava, Slovakia (P)
     \nCovilhã, Portugal (S)
     \nThessaloniki, Greece (S)
@@ -323,7 +322,7 @@
     \nPhoenix, Arizona, USA (S)
     \nToronto, Canada (S)
     \nBuenos Aires, Argentina (S)
-    \n\n20th June 2015:
+    \n\n20th June, 2015:
     \nUtrecht, The Netherlands (P)
     \nLiverpool, United Kingdom (S)
     \nPoznan, Poland (S)
@@ -335,6 +334,43 @@
     \nMilwaukee, Wisconsin, USA (S)
     \nNashville, Tennessee, USA (S)
     \nFt Collins, Colorado, USA (S) </string>
+
+    <string name="recursion">Recursion</string>
+    <string name="recursion_description">The Recursion Anomaly Badge was awarded only to people who made a contribution on the Abaddon Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="recursion_notes">You were able to get this badge when contributing to one of the following events:
+    \n\nFebruary 15th, 2014
+    \nMiami, Florida, USA (P)
+    \nLouisville, KY, USA (S)
+    \nColumbus, OH, USA (S)
+    \n\nFebruary 22nd, 2014
+    \nBangalore, India (P)
+    \nHyderabad (S)
+    \nNew Delhi, India (S)
+    \n\nMarch 1st, 2014
+    \nNashville, TN, USA (P)
+    \nMobile, AL, USA (S)
+    \nLittle Rock, AK, USA (S)
+    \n\nMarch 8th, 2014
+    \nAustin, TX, USA (P)
+    \nMexico City, Mexico (S)
+    \nSaint Louis, MO, USA (S)
+    \n\nMarch 15th, 2014
+    \nZagreb, Croatia (P)
+    \nTel Aviv, Israel (S)
+    \nCairo, Egypt (S)
+    \nNice, France (S)
+    \nCagliari, Italy (S)
+    \n\nMarch 22nd, 2014
+    \nBoulder, CO, USA (P)
+    \nBoise, ID, USA (S)
+    \nProvo, UT, USA (S)
+    \n\nMarch 29th, 2014
+    \nLos Angeles, CA, USA (P)
+    \nPBerlin, Germany(P)
+    \nSpokane, WA, USA (S)
+    \nOakland, CA, USA (S)
+    \nNantes, France (S)
+    \nBrussels, Belgium (S) </string>
 
     <string name="shonin">Shōnin</string>
     <string name="shonin_description">The Shōnin Anomaly Badge was awarded only to people who made a contribution on the Shōnin Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
@@ -432,7 +468,7 @@
     \n\nBronze: Level 3\nSilver: Level 9\nGold: Level 11\nPlatinum: Level 13\nOnyx (Black): Level 15</string>
 
     <string name="missionday">Mission Day</string>
-    <string name="missionday_description">The Mission Day badge is earned by contributing to a specified amount of special missions on an official Mission Day. These missions are mostly done in a group of people. The Mission Day medal can be gained after every anomaly in will stay the same.</string>
+    <string name="missionday_description">The Mission Day badge is earned by contributing to a specified amount of special missions on an official Mission Day. The Mission Day itself is always the day after the actual anomaly.</string>
     <string name="missionday_notes"> </string>
 
     <string name="nl1331">NL-1331</string>

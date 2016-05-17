@@ -500,12 +500,12 @@ public class BadgesActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_recursion) {
 
-            badge_name.setText(getString(R.string.purifier));
-            badge_image.setImageResource(R.mipmap.badge_purifier);
-            badge_description.setText(getString(R.string.purifier_description));
+            badge_name.setText(getString(R.string.recursion));
+            badge_image.setImageResource(R.mipmap.badge_recursion);
+            badge_description.setText(getString(R.string.recursion_description));
             badge_acquisition.setText(getString(R.string.item_acquisition_playing));
-            badge_variations.setText(getString(R.string.badge_variations_full));
-            badge_notes.setText(getString(R.string.purifier_notes));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.recursion_notes));
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);
