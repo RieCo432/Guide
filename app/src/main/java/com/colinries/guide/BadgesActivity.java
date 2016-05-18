@@ -105,8 +105,6 @@ public class BadgesActivity extends AppCompatActivity
         Tracker t = ((Guide) getApplication()).getTracker(
                 Guide.TrackerName.APP_TRACKER);
 
-        //TODO: Verify all enzries
-
         if (id == R.id.nav_abaddon) {
 
             badge_name.setText(getString(R.string.abaddon));

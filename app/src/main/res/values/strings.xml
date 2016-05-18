@@ -73,7 +73,7 @@
     <string name="portalsim">Portal Sim</string>
     <string name="select_resonators">Select Resonators</string>
     <string name="select_mods">Select Mods</string>
-    <string name="select_links">Links</string>
+    <string name="select_links">Links:</string>
     <string name="portalData">Portal Data</string>
     <string name="level">Level</string>
     <string name="range">Range</string>
@@ -137,7 +137,7 @@
     <string name="softbankultralinkamp_notes">Just as normal link amps, their effect decreases the more you deploy, use our Portal Simulator to calculate their effect on the portal.</string>
     <string name="capsule_description">You can store any item in capsules (except capsules…) but they won\'t free up space in your inventory.</string>
     <string name="capsule_notes">Items in a capsule still count towards the 2000 item limit of your inventory. Be aware that keys stored in a capsule cannot be used to link or recharge portals.</string>
-    <string name="mufgcapsules_description">MUFG capsules are awesome, period. They have made getting very rare items much easier, due to the fact that they duplicate items after a certain time that you\'ve them in.</string>
+    <string name="mufgcapsules_description">MUFG capsules are awesome, period. They have made getting very rare items much easier, due to the fact that they duplicate items after a certain time that you\'ve put them in.</string>
     <string name="mufgcapsule_notes">Items in a MUFG capsule still count towards inventory item limit. In order to make items duplicate, the capsule must have some free slots and your inventory must as well have a few free slots.</string>
     <string name="fracker_description">Frackers are powerups which can be bought in the Store in Ingress. When used on a Portal, they double the hack output for 10 minutes or for 150 hacks, whatever comes first.</string>
     <string name="fracker_notes">Best way to use them is when there are several rare or very rare heatsinks on the portal and when more than 1 or 2 players take advantage of it. Just like any other buyable item, they cannot be dropped or recycled.</string>
