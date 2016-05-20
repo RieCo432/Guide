@@ -515,5 +515,29 @@
     <string name="error">Error!</string>
     <string name="errorconsumingitem">Error Consuming Item!</string>
     <string name="dialogpremiuminfo">You can use the Portal Simulator to simulate different portal configurations and get information like energy, link range… This feature is a premium feature. When you decide to unlock this feature, you\'ll also have every future premium feature that we\'ll release.</string>
+    <string name="level1">Level 1</string>
+    <string name="level2">Level 2</string>
+    <string name="level3">Level 3</string>
+    <string name="level4">Level 4</string>
+    <string name="level5">Level 5</string>
+    <string name="level6">Level 6</string>
+    <string name="level7">Level 7</string>
+    <string name="level8">Level 8</string>
+    <string name="none">None</string>
+    <string name="csh">Common Shield</string>
+    <string name="rsh">Rare Shield</string>
+    <string name="vrsh">Very Rare Shield</string>
+    <string name="axash">AXA Shield</string>
+    <string name="rla">Rare Link Amp</string>
+    <string name="vrla">Very Rare Link Amp</string>
+    <string name="sbula">Softbank Ultra Link</string>
+    <string name="chs">Common Heatsink</string>
+    <string name="rhs">Rare Heatsink</string>
+    <string name="vrhs">Very Rare Heatsink</string>
+    <string name="cmh">Common Multihack</string>
+    <string name="rmh">Rare Multihack</string>
+    <string name="vrmh">Very Rare Multihack</string>
+    <string name="rfa">Rare Force Amp</string>
+    <string name="rt">Rare Turret</string>
 
 </resources>

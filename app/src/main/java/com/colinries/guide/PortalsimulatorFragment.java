@@ -7,9 +7,13 @@ import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -24,16 +28,12 @@ import java.util.Arrays;
 public class PortalsimulatorFragment extends Fragment {
 
     public static int[] ResonatorLevels = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    public static String[] ModsAndRarity = new String[5];
-    public static int resonatorSlotId;
+    public static String[] ModsAndRarity = {null, null, null, null, null};
     public static ImageView[] modSlot;
-    public static SpinnerDialog selectResonatorLevelSpinner;
-    public static SpinnerDialog selectModSpinner;
     public static ImageView[] resonatorSlot;
     public static int[] resonatorImages;
     public static int[] modImages;
-    public static int modSlotId;
-    public static String[] mods = new String[16];
+    public static String[] mods = {null, "csh","rsh","vrsh","axash","rla","vrla","sbula","chs","rhs","vrhs","cmh","rmh","vrmh","rfa","rt"};
 
     public static TextView portal_level;
     public static TextView portal_energy;
@@ -53,8 +53,21 @@ public class PortalsimulatorFragment extends Fragment {
     public static float[] heatSinkFactor = {0f, 0.7f, 0.5f, 0.2f};
     public static int[] multiHackInsulation = {0, 12, 8, 4};
 
+    public static View slotView;
 
+    public static View resonatorSlotView1;
+    public static View resonatorSlotView2;
+    public static View resonatorSlotView3;
+    public static View resonatorSlotView4;
+    public static View resonatorSlotView5;
+    public static View resonatorSlotView6;
+    public static View resonatorSlotView7;
+    public static View resonatorSlotView8;
 
+    public static View modSlotView1;
+    public static View modSlotView2;
+    public static View modSlotView3;
+    public static View modSlotView4;
 
     public PortalsimulatorFragment() {
         // Required empty public constructor
@@ -144,158 +157,777 @@ public class PortalsimulatorFragment extends Fragment {
             }
         });
 
-        View.OnClickListener ResonatorSelectorListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                resonatorSlotId = v.getId();
+        resonatorSlotView1 = layout.findViewById(R.id.resonatorSlot1);
+        resonatorSlotView2 = layout.findViewById(R.id.resonatorSlot2);
+        resonatorSlotView3 = layout.findViewById(R.id.resonatorSlot3);
+        resonatorSlotView4 = layout.findViewById(R.id.resonatorSlot4);
+        resonatorSlotView5 = layout.findViewById(R.id.resonatorSlot5);
+        resonatorSlotView6 = layout.findViewById(R.id.resonatorSlot6);
+        resonatorSlotView7 = layout.findViewById(R.id.resonatorSlot7);
+        resonatorSlotView8 = layout.findViewById(R.id.resonatorSlot8);
 
-                String[] levels = {"Select Level", "1","2","3","4","5","6","7","8"};
+        modSlotView1 = layout.findViewById(R.id.modSlot1);
+        modSlotView2 = layout.findViewById(R.id.modSlot2);
+        modSlotView3 = layout.findViewById(R.id.modSlot3);
+        modSlotView4 = layout.findViewById(R.id.modSlot4);
 
-                selectResonatorLevelSpinner = new SpinnerDialog(getContext(), levels, new SpinnerDialog.DialogListener() {
-                    public void cancelled() {
-                        Log.i("GUIDE:", "cancelled");
+        registerForContextMenu(resonatorSlotView1);
+        registerForContextMenu(resonatorSlotView2);
+        registerForContextMenu(resonatorSlotView3);
+        registerForContextMenu(resonatorSlotView4);
+        registerForContextMenu(resonatorSlotView5);
+        registerForContextMenu(resonatorSlotView6);
+        registerForContextMenu(resonatorSlotView7);
+        registerForContextMenu(resonatorSlotView8);
 
-                    }
-                    public void ready(int position) {
-
-                        Tracker t = ((Guide) getActivity().getApplication()).getTracker(
-                                Guide.TrackerName.APP_TRACKER);
-
-                        t.send(new HitBuilders.EventBuilder()
-                                .setCategory("PortalSim")
-                                .setAction("R"+Integer.toString(position))
-                                .build());
-
-                        switch (resonatorSlotId) {
-                            case R.id.resonatorSlot1:
-                                ResonatorLevels[1] = position;
-                                Log.i("GUIDE", "True");
-                                break;
-                            case R.id.resonatorSlot2:
-                                ResonatorLevels[2] = position;
-                                break;
-                            case R.id.resonatorSlot3:
-                                ResonatorLevels[3] = position;
-                                break;
-                            case R.id.resonatorSlot4:
-                                ResonatorLevels[4] = position;
-                                break;
-                            case R.id.resonatorSlot5:
-                                ResonatorLevels[5] = position;
-                                break;
-                            case R.id.resonatorSlot6:
-                                ResonatorLevels[6] = position;
-                                break;
-                            case R.id.resonatorSlot7:
-                                ResonatorLevels[7] = position;
-                                break;
-                            case R.id.resonatorSlot8:
-                                ResonatorLevels[8] = position;
-                                break;
-                        }
-                        Log.i("GUIDE", "switch complete");
-
-                        updateImages();
-                        updateProperties();
-
-                    }
-                });
-
-                selectResonatorLevelSpinner.show();
-
-                }
-
-            };
-
-        View.OnClickListener ModSelectorListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                modSlotId = v.getId();
-
-                final String[] mods_friendly = {"Select Mod",
-                        "Common Shield",
-                        "Rare Shield",
-                        "Very Rare Shield",
-                        "AXA Shield",
-                        "Rare Link Amp",
-                        "Very Rare Link Amp",
-                        "Softbank Ultra Link",
-                        "Common Heatsink",
-                        "Rare Heatsink",
-                        "Very Rare Heatsink",
-                        "Common Multi Hack",
-                        "Rare Multi Hack",
-                        "Very Rare Multi Hack",
-                        "Force Amp",
-                        "Turret"
-                };
-
-                mods = new String[]{null,
-                        "csh",
-                        "rsh",
-                        "vrsh",
-                        "axash",
-                        "rla",
-                        "vrla",
-                        "sbula",
-                        "chs",
-                        "rhs",
-                        "vrhs",
-                        "cmh",
-                        "rmh",
-                        "vrmh",
-                        "rfa",
-                        "rt"
-                };
-
-                selectModSpinner = new SpinnerDialog(getContext(), mods_friendly, new SpinnerDialog.DialogListener() {
-
-                    public void cancelled() {
-                    }
-
-
-                    public void ready(int n) {
-                        Tracker t = ((Guide) getActivity().getApplication()).getTracker(
-                                Guide.TrackerName.APP_TRACKER);
-
-                        t.send(new HitBuilders.EventBuilder()
-                                .setCategory("PortalSim")
-                                .setAction(mods[n])
-                                .build());
-                        switch (modSlotId) {
-                            case R.id.modSlot1:
-                                ModsAndRarity[1]=mods[n];
-                                break;
-                            case R.id.modSlot2:
-                                ModsAndRarity[2]=mods[n];
-                                break;
-                            case R.id.modSlot3:
-                                ModsAndRarity[3]=mods[n];
-                                break;
-                            case R.id.modSlot4:
-                                ModsAndRarity[4]=mods[n];
-                                break;
-                        }
-                        updateImages();
-                        updateProperties();
-                    }
-
-                });
-
-                selectModSpinner.show();
-
-            }
-        };
-
-        for (int i=1;i<=8;i++) {
-            resonatorSlot[i].setOnClickListener(ResonatorSelectorListener);
-        }
-
-        for (int i=1; i<=4; i++) {
-            modSlot[i].setOnClickListener(ModSelectorListener);
-        }
+        registerForContextMenu(modSlotView1);
+        registerForContextMenu(modSlotView2);
+        registerForContextMenu(modSlotView3);
+        registerForContextMenu(modSlotView4);
 
         return layout;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+
+        if(v.getId()==resonatorSlotView1.getId() || v.getId()==resonatorSlotView2.getId()
+                ||v.getId()==resonatorSlotView3.getId() || v.getId()==resonatorSlotView4.getId()
+                || v.getId()==resonatorSlotView5.getId() || v.getId()==resonatorSlotView6.getId()
+                || v.getId()==resonatorSlotView7.getId() || v.getId()==resonatorSlotView8.getId() ) {
+            inflater.inflate(R.menu.select_resonator_context_menu, menu);
+        } else if(v.getId()==modSlotView1.getId() || v.getId()==modSlotView2.getId()
+            ||v.getId()==modSlotView3.getId() || v.getId()==modSlotView4.getId()) {
+            inflater.inflate(R.menu.select_mod_context_menu, menu);
+        }
+
+        slotView = v;
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        if(slotView.getId() == resonatorSlotView1.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[1] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[1] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[1] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[1] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[1] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[1] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[1] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[1] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[1] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        } else if(slotView.getId() == resonatorSlotView2.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[2] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[2] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[2] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[2] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[2] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[2] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[2] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[2] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[2] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        } else if(slotView.getId() == resonatorSlotView3.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[3] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[3] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[3] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[3] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[3] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[3] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[3] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[3] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[3] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        } else if(slotView.getId() == resonatorSlotView4.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[4] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[4] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[4] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[4] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[4] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[4] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[4] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[4] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[4] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        } else if(slotView.getId() == resonatorSlotView5.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[5] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[5] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[5] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[5] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[5] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[5] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[5] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[5] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[5] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        } else if(slotView.getId() == resonatorSlotView6.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[6] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[6] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[6] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[6] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[6] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[6] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[6] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[6] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[6] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        } else if(slotView.getId() == resonatorSlotView7.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[7] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[7] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[7] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[7] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[7] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[7] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[7] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[7] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[7] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        } else if(slotView.getId() == resonatorSlotView8.getId()) {
+            switch(item.getItemId()) {
+                case R.id.select_none:
+                    ResonatorLevels[8] = 0;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l1:
+                    ResonatorLevels[8] = 1;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l2:
+                    ResonatorLevels[8] = 2;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l3:
+                    ResonatorLevels[8] = 3;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l4:
+                    ResonatorLevels[8] = 4;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l5:
+                    ResonatorLevels[8] = 5;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l6:
+                    ResonatorLevels[8] = 6;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l7:
+                    ResonatorLevels[8] = 7;
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_l8:
+                    ResonatorLevels[8] = 8;
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        }  else if(slotView.getId() == modSlotView1.getId()) {
+            switch (item.getItemId()) {
+                case R.id.select_none:
+                    ModsAndRarity[1]=mods[0];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_csh:
+                    ModsAndRarity[1]=mods[1];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rsh:
+                    ModsAndRarity[1]=mods[2];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrsh:
+                    ModsAndRarity[1]=mods[3];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_axash:
+                    ModsAndRarity[1]=mods[4];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rla:
+                    ModsAndRarity[1]=mods[5];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrla:
+                    ModsAndRarity[1]=mods[6];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_sbula:
+                    ModsAndRarity[1]=mods[7];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_chs:
+                    ModsAndRarity[1]=mods[8];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rhs:
+                    ModsAndRarity[1]=mods[9];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrhs:
+                    ModsAndRarity[1]=mods[10];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_cmh:
+                    ModsAndRarity[1]=mods[11];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rmh:
+                    ModsAndRarity[1]=mods[12];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrmh:
+                    ModsAndRarity[1]=mods[13];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rfa:
+                    ModsAndRarity[1]=mods[14];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rt:
+                    ModsAndRarity[1]=mods[15];
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        }  else if(slotView.getId() == modSlotView2.getId()) {
+            switch (item.getItemId()) {
+                case R.id.select_none:
+                    ModsAndRarity[2]=mods[0];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_csh:
+                    ModsAndRarity[2]=mods[1];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rsh:
+                    ModsAndRarity[2]=mods[2];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrsh:
+                    ModsAndRarity[2]=mods[3];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_axash:
+                    ModsAndRarity[2]=mods[4];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rla:
+                    ModsAndRarity[2]=mods[5];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrla:
+                    ModsAndRarity[2]=mods[6];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_sbula:
+                    ModsAndRarity[2]=mods[7];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_chs:
+                    ModsAndRarity[2]=mods[8];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rhs:
+                    ModsAndRarity[2]=mods[9];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrhs:
+                    ModsAndRarity[2]=mods[10];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_cmh:
+                    ModsAndRarity[2]=mods[11];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rmh:
+                    ModsAndRarity[2]=mods[12];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrmh:
+                    ModsAndRarity[2]=mods[13];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rfa:
+                    ModsAndRarity[2]=mods[14];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rt:
+                    ModsAndRarity[2]=mods[15];
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        }  else if(slotView.getId() == modSlotView3.getId()) {
+            switch (item.getItemId()) {
+                case R.id.select_none:
+                    ModsAndRarity[3]=mods[0];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_csh:
+                    ModsAndRarity[3]=mods[1];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rsh:
+                    ModsAndRarity[3]=mods[2];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrsh:
+                    ModsAndRarity[3]=mods[3];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_axash:
+                    ModsAndRarity[3]=mods[4];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rla:
+                    ModsAndRarity[3]=mods[5];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrla:
+                    ModsAndRarity[3]=mods[6];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_sbula:
+                    ModsAndRarity[3]=mods[7];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_chs:
+                    ModsAndRarity[3]=mods[8];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rhs:
+                    ModsAndRarity[3]=mods[9];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrhs:
+                    ModsAndRarity[3]=mods[10];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_cmh:
+                    ModsAndRarity[3]=mods[11];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rmh:
+                    ModsAndRarity[3]=mods[12];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrmh:
+                    ModsAndRarity[3]=mods[13];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rfa:
+                    ModsAndRarity[3]=mods[14];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rt:
+                    ModsAndRarity[3]=mods[15];
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        }  else if(slotView.getId() == modSlotView4.getId()) {
+            switch (item.getItemId()) {
+                case R.id.select_none:
+                    ModsAndRarity[4]=mods[0];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_csh:
+                    ModsAndRarity[4]=mods[1];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rsh:
+                    ModsAndRarity[4]=mods[2];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrsh:
+                    ModsAndRarity[4]=mods[3];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_axash:
+                    ModsAndRarity[4]=mods[4];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rla:
+                    ModsAndRarity[4]=mods[5];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrla:
+                    ModsAndRarity[4]=mods[6];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_sbula:
+                    ModsAndRarity[4]=mods[7];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_chs:
+                    ModsAndRarity[4]=mods[8];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rhs:
+                    ModsAndRarity[4]=mods[9];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrhs:
+                    ModsAndRarity[4]=mods[10];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_cmh:
+                    ModsAndRarity[4]=mods[11];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rmh:
+                    ModsAndRarity[4]=mods[12];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_vrmh:
+                    ModsAndRarity[4]=mods[13];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rfa:
+                    ModsAndRarity[4]=mods[14];
+                    updateImages();
+                    updateProperties();
+                    break;
+                case R.id.select_rt:
+                    ModsAndRarity[4]=mods[15];
+                    updateImages();
+                    updateProperties();
+                    break;
+            }
+        }
+        return true;
     }
 
     public void updateImages() {
