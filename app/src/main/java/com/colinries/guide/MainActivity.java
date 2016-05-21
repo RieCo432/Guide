@@ -170,8 +170,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, BadgesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_portalsimulator) {
-            //TODO: switch back to false
-            if(sharedPreferences.getBoolean("PREMIUM_UNLOCKED", true)) {
+            if(sharedPreferences.getBoolean("PREMIUM_UNLOCKED", false)) {
                 fragmentTransaction.replace(R.id.fragment_container, new PortalsimulatorFragment()).commit();
                 setTitle(getString(R.string.portalsimulator));
             } else {

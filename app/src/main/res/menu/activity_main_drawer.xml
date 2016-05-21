@@ -13,15 +13,15 @@
         <item
             android:title="@string/items"
             android:id="@+id/nav_items"
-            android:icon="@drawable/ic_resonator" />
+            android:icon="@mipmap/item_resonator8" />
         <item
             android:title="@string/badges"
             android:id="@+id/nav_badges"
-            android:icon="@drawable/ic_item"/>
+            android:icon="@mipmap/badge_builder"/>
         <item
             android:title="@string/portalsim"
             android:id="@+id/nav_portalsimulator"
-            android:icon="@drawable/ic_item"/>
+            android:icon="@drawable/ic_portalsim"/>
         <item
             android:title="@string/faq"
             android:id="@+id/nav_faq"
