@@ -75,6 +75,8 @@ public class PortalsimulatorFragment extends Fragment {
     public static View modSlotView3;
     public static View modSlotView4;
 
+    public Tracker t;
+
     public PortalsimulatorFragment() {
         // Required empty public constructor
     }
@@ -91,6 +93,8 @@ public class PortalsimulatorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.fragment_portalsimulator, container, false);
+
+        t = ((Guide)getActivity().getApplication()).getTracker(Guide.TrackerName.APP_TRACKER);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
@@ -769,16 +773,32 @@ public class PortalsimulatorFragment extends Fragment {
     public void updateImages() {
         for (int i = 1; i<=8; i++) {
             if (resonatorImages[ResonatorLevels[i]] != 0) {
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("PortalSim")
+                        .setAction("R"+Integer.toString(ResonatorLevels[i]))
+                        .build());
                 resonatorSlot[i].setImageResource(resonatorImages[ResonatorLevels[i]]);
             } else {
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("PortalSim")
+                        .setAction("R0")
+                        .build());
                 resonatorSlot[i].setImageDrawable(null);
             }
         }
 
         for (int i=1; i<=4; i++) {
             if (ModsAndRarity[i] != null) {
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("PortalSim")
+                        .setAction(mods[i])
+                        .build());
                 modSlot[i].setImageResource(modImages[getIndex(mods, ModsAndRarity[i])]);
             } else {
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("PortalSim")
+                        .setAction("none")
+                        .build());
                 modSlot[i].setImageDrawable(null);
             }
         }
