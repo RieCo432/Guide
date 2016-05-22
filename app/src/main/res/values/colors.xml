@@ -10,4 +10,5 @@
     <color name="itemSlotBackgroundColor">@color/colorPrimary</color>
     <color name="gieltIngress">#eef180</color>
     <color name="colorTextMain">@color/colorPrimary</color>
+    <color name="colorDarkBackground">#001821</color>
 </resources>

@@ -26,5 +26,9 @@
         android:orderInCategory="200"
         android:title="@string/donateL"
         app:showAsAction="never"/>
-
+    <item
+        android:id="@+id/action_restore_purchases"
+        android:orderInCategory="300"
+        android:title="@string/restore_purchases"
+        app:showAsAction="never"/>
 </menu>

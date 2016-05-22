@@ -8,7 +8,7 @@
     <string name="build">Build</string>
     <string name="build_date">Build Date</string>
     <string name="developers">Developers</string>
-    <string name="developers_names"><![CDATA[Colin Ries & Emmanuel Braz]]></string>
+    <string name="developers_names">Colin Ries &amp; Emmanuel Braz</string>
     <string name="copyright">Copyright</string>
     <string name="copyright_label">© Colin Ries, Emmanuel Braz 2016</string>
     <string name="nav_intro">Intro</string>
@@ -473,11 +473,11 @@
 
     <string name="nl1331">NL-1331</string>
     <string name="nl1331_description">What is it all about those NL-1331 badges? Where do people get them from?\n This badge can only be acquired when being at the right time at the right spot. A special van of the NIA group may come to your town and hand them out.</string>
-    <string name="nl1331_notes">Unfortunately we have no idea if this badge is still available. Sure that on ebay or other online markets you may buy them, but there is no information of another visit of the NIA van.</string>
+    <string name="nl1331_notes">The NIA Van is most likely to only visit places in America, but you can get more information on http://ingress.com/events</string>
     <!--Add image NIA van-->
 
     <string name="stellavyctory">Stella Vyctory</string>
-    <string name="stellavyctory_description">Stella Vyctory is a character in Ingress like Hank Johnson. This badge bas distributed at the Hanover anomaly (Shonin) to people who chose a line. </string>
+    <string name="stellavyctory_description">Stella Vyctory is a character in Ingress like Hank Johnson. This badge bas distributed at the Hanover anomaly (Shonin) to people who chose a line and during Persepolis in Utrecht to those who solved the riddle distributed at the registration.</string>
     <string name="stellavyctory_notes">As many other badges, you can not get this badge anymore unless you find a valid passcode.</string>
 
     <string name="susannamoyer">Susanna Moyer</string>
@@ -502,9 +502,9 @@
     <string name="feedback_email">feedback@colinries.com</string>
     <string name="guide_feedback">Feedback (Guide)</string>
     <string name="unlockPortalSim">Unlock Portal Sim</string>
-    <string name="donateS">Donate S</string>
-    <string name="donateM">Donate M</string>
-    <string name="donateL">Donate L</string>
+    <string name="donateS">Buy us a coke</string>
+    <string name="donateM">Buy us a beer</string>
+    <string name="donateL">Buy us lunch</string>
     <string name="thankyou">Thank You!</string>
     <string name="purchasecancelled">Purchase cancelled!</string>
     <string name="premiumunlocked">Premium Unlocked!</string>
@@ -539,5 +539,12 @@
     <string name="vrmh">Very Rare Multihack</string>
     <string name="rfa">Rare Force Amp</string>
     <string name="rt">Rare Turret</string>
+    <string name="sim_hint_title">Hint</string>
+    <string name="sim_hint">Long press resonator and mod slots to select resonator level and mods. Click on the slots in order to increase level by 1 or just switch to the next mod. You can also click on the link input field to increase its value by 1!</string>
+    <string name="okay">Okay!</string>
+    <string name="restore_purchases">Restore Purchases</string>
+    <string name="restore_failed">Restore Failed!</string>
+    <string name="purchases_restored">Purchases Restored!</string>
+    <string name="nothing_to_restore">Nothing to restore!</string>
 
 </resources>

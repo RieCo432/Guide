@@ -140,6 +140,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.action_unlockPortalSim) {
             ITEM_SKU = "premiumunlock";
             mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
+        } else if (id == R.id.action_restore_purchases) {
+            /*Inventory mInventory = new Inventory();
+            Boolean premiumPurchased = mInventory.hasPurchase("premiumunlock");
+            Log.i("LGE", "Premium?" + Boolean.toString(premiumPurchased));*/
+            Boolean premiumPurchased = mHelper.checkIfPremium();
+            if(premiumPurchased) {
+                sharedPreferences.edit().putBoolean("PREMIUM_UNLOCKED", true).apply();
+            } else {
+                Toast.makeText(this, getString(R.string.nothing_to_restore), Toast.LENGTH_LONG).show();
+            }
         }
 
         return super.onOptionsItemSelected(item);
@@ -170,8 +180,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, BadgesActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_portalsimulator) {
-            //TODO: switch back to false
-            if(sharedPreferences.getBoolean("PREMIUM_UNLOCKED", true)) {
+            if(sharedPreferences.getBoolean("PREMIUM_UNLOCKED", false)) {
                 fragmentTransaction.replace(R.id.fragment_container, new PortalsimulatorFragment()).commit();
                 setTitle(getString(R.string.portalsimulator));
             } else {
