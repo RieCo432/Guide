@@ -28,8 +28,11 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.vending.billing.IInAppBillingService;
+import com.colinries.guide.MainActivity;
+import com.colinries.guide.R;
 
 import org.json.JSONException;
 
@@ -377,18 +380,46 @@ public class IabHelper {
      * this object's {@link #handleActivityResult} method to continue the purchase flow. This method
      * MUST be called from the UI thread of the Activity.
      *
-     * @param act The calling activity.
-     * @param sku The sku of the item to purchase.
-     * @param itemType indicates if it's a product or a subscription (ITEM_TYPE_INAPP or
+     * @para act The calling activity.
+     * @para sku The sku of the item to purchase.
+     * @para itemType indicates if it's a product or a subscription (ITEM_TYPE_INAPP or
      *      ITEM_TYPE_SUBS)
-     * @param oldSkus A list of SKUs which the new SKU is replacing or null if there are none
-     * @param requestCode A request code (to differentiate from other responses -- as in
+     * @para oldSkus A list of SKUs which the new SKU is replacing or null if there are none
+     * @para requestCode A request code (to differentiate from other responses -- as in
      *      {@link android.app.Activity#startActivityForResult}).
-     * @param listener The listener to notify when the purchase process finishes
-     * @param extraData Extra data (developer payload), which will be returned with the purchase
+     * @para listener The listener to notify when the purchase process finishes
+     * @para extraData Extra data (developer payload), which will be returned with the purchase
      *      data when the purchase completes. This extra data will be permanently bound to that
      *      purchase and will always be returned when the purchase is queried.
      */
+
+    public Boolean checkIfPremium() {
+        Bundle purchases = null;
+        try {
+            purchases = mService.getPurchases(3, mContext.getPackageName(), "inapp", null);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+        int response = purchases.getInt("RESPONSE_CODE");
+        if(response == 0) {
+            ArrayList<String> ownedSkus = purchases.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+
+            for(int i = 0; i < ownedSkus.size(); i++) {
+                String sku = ownedSkus.get(i);
+                if(sku.equals("premiumunlock")) {
+                    Toast.makeText(mContext, mContext.getString(R.string.purchases_restored), Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            }
+        } else {
+            Toast.makeText(mContext, mContext.getString(R.string.restore_failed), Toast.LENGTH_SHORT).show();
+        }
+
+        return false;
+    }
+
+
     public void launchPurchaseFlow(Activity act, String sku, String itemType, List<String> oldSkus,
             int requestCode, OnIabPurchaseFinishedListener listener, String extraData) {
         checkNotDisposed();
