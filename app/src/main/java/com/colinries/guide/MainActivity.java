@@ -140,6 +140,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.action_unlockPortalSim) {
             ITEM_SKU = "premiumunlock";
             mHelper.launchPurchaseFlow(this, ITEM_SKU, 10001, mPurchaseFinishedListener, mIdToken);
+        } else if (id == R.id.action_restore_purchases) {
+            /*Inventory mInventory = new Inventory();
+            Boolean premiumPurchased = mInventory.hasPurchase("premiumunlock");
+            Log.i("LGE", "Premium?" + Boolean.toString(premiumPurchased));*/
+            Boolean premiumPurchased = mHelper.checkIfPremium();
+            if(premiumPurchased) {
+                sharedPreferences.edit().putBoolean("PREMIUM_UNLOCKED", true).apply();
+            } else {
+                Toast.makeText(this, getString(R.string.nothing_to_restore), Toast.LENGTH_LONG).show();
+            }
         }
 
         return super.onOptionsItemSelected(item);

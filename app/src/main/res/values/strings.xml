@@ -8,7 +8,7 @@
     <string name="build">Build</string>
     <string name="build_date">Build Date</string>
     <string name="developers">Developers</string>
-    <string name="developers_names"><![CDATA[Colin Ries & Emmanuel Braz]]></string>
+    <string name="developers_names">Colin Ries &amp; Emmanuel Braz</string>
     <string name="copyright">Copyright</string>
     <string name="copyright_label">© Colin Ries, Emmanuel Braz 2016</string>
     <string name="nav_intro">Intro</string>
@@ -502,9 +502,9 @@
     <string name="feedback_email">feedback@colinries.com</string>
     <string name="guide_feedback">Feedback (Guide)</string>
     <string name="unlockPortalSim">Unlock Portal Sim</string>
-    <string name="donateS">Donate S</string>
-    <string name="donateM">Donate M</string>
-    <string name="donateL">Donate L</string>
+    <string name="donateS">Buy us a coke</string>
+    <string name="donateM">Buy us a beer</string>
+    <string name="donateL">Buy us lunch</string>
     <string name="thankyou">Thank You!</string>
     <string name="purchasecancelled">Purchase cancelled!</string>
     <string name="premiumunlocked">Premium Unlocked!</string>
@@ -542,5 +542,9 @@
     <string name="sim_hint_title">Hint</string>
     <string name="sim_hint">Long press resonator and mod slots to select resonator level and mods. Click on the slots in order to increase level by 1 or just switch to the next mod. You can also click on the link input field to increase its value by 1!</string>
     <string name="okay">Okay!</string>
+    <string name="restore_purchases">Restore Purchases</string>
+    <string name="restore_failed">Restore Failed!</string>
+    <string name="purchases_restored">Purchases Restored!</string>
+    <string name="nothing_to_restore">Nothing to restore!</string>
 
 </resources>
