@@ -30,6 +30,11 @@
             android:id="@+id/nav_powercubes"
             android:icon="@mipmap/item_powercube8"
             android:title="@string/powercubes" />
+
+        <item
+            android:id="@+id/nav_lawsonpowercubes"
+            android:icon="@mipmap/item_lawson"
+            android:title="@string/lawsonpowercube" />
         <item
             android:id="@+id/nav_portalkey"
             android:icon="@mipmap/item_portalkey"

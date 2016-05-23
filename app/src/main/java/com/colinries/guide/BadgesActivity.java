@@ -416,8 +416,8 @@ public class BadgesActivity extends AppCompatActivity
             badge_name.setText(getString(R.string.missionday));
             badge_image.setImageResource(R.mipmap.badge_missionday);
             badge_description.setText(getString(R.string.missionday_description));
-            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
-            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_acquisition.setText(getString(R.string.item_acquisition_showingPhone));
+            badge_variations.setText(getString(R.string.badge_variations_full));
             badge_notes.setText(getString(R.string.missionday_notes));
 
             badge_intro_block.setVisibility(View.GONE);

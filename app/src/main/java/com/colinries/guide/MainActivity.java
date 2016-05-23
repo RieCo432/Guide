@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.guide_feedback));
             Intent.createChooser(intent, getString(R.string.choose_email_app));
             startActivity(intent);
-        } else if (id == R.id.nav_settings) {
+
 
         }
 
