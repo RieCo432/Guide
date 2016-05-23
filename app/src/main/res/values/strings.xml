@@ -42,6 +42,7 @@
     <string name="linkamps">Link AMPs</string>
     <string name="softbankultralinkamps">Softbank Ultra Link AMPs</string>
     <string name="powercubes">Power Cubes</string>
+    <string name="lawsonpowercube">Lawson Power Cube</string>
     <string name="capsules">Capsules</string>
     <string name="mufgcapsules">MUFG Capsules</string>
     <string name="fracker">Fracker</string>
@@ -99,6 +100,7 @@
     <string name="item_acquisition_hacking_only">-via Hacking</string>
     <string name="item_acquisition_passcodes_only">-via Passcodes</string>
     <string name="item_acquisition_store_only">-via the Ingress Store</string>
+    <string name="item_acquisition_showingPhone">-by showing local Niantic employees your Agent Profile (to proof you\'ve done the required missions), which will then write down your name.</string>
     <string name="item_image">Image:</string>
     <string name="portalAttackFrequency">Attack Frequency</string>
     <string name="portalOutgoingLinks">Outgoing Links</string>
@@ -112,13 +114,15 @@
     <string name="ultrastrike_description">Contrary to XMPs, Ultra Strikes do more damage but in a much tinier range. That\'s why they are used to destroy shields (by staying the nearest to the middle of a portal) or to destroy single resonators by staying on them as well.</string>
     <string name="ultrastrike_notes">Don\'t waste them, they are not that common in hacks. In order to get more out of an ultra strike, long press the fire button to get up to 20% attack bonus.</string>
     <string name="ada_description">An ADA Refactor is a weapon used to instantly switch the colour of a green portal to blue. Once applied on a portal, mods and resonators stay the same, but the name and the faction of the portal changes and links are being destroyed.</string>
-    <string name="ada_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using an ADA. Be aware that you can only use an ADA on a portal that\'s maximal one level above your own level.</string>
+    <string name="ada_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using an ADA. Be aware that you can only use an ADA on a portal that\'s maximal one level above your own level. Furthermore, a portal can only be jarvised or adaed once every hour. However, if you should try to use another ada/jarvis before the 1 hour cooldown, your jarvis/ada will be gone.</string>
     <string name="jarvis_description">A Jarvis Virus is a weapon used to instantly switch the colour of a blue portal to green. Once applied on a portal, mods and resonators stay the same, but the name and the faction of the portal changes and links are being destroyed.</string>
-    <string name="jarvis_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using a Jarvis virus. Be aware that you can only use a Jarvis on a portal that\'s maximal one level above your own level.</string>
+    <string name="jarvis_notes">Don\'t waste them. You don\'t get AP for destroying resonators, links or fields when using a Jarvis virus. Be aware that you can only use a Jarvis on a portal that\'s maximal one level above your own level. Furthermore, a portal can only be jarvised or adaed once every hour. However, if you should try to use another ada/jarvis before the 1 hour cooldown, your jarvis/ada will be gone.</string>
     <string name="powercubes_description">Power Cubes are used to refill your XM bar, so you can continue playing without having to pick up XM from the ground.</string>
     <string name="powercubes_notes">XM gain is calculated by multiplying the level of the power cube by 1000.</string>
-    <string name="portalkey_description">Portal keys are the most important gain of a hack. With portal keys, you are able to link a portal to another portal if you\'re in the range of the start portal and if you have a key of the target portal. In addition, portal keys can be used to recharge portals when they\'re not in your range.</string>
-    <string name="portalkey_notes">Once you\'ve hacked a key out of a portal, you won\'t be able to hack another one unless you drop the key or store it in a capsule of whatever type.</string>
+    <string name="lawsonpowercubes_description">The Lawson Power Cube is not like a regular power cube. When used, it gives you an additional XM tank which refills your original XM tank. The additional tank has different sizes based on your level. It is useful in situations where you have to recharge a lot in a short period, but also in situations where you\'re getting a lot of damage.</string>
+    <string name="lawsonpowercubes_notes">A list with the LPC tank sizes varying based on your level:\n\nLevel 1: 18.000 XM\nLevel 2: 20.250 XM\nLevel 3: 22.500 XM\nLevel 4: 24.750 XM\nLevel 5: 27.000 XM\nLevel 6: 29.250 XM\nLevel 7: 31.500 XM\nLevel 8: 33.750 XM\nLevel 9: 36.000 XM\nLevel 10: 38.400 XM\nLevel 11: 40.800 XM\nLevel 12: 43.200 XM\nLevel 13: 45.600 XM\nLevel 14: 48.000 XM\nLevel 15: 50.400 XM\nLevel 16: 52.800 XM</string>
+    <string name="portalkey_description">Portal keys are the most important gain of a hack. With portal keys, you are able to link a portal to another portal if you\'re in the range of the start portal and if you have a key of the target portal. In addition, portal keys can be used to recharge portals which are not in your range.</string>
+    <string name="portalkey_notes">Once you\'ve hacked a key out of a portal, you won\'t be able to hack another one unless you drop the key, store it in a capsule of whatever type or perform a Glyph Hack with the "MORE" Glyph at the beginning.</string>
     <string name="shields_description">Shields are a portal\'s bodyguards. They decrease the damage an XMP or Ultra Strike can do on your portal. Two attributes define a shield\'s behavior: Mitigation and Stickiness. Mitigation is the shield\'s protecting ability. The stickiness describes the shield\'s lasting ability, so to say whether it lasts long or not long when under XMP attacks.</string>
     <string name="shield_notes">Not only shields add mitigation to a portal, but links do as well. Check out our Portal Simulator for further information.</string>
     <string name="axashield_notes">The drop rate of AXA shields is slightly higher on AXA portals, which are present at all AXA agencies in some countries.</string>
@@ -129,8 +133,7 @@
     <string name="multihack_notes">Portal burned out but you don\'t want to wait 4 hours to hack again? See if there is an empty mod slot and put in a multihack to reset the 4 hour period.</string>
     <string name="forceamp_description">Force AMPs are mods used to give a portal the power to answer with more damage by attacking an enemy player when he hacks or attacks a portal. See our Portal Simulator to find out more.</string>
     <string name="forceamp_notes">The effect of Force AMPs decreases the more you deploy, take a look at our Portal Simulator.</string>
-    <string name="turret_description">Turrets are used to increase the frequency of a portal\'s attacks against enemy players, for both, XMP attacks or just hacks. For example a portal does not always shoot back when you hack or attack it, but with the turrets, you can change this probability.</string>
-    <string name="turret_notes">The effect a turret has on the attack frequency decreases the more you deploy, use our Portal Simulator to calculate the attack frequency.</string>
+    <string name="turret_description">Turrets are used to increase the frequency of a portal\'s attacks against enemy players, for both, XMP attacks or just hacks. For example a portal does not always shoot back when you hack or attack it, but with the turrets, you can increase this probability.</string>
     <string name="linkamp_description">Link AMPs are mods used to increase the maximum link range of a portal.</string>
     <string name="linkamp_notes">Very rare link amps can only be received by redeeming a passcode. They are mostly distributed on anomalies or to players who have a big and completely planned operation, when they ask Niantic.</string>
     <string name="softbankultralinkamp_description">Softbank Ultra Link Amps have many features. They increase the link range of a portal, the limit of 8 outbound link by 8 per Softbank Ultra Link and they the mitigation from links by 50%.</string>
@@ -267,7 +270,7 @@
     \nGothenburg, Sweden (S)
     \nRiga, Latvia (S) </string>
 
-    <string name="interitus">Helios</string>
+    <string name="interitus">Interitus</string>
     <string name="interitus_description">The Interitus Anomaly Badge was awarded only to people who made a contribution on the Interitus Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
     <string name="interitus_notes">You were able to get this badge when contributing to one of the following events:
     \n\n12th April 2014:
@@ -336,7 +339,7 @@
     \nFt Collins, Colorado, USA (S) </string>
 
     <string name="recursion">Recursion</string>
-    <string name="recursion_description">The Recursion Anomaly Badge was awarded only to people who made a contribution on the Abaddon Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="recursion_description">The Recursion Anomaly Badge was awarded only to people who made a contribution on the Recursion Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
     <string name="recursion_notes">You were able to get this badge when contributing to one of the following events:
     \n\nFebruary 15th, 2014
     \nMiami, Florida, USA (P)
@@ -469,7 +472,7 @@
 
     <string name="missionday">Mission Day</string>
     <string name="missionday_description">The Mission Day badge is earned by contributing to a specified amount of special missions on an official Mission Day. The Mission Day itself is always the day after the actual anomaly.</string>
-    <string name="missionday_notes"> </string>
+    <string name="missionday_notes">Since a more recent update, Mission Day Badges are now tiered, which means they don\'t count as a normal Anomaly badge but as a leveled medal.</string>
 
     <string name="nl1331">NL-1331</string>
     <string name="nl1331_description">What is it all about those NL-1331 badges? Where do people get them from?\n This badge can only be acquired when being at the right time at the right spot. A special van of the NIA group may come to your town and hand them out.</string>
@@ -501,10 +504,10 @@
     <string name="guide_support">Support (Guide)</string>
     <string name="feedback_email">feedback@colinries.com</string>
     <string name="guide_feedback">Feedback (Guide)</string>
-    <string name="unlockPortalSim">Unlock Portal Sim</string>
-    <string name="donateS">Buy us a coke</string>
-    <string name="donateM">Buy us a beer</string>
-    <string name="donateL">Buy us lunch</string>
+    <string name="unlockPortalSim">Unlock Portal Sim   ~2€</string>
+    <string name="donateS">Buy us a coke   ~2€</string>
+    <string name="donateM">Buy us a beer   ~5€</string>
+    <string name="donateL">Buy us lunch    ~10€</string>
     <string name="thankyou">Thank You!</string>
     <string name="purchasecancelled">Purchase cancelled!</string>
     <string name="premiumunlocked">Premium Unlocked!</string>

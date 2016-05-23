@@ -223,6 +223,23 @@ public class ItemActivity extends AppCompatActivity
                     .setAction("Selected " + getResources().getResourceName(id))
                     .build());
 
+        } else if (id == R.id.nav_lawsonpowercubes) {
+
+            item_name.setText(getString(R.string.lawsonpowercube));
+            item_image.setImageResource(R.mipmap.item_lawson);
+            item_description.setText(getString(R.string.lawsonpowercubes_description));
+            item_acquisition.setText(getString(R.string.item_acquisition_full));
+            item_variations.setText(getString(R.string.item_variations_rarity_veryrare));
+            item_notes.setText(getString(R.string.lawsonpowercubes_notes));
+
+            item_intro_block.setVisibility(View.GONE);
+            item_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("ItemIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
         } else if (id == R.id.nav_portalkey) {
 
             item_name.setText(getString(R.string.portalkey));
@@ -331,7 +348,6 @@ public class ItemActivity extends AppCompatActivity
             item_description.setText(getString(R.string.turret_description));
             item_acquisition.setText(getString(R.string.item_acquisition_full));
             item_variations.setText(getString(R.string.item_variations_rarity_rare));
-            item_notes.setText(getString(R.string.turret_notes));
 
             item_intro_block.setVisibility(View.GONE);
             item_iq_block.setVisibility(View.VISIBLE);
