@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,7 +40,8 @@ public class PortalsimulatorFragment extends Fragment {
 
     public static View.OnClickListener resonatorClickListener;
     public static View.OnClickListener modClickListener;
-    public static View.OnClickListener linkClickListener;
+    public static View.OnClickListener increaseLinksClickListener;
+    public static View.OnClickListener decreaseLinksClickListener;
 
     public static TextView portal_level;
     public static TextView portal_energy;
@@ -75,7 +77,12 @@ public class PortalsimulatorFragment extends Fragment {
     public static View modSlotView3;
     public static View modSlotView4;
 
+    public static TextView[] resonatorLevelDisplays;
+
     public Tracker t;
+
+    public static ImageButton increaseLinksButton;
+    public static ImageButton decreaseLinksButton;
 
     public PortalsimulatorFragment() {
         // Required empty public constructor
@@ -131,6 +138,18 @@ public class PortalsimulatorFragment extends Fragment {
                 (ImageView) layout.findViewById(R.id.modSlot2),
                 (ImageView) layout.findViewById(R.id.modSlot3),
                 (ImageView) layout.findViewById(R.id.modSlot4)};
+
+        resonatorLevelDisplays = new TextView[]{null, (TextView) layout.findViewById(R.id.resonatorLevel1),
+                (TextView) layout.findViewById(R.id.resonatorLevel2),
+                (TextView) layout.findViewById(R.id.resonatorLevel3),
+                (TextView) layout.findViewById(R.id.resonatorLevel4),
+                (TextView) layout.findViewById(R.id.resonatorLevel5),
+                (TextView) layout.findViewById(R.id.resonatorLevel6),
+                (TextView) layout.findViewById(R.id.resonatorLevel7),
+                (TextView) layout.findViewById(R.id.resonatorLevel8)};
+
+        increaseLinksButton = (ImageButton) layout.findViewById(R.id.increaseLinksButton);
+        decreaseLinksButton = (ImageButton) layout.findViewById(R.id.decreaseLinksButton);
 
         resonatorImages = new int[]{0,
                 R.mipmap.item_resonator1,
@@ -271,13 +290,25 @@ public class PortalsimulatorFragment extends Fragment {
             }
         };
 
-        linkClickListener = new View.OnClickListener() {
+        increaseLinksClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 linkAmountInput.setText(Integer.toString(Integer.valueOf(String.valueOf(linkAmountInput.getText()))+1));
                 updateProperties();
             }
         };
+
+        decreaseLinksClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Integer.valueOf(String.valueOf(linkAmountInput.getText())) > 0) {
+                    linkAmountInput.setText(Integer.toString(Integer.valueOf(String.valueOf(linkAmountInput.getText())) - 1));
+                    updateProperties();
+                }
+            }
+        };
+
+
 
         resonatorSlotView1.setOnClickListener(resonatorClickListener);
         resonatorSlotView2.setOnClickListener(resonatorClickListener);
@@ -293,7 +324,8 @@ public class PortalsimulatorFragment extends Fragment {
         modSlotView3.setOnClickListener(modClickListener);
         modSlotView4.setOnClickListener(modClickListener);
 
-        linkAmountInput.setOnClickListener(linkClickListener);
+        increaseLinksButton.setOnClickListener(increaseLinksClickListener);
+        decreaseLinksButton.setOnClickListener(decreaseLinksClickListener);
 
         return layout;
     }
@@ -772,6 +804,7 @@ public class PortalsimulatorFragment extends Fragment {
 
     public void updateImages() {
         for (int i = 1; i<=8; i++) {
+            resonatorLevelDisplays[i].setText("L"+Integer.toString(ResonatorLevels[i]));
             if (resonatorImages[ResonatorLevels[i]] != 0) {
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("PortalSim")
@@ -859,6 +892,9 @@ public class PortalsimulatorFragment extends Fragment {
         }
 
         portal_range_value = portal_range_value * rangeMultiplyFactor;
+
+        portal_range_value = Math.round(portal_range_value * 100f);
+        portal_range_value = portal_range_value / 100f;
 
         PortalsimulatorFragment.portal_range.setText(Float.toString(portal_range_value) + unit);
 
