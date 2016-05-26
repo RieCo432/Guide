@@ -11,4 +11,8 @@
     <color name="gieltIngress">#eef180</color>
     <color name="colorTextMain">@color/colorPrimary</color>
     <color name="colorDarkBackground">#001821</color>
+    <color name="darkblue">#1A237E</color>
+    <color name="stylishRed">#DC4E41</color>
+    <color name="goodBlue">#00ACED</color>
+    <color name="goodRed">#E52C27</color>
 </resources>

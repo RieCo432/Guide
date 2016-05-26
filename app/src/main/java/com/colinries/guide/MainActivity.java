@@ -24,6 +24,7 @@ import com.colinries.guide.util.IabHelper;
 import com.colinries.guide.util.IabResult;
 import com.colinries.guide.util.Inventory;
 import com.colinries.guide.util.Purchase;
+/*import com.colinries.guide.util.ReplaceFont;*/
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mIdToken = UUID.randomUUID().toString();
             sharedPreferences.edit().putString("APP_ID_TOKEN", mIdToken).apply();
         }
+
+        /*ReplaceFont.replaceDefaultFont(this, "DEFAULT", "Coda-Regular.tff");*/
     }
 
 
@@ -310,4 +313,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (mHelper != null) mHelper.dispose();
         mHelper = null;
     }
+
+
+
+
 }

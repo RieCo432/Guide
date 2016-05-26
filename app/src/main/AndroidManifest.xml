@@ -36,6 +36,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.colinries.guide.MainActivity" />
         </activity>
+
+        <activity
+            android:name="com.google.android.apps.plus.phone.UrlGatewayActivity">
+        </activity>
         <activity
             android:name=".BadgesActivity"
             android:label="@string/title_activity_badges"
