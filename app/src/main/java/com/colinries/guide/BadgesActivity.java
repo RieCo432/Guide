@@ -139,6 +139,24 @@ public class BadgesActivity extends AppCompatActivity
                     .setAction("Selected " + getResources().getResourceName(id))
                     .build());
 
+        } else if (id == R.id.nav_aegisnova) {
+
+            badge_name.setText(getString(R.string.aegisnova));
+            badge_image.setImageResource(R.mipmap.badge_aegisnova);
+            badge_description.setText(getString(R.string.aegisnova_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.aegisnova_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
+
         } else if (id == R.id.nav_builder) {
 
             badge_name.setText(getString(R.string.builder));
@@ -436,6 +454,23 @@ public class BadgesActivity extends AppCompatActivity
             badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
             badge_variations.setText(getString(R.string.badge_variations_bronze));
             badge_notes.setText(getString(R.string.nl1331_notes));
+
+            badge_intro_block.setVisibility(View.GONE);
+            badge_iq_block.setVisibility(View.VISIBLE);
+
+            t.send(new HitBuilders.EventBuilder()
+                    .setCategory("BadgesIQ")
+                    .setAction("Selected " + getResources().getResourceName(id))
+                    .build());
+
+        } else if (id == R.id.nav_obsidian) {
+
+            badge_name.setText(getString(R.string.obsidian));
+            badge_image.setImageResource(R.mipmap.badge_obsidian);
+            badge_description.setText(getString(R.string.obsidian_description));
+            badge_acquisition.setText(getString(R.string.item_acquisition_passcodes_only));
+            badge_variations.setText(getString(R.string.badge_variations_bronze));
+            badge_notes.setText(getString(R.string.obsidian_notes));
 
             badge_intro_block.setVisibility(View.GONE);
             badge_iq_block.setVisibility(View.VISIBLE);

@@ -11,6 +11,10 @@
             android:icon="@mipmap/badge_ada"
             android:title="@string/ada" />
         <item
+            android:id="@+id/nav_aegisnova"
+            android:icon="@mipmap/badge_aegisnova"
+            android:title="@string/aegisnova" />
+        <item
             android:id="@+id/nav_builder"
             android:icon="@mipmap/badge_builder"
             android:title="@string/builder" />
@@ -82,6 +86,10 @@
             android:id="@+id/nav_nl1331"
             android:icon="@mipmap/badge_nl1331"
             android:title="@string/nl1331" />
+        <item
+            android:id="@+id/nav_obsidian"
+            android:icon="@mipmap/badge_obsidian"
+            android:title="@string/obsidian"/>
         <item
             android:id="@+id/nav_persepolis"
             android:icon="@mipmap/badge_persepolis"

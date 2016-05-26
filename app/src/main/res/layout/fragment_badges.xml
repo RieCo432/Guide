@@ -42,19 +42,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_name_header"
                 android:text="@string/badge_full_name"
-                android:textColor="@color/colorTextMain" />
+                android:textColor="@color/gieltIngress" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_name"
-                android:textColor="@color/colorTextMain"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/badge_image_header"
-                android:text="@string/badge_image"
-                android:textColor="@color/colorTextMain"
-                android:layout_marginTop="@dimen/IQparagrapheTopMargin"/>
+                android:textColor="@color/test"/>
             <ImageView
                 android:layout_width="@dimen/badgeShowcase"
                 android:layout_height="@dimen/badgeShowcase"
@@ -65,49 +58,49 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_description_header"
                 android:text="@string/badge_description"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_description"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_acquisition_header"
                 android:text="@string/badge_acquisition"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_acquisition"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_variations_header"
                 android:text="@string/badge_versions"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_variations"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_notes_header"
                 android:text="@string/badge_notes"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/badge_notes"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
         </LinearLayout>
     </ScrollView>
 

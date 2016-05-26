@@ -4,10 +4,95 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
-    <!-- TODO: Build nice welcome page -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstMainMsg"
+        android:text="@string/firstMainMsg"
+        android:textColor="@color/test"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true" />
+
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonBox1"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/firstMainMsg">
+
+
+            <ImageButton
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/button1"
+                android:src="@mipmap/logo_fb"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="11dp"/>
+
+            <ImageButton
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/button2"
+                android:src="@mipmap/logo_twitter"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="11dp"/>
+
+            <ImageButton
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/button3"
+                android:src="@mipmap/logo_googleplus"
+                android:scaleType="fitCenter"
+                android:background="@drawable/roundcorner"
+                android:layout_marginEnd="11dp"/>
+
+            <ImageButton
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/button4"
+                android:src="@mipmap/logo_yt"
+                android:scaleType="fitCenter"
+                android:background="@drawable/roundcorner_white" />
+        </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/newsfeedPrompt"
+        android:text="@string/newsfeed"
+        android:textSize="30sp"
+        android:layout_below="@+id/ButtonBox1"
+        android:textColor="@color/test"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMING SOON"
+        android:textSize="50sp"
+        android:layout_below="@+id/newsfeedPrompt"
+        android:textColor="@color/goodRed"
+        android:background="@color/test"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"/>
+
+
+
+
+
 
 </RelativeLayout>
+
+
+
+

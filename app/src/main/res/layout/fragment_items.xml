@@ -26,6 +26,7 @@
             android:textColor="@color/colorTextMain"/>
     </LinearLayout>
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,22 +43,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/item_name_header"
                 android:text="@string/item_full_name"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/gieltIngress"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_name"
-                android:textColor="@color/colorTextMain"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/item_image_header"
-                android:text="@string/item_image"
-                android:textColor="@color/colorTextMain"
-                android:layout_marginTop="@dimen/IQparagrapheTopMargin"/>
+                android:textColor="@color/test"/>
             <ImageView
                 android:layout_width="216dp"
                 android:layout_height="216dp"
+                android:layout_marginTop="5dp"
                 android:id="@+id/item_image"
                 android:scaleType="fitCenter"/>
             <TextView
@@ -65,49 +60,49 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/item_description_header"
                 android:text="@string/item_description"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_description"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_acquisition_header"
                 android:text="@string/item_acquisition"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_acquisition"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_variations_header"
                 android:text="@string/item_variations"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_variations"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_notes_header"
                 android:text="@string/item_notes"
-                android:textColor="@color/colorTextMain"
+                android:textColor="@color/gieltIngress"
                 android:layout_marginTop="@dimen/IQparagrapheTopMargin"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_notes"
-                android:textColor="@color/colorTextMain"/>
+                android:textColor="@color/test"/>
         </LinearLayout>
     </ScrollView>
 

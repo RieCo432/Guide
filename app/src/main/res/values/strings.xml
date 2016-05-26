@@ -54,6 +54,13 @@
     <string name="portalkey">Portal Key</string>
     <string name="title_activity_badges">Badges IQ</string>
 
+    <string name="CheckpointPrompt">Current Checkpoint:</string>
+    <string name="CyclePrompt">Current Cycle:</string>
+    <string name="firstMainMsg">Leave a like, follow or subscription to stay up to date with official Ingress Events!</string>
+    <string name="newsfeed">News Feed:</string>
+
+
+
     <string name="ada">ADA</string>
     <string name="builder">Builder</string>
     <string name="connector">Connector</string>
@@ -89,12 +96,12 @@
     <string name="item_variations_rarity_veryrare">-Very Rare</string>
     <string name="item_variations_rarity_rare_veryrare">-Rare\n-Very Rare</string>
     <string name="item_variations_rarity_all">-Common\n-Rare\n-Very Rare</string>
-    <string name="item_variations">Variations:</string>
+    <string name="item_variations"><u>Variations:</u></string>
     <string name="xmp">Exotic Matter Pulse Burster</string>
-    <string name="item_notes">Notes:</string>
-    <string name="item_full_name">Full Name:</string>
-    <string name="item_description">Description:</string>
-    <string name="item_acquisition">Acquisition:</string>
+    <string name="item_notes"><u>Notes:</u></string>
+    <string name="item_full_name"><u>Full Name:</u></string>
+    <string name="item_description"><u>Description:</u></string>
+    <string name="item_acquisition"><u>Acquisition:</u></string>
     <string name="item_intro_header">About Items in Ingress</string>
     <string name="item_acquisition_full">-via hacking\n-via passcodes</string>
     <string name="item_acquisition_hacking_only">-via Hacking</string>
@@ -106,6 +113,7 @@
     <string name="portalOutgoingLinks">Outgoing Links</string>
     <string name="portalForce">Force</string>
     <string name="energy">Energy</string>
+
 
     <string name="resonator_description">Resonators are deployed on a portal in order to capture it or upgrade existing resonators.</string>
     <string name="resonator_notes">There\'s a limit of resonators of one level a player can deploy on one portal:\n1x L8\n1x L7\n2x L6\n2x L5\n4x L4\n4x L3\n4x L2\n8x L1</string>
@@ -149,14 +157,14 @@
     <string name="beacon_description">Beacons are simple markers on the scanner that hover over a portal. For some they are more a fun item than a utility item. They can be found in the store, under 4 different variations.</string>
     <string name="beacon_notes">Just like any other buyable item, they cannot be dropped or recycled.</string>
 
-    <string name="badges_intro_header">About Badges in Ingress</string>
+    <string name="badges_intro_header">About Badges in Ingress:</string>
     <string name="badges_intro">Badges aren\'t important as long as you plan to stay at level 8 or below. But once you want to reach levels above level 8, you will need a certain amount of badges to be able to reach those levels. Other than that, badges don\'t have any function other than bragging rights.</string>
-    <string name="badge_full_name">Badge name:</string>
+    <string name="badge_full_name"><u>Badge name:</u></string>
     <string name="badge_image">Badge image:</string>
-    <string name="badge_description">Description</string>
-    <string name="badge_acquisition">How to get it</string>
-    <string name="badge_versions">Stages/Levels</string>
-    <string name="badge_notes">Notes</string>
+    <string name="badge_description"><u>Description:</u></string>
+    <string name="badge_acquisition"><u>How to get it</u></string>
+    <string name="badge_versions"><u>Stages/Levels</u></string>
+    <string name="badge_notes"><u>Notes</u></string>
     <string name="item_intro">Items are a big part of the game.</string>
     <string name="connection_error">Connection error!</string>
     <string name="xml_error">XML Error!</string>
@@ -193,6 +201,32 @@
     \nGdansk, Poland (S)
     \nPorto, Portugal (S)
     \nSofia, Bulgaria (S) </string>
+
+    <string name="aegisnova">Aegis Nova</string>
+    <string name="aegisnova_description">The Aegis Nova Anomaly Badge was awarded only to people who made a contribution on the Aegis Nova Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="aegisnova_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n28th May, 2016
+        \nBrooklyn, New York, USA
+        \nSavannah, Georgia, USA
+        \nMinneapolis/Saint Paul, Minnesota, USA
+        \nRotterdam, Netherlands
+        \nCape Town, South Africa
+        \nPadova, Italy
+        \nTainan, Taiwan
+        \nManila, Philippines
+        \nChiang Mai, Thailand
+        \n\n25th June, 2016
+        \nSan Diego, California, USA
+        \nSalt Lake City, Utah, USA
+        \nCalgary, Alberta, Canada
+        \nMoscow, Russia
+        \nDublin, Ireland
+        \nNice, France
+        \nSydney, Australia
+        \nKuala Lumpur, Malaysia
+        \nHyderabad, India
+        \n\n16th July, 2016
+        \nTokyo, Japan</string>
 
     <string name="darsana">Darsana</string>
     <string name="darsana_description">The Darsana Anomaly Badge was awarded only to people who made a contribution on the Darsana Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
@@ -312,6 +346,26 @@
     \nSt Petersburg, Russia(S)
     \nHoboken, New Jersey (S)
     \nJacksonville, Florida, USA (S)</string>
+
+    <string name="obsidian">Obsidian</string>
+    <string name="obsidian_description">The Obsidian Anomaly Badge was awarded only to people who made a contribution on the Obsidian Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
+    <string name="obsidian_notes">You were able to get this badge when contributing to one of the following events:
+    \n\n27th February, 2016:
+        \nSeattle, Washington, USA (P)
+        \nHamamatsu, Japon (S)
+        \nMadrid, Spain (S)
+        \nMilwaukee, Wisconsin, USA (S)
+        \nRio de Janeiro, Brasil (S)
+        \n\n2nd April, 2016
+        \nHong Kong (P)
+        \nColombo, Sri Lanka (S)
+        \nVienna, Austria (P)
+        \nCopenhagen, Denmark (S)
+        \nOrlando, Florida, USA (P)
+        \nMexico City, Mexico (S)
+        \nSan Antonio, Texas, USA (S)
+        \nTucson, Arizona, USA (S)</string>
+
 
     <string name="persepolis">Persepolis</string>
     <string name="persepolis_description">The Persepolis Anomaly Badge was awarded only to people who made a contribution on the Persepolis Anomaly series, either as a field-agent or remote intel agent. In order to receive one of these, you had to register on the official Niantic Event.</string>
